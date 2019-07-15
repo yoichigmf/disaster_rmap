@@ -205,7 +205,7 @@ $sheetd = GetSheet( $spreadsheetId, $sheetname );
 echo "<script>\n";
 #echo "tgjson=\"{\"type\": \"FeatureCollection\",\"name\": \"調査地点\",\"crs\": { \"type\": \"name\", \"properties\": { \"name\": \"urn:ogc:def:crs:OGC:1.3:CRS84\" } },\"features\": []\"; ";
 
-echo sprintf('tgjson="{\\"type\\":\\"FeatureCollection\\",\\"name\\":\\"調査地点\\",\\"crs\\":{ \\"type\\": \\"name\\", \\"properties\\": { \\"name\\": \\"urn:ogc:def:crs:OGC:1.3:CRS84\\" } },\\"features\\": [  \";\n ');
+echo sprintf('tgjson="{\\"type\\":\\"FeatureCollection\\",\\"name\\":\\"調査地点\\",\\"crs\\":{ \\"type\\": \\"name\\", \\"properties\\": { \\"name\\": \\"urn:ogc:def:crs:OGC:1.3:CRS84\\" } },\\"features\\": [ ] ";');
 foreach ($sheetd as $index => $cols) {
 
   if ( $index > 0 ) {
