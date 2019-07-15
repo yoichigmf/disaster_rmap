@@ -221,10 +221,11 @@ foreach ($sheetd as $index => $cols) {
      
      }
      
+   //  $itemd = sprintf('\\type\\":\\"Feature\\",\\"Properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\"},\\"geometry\\":{\\"type\\":\\"Point\\",\"";
      
-     $itemd = " \\"type\\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[null,null]}\n";
+    // $itemd = " \\"type\\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[null,null]}\n";
 
-     echo "\ntgjson=tgjson+${topc}+${itemd};\n";
+  //   echo "\ntgjson=tgjson+${topc}+${itemd};\n";
      }
    // echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
  }
