@@ -179,19 +179,31 @@ table.fudeinfo tr th {
 
 <?php 
 
+function GetSheet( $sheetid, $sheetname ) {
   $client = getClient();
-  $spreadsheetId = getenv('SPREADSHEET_ID');
+ 
 
     $client->addScope(Google_Service_Sheets::SPREADSHEETS);
     $client->setApplicationName('ReadSheet');
     
     $service = new Google_Service_Sheets($client);
      
-    $response = $service->spreadsheets_values->get($spreadsheetId, 'シート1');
+    $response = $service->spreadsheets_values->get($spreadsheetId, $sheetname);
     
     $values = $response->getValues();
     
-    var_dump( $values );
+    return $values;
+    //var_dump( $values );
+    
+}
+
+$sheetname = 'シート1';
+$spreadsheetId = getenv('SPREADSHEET_ID');
+ 
+$sheetd = GetSheet( $spreadsheetId, $sheetname ) 
+ 
+foreach ($sheetd as $index => $cols) {
+    echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
 
 include ('webpg.html'); 
 
