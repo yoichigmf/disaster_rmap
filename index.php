@@ -187,7 +187,7 @@ table.fudeinfo tr th {
     
     $service = new Google_Service_Sheets($client);
      
-    $response = $service->spreadsheets_values->get($spreadsheetId, 'シート1!A1:D5');
+    $response = $service->spreadsheets_values->get($spreadsheetId, 'シート1');
     
     $values = $response->getValues();
     
