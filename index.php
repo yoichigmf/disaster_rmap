@@ -220,7 +220,7 @@ foreach ($sheetd as $index => $cols) {
      }
      
      
-     $itemd = " \"type\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[,]}
+     $itemd = " \"type\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[null,null]}\n";
 
      echo "tgjson=tgjson+${topc}+${itemd}\n";
      }
