@@ -202,10 +202,33 @@ $spreadsheetId = getenv('SPREADSHEET_ID');
  
 $sheetd = GetSheet( $spreadsheetId, $sheetname ); 
  
+echo "<script>\n";
+echo "tgjson={\"type\": \"FeatureCollection\",\"name\": \"調査地点\",\"crs\": { \"type\": \"name\", \"properties\": { \"name\": \"urn:ogc:def:crs:OGC:1.3:CRS84\" } },\"features\": [\n";
 foreach ($sheetd as $index => $cols) {
-    echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
+
+  if ( $index > 0 ) {
+  
+     $dated = $cols[0];
+     $userd = $cols[1];
+     
+     if ( $index > 1 ) {
+          $topc = ",{";
+       }
+     else   {
+          $topc = "{";
+     
+     }
+     
+     
+     $itemd = " \"type\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[,]}
+
+     echo "tgjson=tgjson+${topc}+${itemd}\n";
+     }
+   // echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
  }
     
+echo "tgjson=tgjson +\"]} \n";
+echo "</script>\n";
 //var_dump( $sheetd );
 
 
