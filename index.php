@@ -202,8 +202,8 @@ $spreadsheetId = getenv('SPREADSHEET_ID');
  
 $sheetd = GetSheet( $spreadsheetId, $sheetname ) 
  
-foreach ($sheetd as $index => $cols) {
-    echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
+var_dump( $sheetd );
+
 
 include ('webpg.html'); 
 
