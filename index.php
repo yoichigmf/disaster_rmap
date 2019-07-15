@@ -188,7 +188,7 @@ function GetSheet( $sheetid, $sheetname ) {
     
     $service = new Google_Service_Sheets($client);
      
-    $response = $service->spreadsheets_values->get($spreadsheetId, $sheetname);
+    $response = $service->spreadsheets_values->get($sheetid, $sheetname);
     
     $values = $response->getValues();
     
