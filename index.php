@@ -179,6 +179,19 @@ table.fudeinfo tr th {
 
 <?php 
 
+  $client = getClient();
+  $spreadsheetId = getenv('SPREADSHEET_ID');
+
+    $client->addScope(Google_Service_Sheets::SPREADSHEETS);
+    $client->setApplicationName('ReadSheet');
+    
+    $service = new Google_Service_Sheets($client);
+     
+    $response = $service->spreadsheets_values->get($spreadsheetId, 'シート1!A1:D5');
+    
+    $values = $response->getValues();
+    
+    var_dump( $values );
 
 include ('webpg.html'); 
 
