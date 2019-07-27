@@ -234,14 +234,14 @@ foreach ($sheetd as $index => $cols) {
         $itemd = "{ \"type\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[${xcod},${ycod}]}},";
 
         
-        echo "\ntgjson=tgjson+${topc}+${itemd};\n";
+        echo "\n${tgjson}=${tgjson}+${itemd};\n";
   
        }
      }
    // echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
  }
     
-echo "tgjson=tgjson +\"]} \n";
+echo "tgjson=${tgjson} +\"]} \n";
 echo "\n</script>\n";
 //var_dump( $sheetd );
 
