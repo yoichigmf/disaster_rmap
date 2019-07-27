@@ -220,7 +220,7 @@ echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
      $dated = $cols[0];
      $userd = $cols[1];
     
-     $kind = $cols[3]; 
+     $kind = $cols[2]; 
      if ( intval($index) > 1 ) {
           $topc = "\",{\"";
        }
