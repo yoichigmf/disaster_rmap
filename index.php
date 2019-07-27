@@ -206,16 +206,17 @@ $sheetd = GetSheet( $spreadsheetId, $sheetname );
  var_dump( $sheetd );
  
 echo "<script>\n";
-#echo "var tgjson=\"{\"type\": \"FeatureCollection\",\"name\": \"調査地点\",\"crs\": { \"type\": \"name\", \"properties\": { \"name\": \"urn:ogc:def:crs:OGC:1.3:CRS84\" } },\"features\": []\"; ";
 
-echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\",\\"name\\":\\"調査地点\\",\\"crs\\":{ \\"type\\": \\"name\\", \\"properties\\": { \\"name\\": \\"urn:ogc:def:crs:OGC:1.3:CRS84\\" } },\\"features\\": [ ] ";');
+
+echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\",\\"name\\":\\"調査地点\\",\\"crs\\":{ \\"type\\": \\"name\\", \\"properties\\": { \\"name\\": \\"urn:ogc:def:crs:OGC:1.3:CRS84\\" } },\\"features\\":[ ');
 foreach ($sheetd as $index => $cols) {
 
-  if ( $index > 0 ) {
+  if ( $index > 0 ) {  //  1行目は項目名だからスキップ
   
      $dated = $cols[0];
      $userd = $cols[1];
-     
+    
+     $kind = $cols[3]; 
      if ( $index > 1 ) {
           $topc = "\",{\"";
        }
@@ -224,16 +225,23 @@ foreach ($sheetd as $index => $cols) {
      
      }
      
-   //  $itemd = sprintf('\\type\\":\\"Feature\\",\\"Properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\"},\\"geometry\\":{\\"type\\":\\"Point\\",\"";
-     
-    // $itemd = " \\"type\\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[null,null]}\n";
 
-  //   echo "\ntgjson=tgjson+${topc}+${itemd};\n";
+   
+     if ( strcmp( $kind ,'location' ) == 0 ) {
+        $xcod =$cols[6];
+        $ycod = $cols[5];
+     
+        $itemd = " \\"type\\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[${xcod},${ycod}]}\n";
+
+        
+        echo "\ntgjson=tgjson+${topc}+${itemd};\n";
+  
+       }
      }
    // echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
  }
     
-//echo "tgjson=tgjson +\"]} \n";
+echo "tgjson=tgjson +\"]} \n";
 echo "\n</script>\n";
 //var_dump( $sheetd );
 
