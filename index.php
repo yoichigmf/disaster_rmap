@@ -231,7 +231,7 @@ foreach ($sheetd as $index => $cols) {
         $xcod =$cols[6];
         $ycod = $cols[5];
      
-        $itemd = " \\"type\\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[${xcod},${ycod}]}\n";
+        $itemd = "{ \"type\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[${xcod},${ycod}]}},";
 
         
         echo "\ntgjson=tgjson+${topc}+${itemd};\n";
