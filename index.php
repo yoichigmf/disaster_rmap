@@ -213,7 +213,7 @@ echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\",\\"name\\":\\"調�
 
 foreach ($sheetd as $index => $cols) {
 
-echo "\n col =>${cols}";
+echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
 
   if ( $index > 0 ) {  //  1行目は項目名だからスキップ
   
