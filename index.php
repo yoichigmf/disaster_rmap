@@ -213,7 +213,7 @@ echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\",\\"name\\":\\"調�
 
 foreach ($sheetd as $index => $cols) {
 
-echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
+//echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
 
  // if ( intval($index) > 0 ) {  //  1行目は項目名だからスキップ
   
@@ -246,7 +246,7 @@ echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
    // echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
 // }
     
-echo "tgjson=${tgjson} +\"]} \n";
+echo " +\"]} ;\n";
 echo "\n</script>\n";
 //var_dump( $sheetd );
 
