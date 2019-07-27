@@ -202,10 +202,13 @@ $spreadsheetId = getenv('SPREADSHEET_ID');
  
 $sheetd = GetSheet( $spreadsheetId, $sheetname ); 
  
+ 
+ var_dump( $sheetd );
+ 
 echo "<script>\n";
-#echo "tgjson=\"{\"type\": \"FeatureCollection\",\"name\": \"調査地点\",\"crs\": { \"type\": \"name\", \"properties\": { \"name\": \"urn:ogc:def:crs:OGC:1.3:CRS84\" } },\"features\": []\"; ";
+#echo "var tgjson=\"{\"type\": \"FeatureCollection\",\"name\": \"調査地点\",\"crs\": { \"type\": \"name\", \"properties\": { \"name\": \"urn:ogc:def:crs:OGC:1.3:CRS84\" } },\"features\": []\"; ";
 
-echo sprintf('tgjson="{\\"type\\":\\"FeatureCollection\\",\\"name\\":\\"調査地点\\",\\"crs\\":{ \\"type\\": \\"name\\", \\"properties\\": { \\"name\\": \\"urn:ogc:def:crs:OGC:1.3:CRS84\\" } },\\"features\\": [ ] ";');
+echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\",\\"name\\":\\"調査地点\\",\\"crs\\":{ \\"type\\": \\"name\\", \\"properties\\": { \\"name\\": \\"urn:ogc:def:crs:OGC:1.3:CRS84\\" } },\\"features\\": [ ] ";');
 foreach ($sheetd as $index => $cols) {
 
   if ( $index > 0 ) {
@@ -231,7 +234,7 @@ foreach ($sheetd as $index => $cols) {
  }
     
 //echo "tgjson=tgjson +\"]} \n";
-echo "</script>\n";
+echo "\n</script>\n";
 //var_dump( $sheetd );
 
 
