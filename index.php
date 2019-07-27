@@ -229,7 +229,7 @@ foreach ($sheetd as $index => $cols) {
      
      }
      
-     echo "\nkind ${kind}  ";
+   //  echo "\nkind ${kind}  ";
 
    
      if ( strcmp( $kind ,'location' ) == 0 ) {
@@ -239,7 +239,7 @@ foreach ($sheetd as $index => $cols) {
         $itemd = "${topc} \"type\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[${xcod},${ycod}]}},";
 
         
-        echo "\n${tgjson}=${tgjson}+${itemd};\n";
+        echo "${itemd};\n";
   
        }
      }
