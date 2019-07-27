@@ -215,13 +215,13 @@ foreach ($sheetd as $index => $cols) {
 
 echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
 
-  if ( $index > 0 ) {  //  1行目は項目名だからスキップ
+  if ( intval($index) > 0 ) {  //  1行目は項目名だからスキップ
   
      $dated = $cols[0];
      $userd = $cols[1];
     
      $kind = $cols[3]; 
-     if ( $index > 1 ) {
+     if ( intval($index) > 1 ) {
           $topc = "\",{\"";
        }
      else   {
@@ -235,7 +235,7 @@ echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
         $xcod =$cols[6];
         $ycod = $cols[5];
      
-        $itemd = "{ \"type\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[${xcod},${ycod}]}},";
+        $itemd = "${topc} \"type\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[${xcod},${ycod}]}},";
 
         
         echo "\n${tgjson}=${tgjson}+${itemd};\n";
