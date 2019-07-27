@@ -229,6 +229,7 @@ echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
      
      }
      
+     echo "\nkind ${kind}  ";
 
    
      if ( strcmp( $kind ,'location' ) == 0 ) {
