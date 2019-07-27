@@ -215,7 +215,7 @@ foreach ($sheetd as $index => $cols) {
 
 echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
 
-  if ( intval($index) > 0 ) {  //  1行目は項目名だからスキップ
+ // if ( intval($index) > 0 ) {  //  1行目は項目名だからスキップ
   
      $dated = $cols[0];
      $userd = $cols[1];
@@ -243,7 +243,7 @@ echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
        }
      }
    // echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
- }
+// }
     
 echo "tgjson=${tgjson} +\"]} \n";
 echo "\n</script>\n";
