@@ -134,14 +134,15 @@ function onEachFeature(feature, layer) {
 }
 
 
-var dSearch = new L.GeoJSON.AJAX("data/20190619.geojson",{pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, geojsonMarkerOptions1);},
-        onEachFeature: onEachFeature
-   		 }
-   		 
-    );
+//var dSearch = new L.GeoJSON.AJAX("data/20190619.geojson",{pointToLayer: function (feature, latlng) {
+//        return L.circleMarker(latlng, geojsonMarkerOptions1);},
+//        onEachFeature: onEachFeature
+//   		 }
+//   		 
+//    );
     
  
+var dSearch;
 
 	     	
 var BaseMaps = {

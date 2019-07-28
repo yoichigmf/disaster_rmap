@@ -260,13 +260,18 @@ foreach ($sheetd as $index => $cols) {
   
        }
      }
-   // echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
-// }
+ 
     
 echo "]} \" ; \n";
 
+echo "var features = JSON.parse(tgjson);\n";
 
+echo "dSearch = L.geoJSON(features, { onEachFeature: function (feature, layer) {\n";
 
+echo "  if (feature.properties && feature.properties.popupContent) { \n";
+echo "        layer.bindPopup(feature.properties.popupContent); \n";
+ echo "   } }} ); \n";
+    
 echo "\n</script>\n";
 //var_dump( $sheetd );
 
