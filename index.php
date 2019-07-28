@@ -271,11 +271,12 @@ echo "]} \" ; \n";
 
 echo "var features = JSON.parse(tgjson);\n";
 
-echo "dSearch = L.geoJSON(features, { onEachFeature: function (feature, layer) {\n";
+echo "dSearch = L.geoJSON(features);\n";
+// { onEachFeature: function (feature, layer) {\n";
 
-echo "  if (feature.properties && feature.properties.popupContent) { \n";
-echo "        layer.bindPopup(feature.properties.popupContent); \n";
- echo "   } }} ); \n";
+//echo "  if (feature.properties && feature.properties.popupContent) { \n";
+//echo "        layer.bindPopup(feature.properties.popupContent); \n";
+// echo "   } }} ); \n";
     
 echo "\n</script>\n";
 //var_dump( $sheetd );
