@@ -248,7 +248,7 @@ foreach ($sheetd as $index => $cols) {
    // echo sprintf('#%d >> "%s"', $index+1, implode('", "', $cols)).PHP_EOL;
 // }
     
-echo "]}\\" \;\n";
+echo "]} \" ; \n";
 echo "\n</script>\n";
 //var_dump( $sheetd );
 
