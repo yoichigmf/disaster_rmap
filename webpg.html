@@ -157,8 +157,8 @@
           <div class="ui-field-contain">
         <fieldset data-role="controlgroup">
          <input id="ov1"
-            name="ov_layer1" type="checkbox" value="20190619" onChange='changechk( this )'    checked />
-          <label for="ov1">20190619</label>
+            name="ov_layer1" type="checkbox" value="nsearch" onChange='changechk( this )'    checked />
+          <label for="ov1">調査データ</label>
           
            
         </fieldset>
@@ -338,7 +338,7 @@ function changechk( cb ){
      // BaseMaps[$( this ).val()].addTo( map );
      CbaseLayer = BaseMaps[$( this ).val()];
      
-   CbaseLayer.setZIndex(0);
+    CbaseLayer.setZIndex(0);
     CbaseLayer.addTo( map );
     // map.addLayer( CBaseLayer, true );
      

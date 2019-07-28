@@ -158,7 +158,7 @@ var BaseMaps = {
 };
 
 var overlays = {
-"20190619":d20190619,
+"nsearch":d20190619,
 };
 
 
@@ -166,7 +166,7 @@ var default_d =  d20190619;
 
 
 var default_display = {
-  1:20190619
+  1:nsearch
 
 };
  
