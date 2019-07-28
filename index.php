@@ -225,7 +225,7 @@ echo "<script>\n";
 
 echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\",\\"name\\":\\"調査地点\\",\\"crs\\":{ \\"type\\": \\"name\\", \\"properties\\": { \\"name\\": \\"urn:ogc:def:crs:OGC:1.3:CRS84\\" } },\\"features\\":[ ');
 
-var isdone = false;
+$isdone = false;
 
 foreach ($sheetd as $index => $cols) {
 
@@ -244,12 +244,12 @@ foreach ($sheetd as $index => $cols) {
    
      if ( strcmp( $kind ,'location' ) == 0 ) {
      
-          if ( isdone   ) {
+          if ( $isdone   ) {
       	    $topc = " ,{";
      		  }
      		else   {
          		 $topc = "{ ";
-         		 isdone = true;
+         		 $isdone = true;
      
      		}
      
