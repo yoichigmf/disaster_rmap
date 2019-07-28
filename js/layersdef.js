@@ -134,7 +134,7 @@ function onEachFeature(feature, layer) {
 }
 
 
-var d20190619 = new L.GeoJSON.AJAX("data/20190619.geojson",{pointToLayer: function (feature, latlng) {
+var dSearch = new L.GeoJSON.AJAX("data/20190619.geojson",{pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, geojsonMarkerOptions1);},
         onEachFeature: onEachFeature
    		 }
@@ -158,15 +158,15 @@ var BaseMaps = {
 };
 
 var overlays = {
-"nsearch":d20190619,
+"nsearch":dSearch,
 };
 
 
-var default_d =  d20190619;
+var default_d =  dSearch;
 
 
 var default_display = {
-  1:d20190619
+  1:dSearch
 
 };
  
