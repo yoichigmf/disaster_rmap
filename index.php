@@ -236,7 +236,7 @@ foreach ($sheetd as $index => $cols) {
         $xcod =$cols[6];
         $ycod = $cols[5];
      
-        $itemd = "${topc} \"type\":\"Feature\",\"properties\":{\"日付\":\"${dated}\",\"ユーザ\":\"${userd}\"},\"geometry\":{\"type\": \"Point\", \"coordinate\":[${xcod},${ycod}]}},";
+        $itemd = "${topc} \\"type\\":\\"Feature\\",\\"properties\\":{\\"日付\\":\\"${dated}\\",\\"ユーザ\\":\\"${userd}\\"},\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinate\\":[${xcod},${ycod}]}}";
 
         
         echo "${itemd};\n";
