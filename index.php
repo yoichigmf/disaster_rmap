@@ -275,6 +275,8 @@ echo "var features = JSON.parse(tgjson);\n";
 echo "dSearch = L.geoJSON(features);\n";
 
 echo "default_d = dSearch;\n";
+echo "overlays[\"nsearch\"]=dSearch;\n";
+
 // { onEachFeature: function (feature, layer) {\n";
 
 //echo "  if (feature.properties && feature.properties.popupContent) { \n";
