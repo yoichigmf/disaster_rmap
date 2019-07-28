@@ -273,6 +273,8 @@ echo "]} \" ; \n";
 echo "var features = JSON.parse(tgjson);\n";
 
 echo "dSearch = L.geoJSON(features);\n";
+
+echo "default_d = sSearch;\n";
 // { onEachFeature: function (feature, layer) {\n";
 
 //echo "  if (feature.properties && feature.properties.popupContent) { \n";
