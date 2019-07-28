@@ -166,7 +166,7 @@ var default_d =  d20190619;
 
 
 var default_display = {
-  1:nsearch
+  1:d20190619
 
 };
  
