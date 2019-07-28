@@ -223,7 +223,7 @@ $sheetd = GetSheet( $spreadsheetId, $sheetname );
 echo "<script>\n";
 
 
-echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\",\\"name\\":\\"調査地点\\",\\"crs\\":{ \\"type\\": \\"name\\", \\"properties\\": { \\"name\\": \\"urn:ogc:def:crs:OGC:1.3:CRS84\\" } },\\"features\\":[ ');
+echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\", \\"features\\":[ ');
 
 $isdone = false;
 
@@ -257,7 +257,8 @@ foreach ($sheetd as $index => $cols) {
         $ycod = $cols[5];
      
      echo ${topc};
-     
+    echo sprintf(' \\"type\\":\\"Feature\\",\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinates\\":[%s,%s]}, \\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\"}}',$xcod,$ycod, $dated,$userd);
+  
       echo sprintf(' \\"type\\":\\"Feature\\",\\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\"},\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinate\\":[%s,%s]}}',$dated,$userd,$xcod,$ycod);
       //  $itemd = "${topc} \"type\\":\\"Feature\\",\\"properties\\":{\\"日付\\":\\"${dated}\\",\\"ユーザ\\":\\"${userd}\\"},\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinate\\":[${xcod},${ycod}]}}";
         
