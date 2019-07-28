@@ -66,15 +66,30 @@ function getClient() {
     <title>災害情報報告マップ</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />   
+<!--
 <link rel="stylesheet" href="js/leaflet-0.7.3/leaflet.css" />
+-->
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   
+<!--
 <script src="js/leaflet-0.7.3/leaflet-src.js"></script>
+-->
+
+ <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+   
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
 
 <script src="js/jquery.js"></script>
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
 
+<!--
 <script src="js/leaflet.ajax.js"></script>
+-->
 
 <script>
         $(document).on("mobileinit", function () {
