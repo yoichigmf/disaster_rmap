@@ -259,8 +259,7 @@ foreach ($sheetd as $index => $cols) {
         $ycod = $cols[5];
      
     echo ${topc};
-    echo sprintf(' \\"type\\":\\"Feature\\",' );
-    echo sprintf( ' \\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinates\\":[%s,%s]}, \\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\",\\"種別\\":\\"%s\\",\\"url\\":\\"%s\\",\\"テキスト\\":\\"%s\\"}}',$xcod,$ycod, $dated,$userd,$kind,$url,$stext);
+    echo sprintf(' \\"type\\":\\"Feature\\",\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinates\\":[%s,%s]}, \\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\",\\"種別\\":\\"%s\\",\\"url\\":\\"%s\\",\\"テキスト\\":\\"%s\\"}}',$xcod,$ycod, $dated,$userd,$kind,$url,$stext);
   
    //   echo sprintf(' \\"type\\":\\"Feature\\",\\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\"},\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinate\\":[%s,%s]}}',$dated,$userd,$xcod,$ycod);
       //  $itemd = "${topc} \"type\\":\\"Feature\\",\\"properties\\":{\\"日付\\":\\"${dated}\\",\\"ユーザ\\":\\"${userd}\\"},\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinate\\":[${xcod},${ycod}]}}";
