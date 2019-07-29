@@ -1,6 +1,6 @@
 
 
-function onEachFeature(feature, layer) {
+function PropContents(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.日付) {
     
