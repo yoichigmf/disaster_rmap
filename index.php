@@ -272,16 +272,18 @@ echo "]} \" ; \n";
 
 echo "var features = JSON.parse(tgjson);\n";
 
-echo "dSearch = L.geoJSON(features);\n";
+echo "dSearch = L.geoJSON(features)\n";
+{ onEachFeature: function (feature, layer) {\n";
+//echo "        layer.bindPopup(feature.properties.popupContent); \n";
+
+echo "        layer.bindPopup(\'contents\'); \n";
+echo "   } } ); \n";
+
 
 echo "default_d = dSearch;\n";
 echo "overlays[\"nsearch\"]=dSearch;\n";
 
-// { onEachFeature: function (feature, layer) {\n";
 
-//echo "  if (feature.properties && feature.properties.popupContent) { \n";
-//echo "        layer.bindPopup(feature.properties.popupContent); \n";
-// echo "   } }} ); \n";
     
 echo "\n</script>\n";
 //var_dump( $sheetd );
