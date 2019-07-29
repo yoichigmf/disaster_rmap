@@ -273,7 +273,7 @@ echo "]} \" ; \n";
 echo "var features = JSON.parse(tgjson);\n";
 
 echo "dSearch = L.geoJSON(features)\n";
-{ onEachFeature: function (feature, layer) {\n";
+echo " { onEachFeature: function (feature, layer) {\n";
 //echo "        layer.bindPopup(feature.properties.popupContent); \n";
 
 echo "        layer.bindPopup(\'contents\'); \n";
