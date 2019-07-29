@@ -238,8 +238,8 @@ foreach ($sheetd as $index => $cols) {
     
      $kind = $cols[2]; 
      $url  = $cols[3];
-   //  $stext = $cols[4];
-     $stext = "";
+     //$stext = $cols[4];
+     $stext = $cols[4];
      
    //  echo "\nkind ${kind}  ";
 
