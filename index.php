@@ -240,12 +240,12 @@ foreach ($sheetd as $index => $cols) {
      $url  = $cols[3];
      $stext = $cols[4];
 
-     
    //  echo "\nkind ${kind}  ";
 
-   
      if ( strcmp( $kind ,'location' ) == 0 ) {
      
+      $topc = "{";
+      
           if ( $isdone   ) {
       	    $topc = " ,{";
      		  }
