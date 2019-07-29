@@ -238,8 +238,9 @@ foreach ($sheetd as $index => $cols) {
     
      $kind = $cols[2]; 
      $url  = $cols[3];
-     $stext = $cols[4];
-
+   //  $stext = $cols[4];
+     $stext = "";
+     
    //  echo "\nkind ${kind}  ";
 
      if ( strcmp( $kind ,'location' ) == 0 ) {
