@@ -295,6 +295,8 @@ foreach ($sheetd as $index => $cols) {
   
        }
        else  {
+       
+       if ( strcmp( $kind ,"種別" ) <> 0 ){ 
            $ukey = $uid_ar[$userd];
            if (array_key_exists($non_loc_ar[$userd], $ukey ) ) {
        
@@ -309,6 +311,8 @@ foreach ($sheetd as $index => $cols) {
               $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
               
               array_push( $non_loc_ar[$userd][$ukey], $non_locr );
+              
+          }
        }
        
        
