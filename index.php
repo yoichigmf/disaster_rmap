@@ -227,6 +227,11 @@ echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\", \\"features\\":[ 
 
 $isdone = false;
 
+
+$uid_ar = array();
+
+$ckey = 0;
+     
 foreach ($sheetd as $index => $cols) {
 
 //echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
@@ -238,8 +243,11 @@ foreach ($sheetd as $index => $cols) {
     
      $kind = $cols[2]; 
      $url  = $cols[3];
-     //$stext = $cols[4];
+
      $stext = $cols[4];
+     
+     
+
      
    //  echo "\nkind ${kind}  ";
 
@@ -258,9 +266,21 @@ foreach ($sheetd as $index => $cols) {
      
         $xcod =$cols[6];
         $ycod = $cols[5];
+        
+        if (array_key_exists( $userd, $uid_ar)){
+          
+            $ckey = $uid_ar[$userd] + 1;
+            $uid_ar[$userd] = $ckey;
+           }
+        else   {
+            $ckey = 0;
+            $uid_ar[$userd] = $ckey;
+        }
+             
+        
      
     echo ${topc};
-    echo sprintf(' \\"type\\":\\"Feature\\",\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinates\\":[%s,%s]}, \\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\",\\"種別\\":\\"%s\\",\\"url\\":\\"%s\\",\\"テキスト\\":\\"%s\\"}}',$xcod,$ycod, $dated,$userd,$kind,$url,$stext);
+    echo sprintf(' \\"type\\":\\"Feature\\",\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinates\\":[%s,%s]}, \\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\",\\"種別\\":\\"%s\\",\\"uid\\":\\"%d\\",\\"url\\":\\"%s\\",\\"テキスト\\":\\"%s\\"}}',$xcod,$ycod, $dated,$userd,$kind,$ckey,$url,$stext);
   
    //   echo sprintf(' \\"type\\":\\"Feature\\",\\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\"},\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinate\\":[%s,%s]}}',$dated,$userd,$xcod,$ycod);
       //  $itemd = "${topc} \"type\\":\\"Feature\\",\\"properties\\":{\\"日付\\":\\"${dated}\\",\\"ユーザ\\":\\"${userd}\\"},\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinate\\":[${xcod},${ycod}]}}";
