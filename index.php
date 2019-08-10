@@ -230,8 +230,12 @@ $isdone = false;
 
 $uid_ar = array();
 
+$non_loc_ar = array();
+
 $ckey = 0;
      
+$non_locr = array();
+
 foreach ($sheetd as $index => $cols) {
 
 //echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
@@ -275,6 +279,8 @@ foreach ($sheetd as $index => $cols) {
         else   {
             $ckey = 0;
             $uid_ar[$userd] = $ckey;
+            
+            $non_loc_ar[$userd] = array();
         }
              
         
@@ -288,6 +294,24 @@ foreach ($sheetd as $index => $cols) {
        // echo "${itemd};\n";
   
        }
+       else  {
+           $ukey = $uid_ar[$userd];
+           if (array_key_exists($non_loc_ar[$userd], $ukey ) ) {
+       
+
+              }
+            else  {
+              
+                             $non_loc_ar[$userd][$ukey] = array();
+             }
+   
+                   
+              $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
+              
+              array_push( $non_loc_ar[$userd][$ukey], $non_locr );
+       }
+       
+       
      }
  
     
@@ -311,7 +335,7 @@ echo "overlays[\"nsearch\"]=dSearch;\n";
 
     
 echo "\n</script>\n";
-//var_dump( $sheetd );
+var_dump( $non_loc_ar );
 
 
 include ('webpg.html'); 
