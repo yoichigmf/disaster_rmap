@@ -363,10 +363,21 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
        echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
        
           foreach ( $vrec as $vv ) {
-              echo 'ercord '. $vv . 'hh<br>';
+            //  echo 'ercord '. $vv . 'hh<br>';
+            
+             echo  'var vvc = {};\n';
+             
+             echo 'vvc.date=\"'. $vv["日付"] .'\";';
+             echo 'vvc.user=\"'. $vv["ユーザ"] .'\";';
+             
+             echo 'vproc.push( vvc );\n';
+       
           }
-          echo 'vparoc.[\"' . $vrec .'\"]=' ;
-      
+
+          echo 'vproc.[\"' . $vrec .'\"]= ' ;
+          
+          
+          echo 'nlj[\"'. $vkey . '\"]=vproc;\n"; 
          }
          
       
