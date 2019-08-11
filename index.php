@@ -363,7 +363,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
        echo "var vproc ={};\n";
      //  echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
        
-         
+         echo "var varr = new Array();\n";
           foreach ( $vrec as $vv ) {
             //  echo 'ercord '. $vv . 'hh<br>';
             
@@ -376,13 +376,13 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
               echo "vvc.url=\"". $vv["url"] ."\";\n";             
            //   echo "vvc.text=\"". nl2vr($vv["TEXT"]) ."\";\n"; 
                                   
-             echo "vproc.push( vvc );\n";
+             echo "varr.push( vvc );\n";
        
           }
           
           if ( $vkey ) {
 
-          echo "vproc[\"" . $vkey ."\"]= vvc;\n" ;
+          echo "vproc[\"" . $vkey ."\"]= varr;\n" ;
           }
           else {
           
