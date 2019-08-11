@@ -374,7 +374,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
              echo "vvc.kind=\"". $vv["種別"] ."\";\n";   
              
               echo "vvc.url=\"". $vv["url"] ."\";\n";             
-             // echo "vvc.text=\"". $vv["TEXT"] ."\";\n"; 
+              echo "vvc.text=\"". addslashes(nl2br($vv["TEXT"])) ."\";\n"; 
                                   
              echo "varr.push( vvc );\n";
        
