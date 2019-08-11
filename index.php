@@ -365,7 +365,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
           foreach ( $vrec as $vv ) {
               echo 'ercord '. $vv . 'hh<br>';
           }
-          echo 'vparoc.[\"' . $vrec .'\"]= ;
+          echo 'vparoc.[\"' . $vrec .'\"]=' ;
       
          }
          
