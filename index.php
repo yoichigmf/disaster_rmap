@@ -337,8 +337,17 @@ echo "default_d = dSearch;\n";
 echo "overlays[\"nsearch\"]=dSearch;\n";
 
 
-    
 echo "\n</script>\n";
+
+echo "var nlj = \"\";\n";
+foreach( $non_loc_ar as $ikey => $ivalue ) {
+
+      echo 'key => '. $ikey  .' value ' . $ivalue . ' <br>'; 
+    }
+    
+    
+    
+
 var_dump( $non_loc_ar );
 
 
