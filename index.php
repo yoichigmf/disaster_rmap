@@ -382,7 +382,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
           
           if ( $vkey ) {
 
-          echo "vproc.[\"' . $vkey .'\"]= vvc;\n" ;
+          echo "vproc[\"" . $vkey ."\"]= vvc;\n" ;
           }
           else {
           
