@@ -351,7 +351,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       echo 'if( \"' .$ikey .'\" in nlj ) { \n';
       echo '  } \n';
       echo ' else { \n';
-      echo '     nlj[\"' . $ikey .'\"]= new Array();\n";
+      echo '     nlj[\"' . $ikey .'\"]= new Array();\n';
       echo ' }\n';
       
       
