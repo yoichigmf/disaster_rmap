@@ -356,6 +356,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       
       
 
+     if ( $ivalue ) {
       
       //  ユーザ別データ
       foreach ( $ivalue  as $vkey => $vrec ) {
@@ -373,7 +374,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
              echo "vvc.kind=\"". $vv["種別"] ."\";\n";   
              
               echo "vvc.url=\"". $vv["url"] ."\";\n";             
-             // echo "vvc.text=\"". nl2vr($vv["TEXT"]) ."\";\n"; 
+              echo "vvc.text=\"". nl2vr($vv["TEXT"]) ."\";\n"; 
                                   
              echo "vproc.push( vvc );\n";
        
@@ -384,7 +385,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
           
           echo "nlj[\"". $vkey . "\"]=vproc;\n"; 
          }
-         
+        }
       
       
     }
