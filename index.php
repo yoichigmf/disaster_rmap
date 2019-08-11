@@ -355,7 +355,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       echo " }\n";
       
       
-
+echo "\n</script>\n";  
       
       //  ユーザ別データ
       foreach ( $ivalue  as $vkey => $vrec ) {
@@ -389,7 +389,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       
     }
     
-echo "\n</script>\n";  
+
 
     
 
