@@ -355,10 +355,17 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       echo ' }\n';
       
       
+
       
+      //  ユーザ別データ
       foreach ( $ivalue  as $vkey => $vrec ) {
-      
+       echo 'var vproc =new Array();\n';
        echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
+       
+          forreach ( $vrec as $vv ) {
+              echo 'ercord '. $vv . 'hh<br>';
+          }
+          echo 'vparoc.[\"' . $vrec .'\"]= ;
       
          }
          
