@@ -339,10 +339,10 @@ echo "overlays[\"nsearch\"]=dSearch;\n";
 
 
 
-echo "var nlj = new Array();\n";
+echo "var nlj = {};\n";
 
 
-echo "\n</script>\n";   
+ 
 
 foreach( $non_loc_ar as $ikey => $ivalue ) {
 
@@ -359,10 +359,10 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       
       //  ユーザ別データ
       foreach ( $ivalue  as $vkey => $vrec ) {
-       echo 'var vproc =new Array();\n';
-       echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
+       echo 'var vproc ={};\n';
+     //  echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
        
-
+         
           foreach ( $vrec as $vv ) {
             //  echo 'ercord '. $vv . 'hh<br>';
             
@@ -370,12 +370,16 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
              
              echo 'vvc.date=\"'. $vv["日付"] .'\";';
              echo 'vvc.user=\"'. $vv["ユーザ"] .'\";';
+             echo 'vvc.kind=\"'. $vv["種別"] .'\";';   
              
+              echo 'vvc.url=\"'. $vv["url"] .'\";';             
+              echo 'vvc.text=\"'. $vv["TEXT"] .'\";'; 
+                                  
              echo 'vproc.push( vvc );\n';
        
           }
 
-          echo 'vproc.[\"' . $vrec .'\"]= vvc;\n' ;
+          //echo 'vproc.[\"' . $vkey .'\"]= vvc;\n' ;
           
           
           echo 'nlj[\"'. $vkey . '\"]=vproc;\n'; 
@@ -385,7 +389,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       
     }
     
-
+echo "\n</script>\n";  
 
     
 
