@@ -362,19 +362,20 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
        echo 'var vproc =new Array();\n';
        echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
        
+
           foreach ( $vrec as $vv ) {
             //  echo 'ercord '. $vv . 'hh<br>';
             
-             echo  'var vvc = {};\n';
+             //echo  'var vvc = {};\n';
              
-             echo 'vvc.date=\"'. $vv["日付"] .'\";';
-             echo 'vvc.user=\"'. $vv["ユーザ"] .'\";';
+           //  echo 'vvc.date=\"'. $vv["日付"] .'\";';
+          //   echo 'vvc.user=\"'. $vv["ユーザ"] .'\";';
              
-             echo 'vproc.push( vvc );\n';
+          //   echo 'vproc.push( vvc );\n';
        
           }
 
-          echo 'vproc.[\"' . $vrec .'\"]= ' ;
+          echo 'vproc.[\"' . $vrec .'\"]= vvc;\n' ;
           
           
           echo 'nlj[\"'. $vkey . '\"]=vproc;\n"; 
