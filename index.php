@@ -356,7 +356,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       
       
       
-      foreach ( $ivale  as $vkey => $vrec ) {
+      foreach ( $ivalue  as $vkey => $vrec ) {
       
        echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
       
@@ -370,7 +370,7 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
 
     
 
-var_dump( $non_loc_ar );
+//var_dump( $non_loc_ar );
 
 
 include ('webpg.html'); 
