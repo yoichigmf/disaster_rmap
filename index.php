@@ -351,38 +351,38 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       echo "if( \"' .$ikey .'\" in nlj ) { \n";
       echo "  } \n";
       echo " else { \n";
-      echo '     nlj[\"' . $ikey .'\"]= new Array();';
-      echo ' }';
+      echo "     nlj[\"" . $ikey ."\"]= new Array();\n";
+      echo " }\n";
       
       
 
       
       //  ユーザ別データ
       foreach ( $ivalue  as $vkey => $vrec ) {
-       echo 'var vproc ={};\n';
+       echo "var vproc ={};\n";
      //  echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
        
          
           foreach ( $vrec as $vv ) {
             //  echo 'ercord '. $vv . 'hh<br>';
             
-             echo  'var vvc = {};\n';
+             echo  "var vvc = {};\n";
              
-             echo 'vvc.date=\"'. $vv["日付"] .'\";';
-             echo 'vvc.user=\"'. $vv["ユーザ"] .'\";';
-             echo 'vvc.kind=\"'. $vv["種別"] .'\";';   
+             echo "vvc.date=\"". $vv["日付"] ."\";\n";
+             echo "vvc.user=\"". $vv["ユーザ"] ."\";\n";
+             echo "vvc.kind=\"". $vv["種別"] ."\";\n";   
              
-              echo 'vvc.url=\"'. $vv["url"] .'\";';             
-              echo 'vvc.text=\"'. $vv["TEXT"] .'\";'; 
+              echo "vvc.url=\"". $vv["url"] ."\";\n";             
+              echo "vvc.text=\"". $vv["TEXT"] ."\";\n"; 
                                   
-             echo 'vproc.push( vvc );\n';
+             echo "vproc.push( vvc );\n";
        
           }
 
           //echo 'vproc.[\"' . $vkey .'\"]= vvc;\n' ;
           
           
-          echo 'nlj[\"'. $vkey . '\"]=vproc;\n'; 
+          echo "nlj[\"". $vkey . "\"]=vproc;\n"; 
          }
          
       
