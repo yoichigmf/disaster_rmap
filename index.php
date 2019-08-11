@@ -337,15 +337,37 @@ echo "default_d = dSearch;\n";
 echo "overlays[\"nsearch\"]=dSearch;\n";
 
 
-echo "\n</script>\n";
 
-echo "var nlj = \"\";\n";
+
+echo "var nlj = new Array();\n";
+
+
+echo "\n</script>\n";   
+
 foreach( $non_loc_ar as $ikey => $ivalue ) {
 
-      echo 'key => '. $ikey  .' value ' . $ivalue . ' <br>'; 
+  //    echo 'key => '. $ikey  .' value ' . $ivalue . ' <br>'; 
+      
+      echo 'if( \"' .$ikey .'\" in nlj ) { \n'
+      echo '  } \n';
+      echo ' else { \n';
+      echo '     nlj[\"' . $ikey .'\"]= new Array();\n";
+      echo ' }\n';
+      
+      
+      
+      foreach ( $ivale  as $vkey => $vrec ) {
+      
+       echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
+      
+         }
+         
+      
+      
     }
     
-    
+
+
     
 
 var_dump( $non_loc_ar );
