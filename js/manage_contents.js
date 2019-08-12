@@ -41,7 +41,28 @@ function PropContents(feature, layer) {
         
            for ( let vf of propList ) {
                 tgtext = tgtext + vf.date + "<br>";
-             
+                
+                 kind = vf.kind;
+                
+                  if ( kind === 'image' ) {
+        
+ 				       imageurl = vf.url;
+        
+                       dlurl = imageurl;
+        
+                       mmurl = dlurl.replace('?dl=0', '');
+                      mmurl = mmurl.replace('www.dropbox.com', 'dl.dropboxusercontent.com');
+        
+                       tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\">" + imageurl + "</a>";
+        
+                       tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\"><img src=\"" + mmurl + "\"  width=\"200\"></a>";
+        
+                     }
+                  else {
+        
+                         tgtext = tgtext +  "<br>" + vf.text + "<br>";
+        
+                       }
              
               }
             }
