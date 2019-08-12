@@ -239,7 +239,7 @@ $non_locr = array();
 
 foreach ($sheetd as $index => $cols) {
 
-echo "\nindex ${index}  <br>";
+echo "\nindex ${index}  ";
   
      $dated = $cols[0];
      $userd = $cols[1];
@@ -291,6 +291,8 @@ echo "\nindex ${index}  <br>";
   
        }    // location
        else  {
+       
+       echo "  index2  ${index} <br>";
        
      //  echo "// kind " . $kind . " date ". $dated . "\n";
        
