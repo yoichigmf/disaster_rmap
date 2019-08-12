@@ -44,9 +44,9 @@ function PropContents(feature, layer) {
                 
                  kind = vf.kind;
                 
-                  if ( kind === 'image' ) {
-        
- 				       imageurl = vf.url;
+                
+                 if ( vf.url   ){
+                  imageurl = vf.url;
         
                        dlurl = imageurl;
         
@@ -54,15 +54,24 @@ function PropContents(feature, layer) {
                       mmurl = mmurl.replace('www.dropbox.com', 'dl.dropboxusercontent.com');
         
                        tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\">" + imageurl + "</a>";
+                       
+                        if ( kind === 'image' ) {
+        
+ 		
         
                        tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\"><img src=\"" + mmurl + "\"  width=\"200\"></a>";
         
                      }
-                  else {
-        
-                         tgtext = tgtext +  " " + vf.text + "<br>";
-        
-                       }
+                     
+                 
+                 
+                 }
+                 
+                     
+                  if ( vf.text  ) {
+                      tgtext = tgtext +  " " + vf.text + "<br>";
+                  
+                   }
              
               }
             }
