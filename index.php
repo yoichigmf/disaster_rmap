@@ -322,8 +322,7 @@ foreach ($sheetd as $index => $cols) {
 echo "]} \" ; \n";
 
 
-echo "default_d = dSearch;\n";
-echo "overlays[\"nsearch\"]=dSearch;\n";
+
 
 
 
@@ -399,7 +398,9 @@ echo " { onEachFeature:function ( feature, layer ) {\n";
 echo         " PropContents (feature, layer); \n";
 echo " }  } ); \n";
 
-    
+echo "default_d = dSearch;\n";
+echo "overlays[\"nsearch\"]=dSearch;\n";
+ 
 echo "\n</script>\n";  
 
     
