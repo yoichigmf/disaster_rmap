@@ -40,7 +40,7 @@ function PropContents(feature, layer) {
             var propList = nlj[feature.properties.ユーザ ][feature.properties.uid];
         
            for ( let vf of propList ) {
-                tgtext = tgtext + vf.date + "<br>";
+                tgtext = tgtext + "<br>" + vf.date ;
                 
                  kind = vf.kind;
                 
@@ -60,7 +60,7 @@ function PropContents(feature, layer) {
                      }
                   else {
         
-                         tgtext = tgtext +  "<br>" + vf.text + "<br>";
+                         tgtext = tgtext +  " " + vf.text + "<br>";
         
                        }
              
