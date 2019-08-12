@@ -312,7 +312,7 @@ echo "\nindex ${index}  ";
            $ukey = $uid_ar[$userd];
        
           echo "  userd ${userd}  ukey ${ukey}  ";
-           if (array_key_exists($non_loc_ar[$userd], $ukey ) ) {
+           if (array_key_exists($ukey ,$non_loc_ar[$userd] ) ) {
        
    echo " ari <br>";
               }
