@@ -321,14 +321,6 @@ foreach ($sheetd as $index => $cols) {
     
 echo "]} \" ; \n";
 
-echo "var features = JSON.parse(tgjson);\n";
-echo "var sample_contents=\"sample contents\"\n";
-
-echo "dSearch = L.geoJSON(features, \n";
-echo " { onEachFeature:function ( feature, layer ) {\n";
-echo         " PropContents (feature, layer); \n";
-echo " }  } ); \n";
-
 
 echo "default_d = dSearch;\n";
 echo "overlays[\"nsearch\"]=dSearch;\n";
@@ -393,6 +385,17 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       
       
     }
+
+
+
+echo "var features = JSON.parse(tgjson);\n";
+//echo "var sample_contents=\"sample contents\"\n";
+
+echo "dSearch = L.geoJSON(features, \n";
+echo " { onEachFeature:function ( feature, layer ) {\n";
+echo         " PropContents (feature, layer); \n";
+echo " }  } ); \n";
+
     
 echo "\n</script>\n";  
 
