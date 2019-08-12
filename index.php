@@ -292,7 +292,7 @@ echo "\nindex ${index}  ";
        }    // location
        else  {
        
-       echo "  index2  ${index} <br>";
+       echo "  index2  ${index} ";
        
      //  echo "// kind " . $kind . " date ". $dated . "\n";
        
@@ -311,7 +311,7 @@ echo "\nindex ${index}  ";
            
            $ukey = $uid_ar[$userd];
        
-       
+          echo "  userd ${userd}  ukey ${ukey}  <br> ";
            if (array_key_exists($non_loc_ar[$userd], $ukey ) ) {
        
 
