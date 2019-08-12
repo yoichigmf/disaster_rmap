@@ -238,7 +238,7 @@ $non_locr = array();
 
 foreach ($sheetd as $index => $cols) {
 
-echo "\nindex ${index}  <br>";
+//echo "\nindex ${index}  <br>";
   
      $dated = $cols[0];
      $userd = $cols[1];
@@ -293,7 +293,7 @@ echo "\nindex ${index}  <br>";
        
      //  echo "// kind " . $kind . " date ". $dated . "\n";
        
-       if ( strcmp( $kind ,"種別" ) <> 0 ){ 
+       if ( $index > 0 ){ 
        
        
            if (array_key_exists( $userd, $uid_ar)){
