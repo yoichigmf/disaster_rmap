@@ -33,7 +33,9 @@ function PropContents(feature, layer) {
         
         }
         
-        
+        if ( nlj === null ) {
+         }
+        else  {
         var propList = nlj[feature.properties.ユーザ ][feature.properties.uid];
         
         for ( let vf of propList ) {
@@ -41,6 +43,8 @@ function PropContents(feature, layer) {
              
              
            }
+        }
+        
         
         layer.bindPopup(tgtext);
     }
