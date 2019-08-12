@@ -342,7 +342,7 @@ echo "<script>\n";
 echo "var nlj = {};\n";
 
 
- 
+$line_array = ["\r\n", "\r", "\n"];
 
 foreach( $non_loc_ar as $ikey => $ivalue ) {
 
@@ -376,8 +376,11 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
              echo "vvc.user=\"". $vv["ユーザ"] ."\";\n";
              echo "vvc.kind=\"". $vv["種別"] ."\";\n";   
              
-              echo "vvc.url=\"". $vv["url"] ."\";\n";             
-             echo "vvc.text=\"". $vv["TEXT"] ."\";\n"; 
+              echo "vvc.url=\"". $vv["url"] ."\";\n";     
+              
+           
+             $vtext= str_replace($line_array, '',  $vv["TEXT"]);
+             echo "vvc.text=\"". $vtext ."\";\n"; 
                                   
              echo "varr.push( vvc );\n";
        
