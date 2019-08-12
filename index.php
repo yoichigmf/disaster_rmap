@@ -218,7 +218,7 @@ $spreadsheetId = getenv('SPREADSHEET_ID');
 $sheetd = GetSheet( $spreadsheetId, $sheetname ); 
  
  
- //var_dump( $sheetd );
+var_dump( $sheetd );
  
 echo "<script>\n";
 
@@ -238,7 +238,7 @@ $non_locr = array();
 
 foreach ($sheetd as $index => $cols) {
 
-
+echo "\nindex ${index}  <br>";
   
      $dated = $cols[0];
      $userd = $cols[1];
@@ -291,7 +291,7 @@ foreach ($sheetd as $index => $cols) {
        }
        else  {
        
-       echo "// kind " . $kind . " date ". $dated . "\n";
+     //  echo "// kind " . $kind . " date ". $dated . "\n";
        
        if ( strcmp( $kind ,"種別" ) <> 0 ){ 
        
