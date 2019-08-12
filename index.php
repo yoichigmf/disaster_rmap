@@ -321,11 +321,11 @@ foreach ($sheetd as $index => $cols) {
     
 echo "]} \" ; \n";
 
+echo "</script>\n";
+var_dump( $non_loc_ar );
 
 
-
-
-
+echo "<script>\n";
 
 echo "var nlj = {};\n";
 
