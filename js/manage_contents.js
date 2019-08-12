@@ -36,13 +36,15 @@ function PropContents(feature, layer) {
         if ( nlj === null ) {
          }
         else  {
-        var propList = nlj[feature.properties.ユーザ ][feature.properties.uid];
+           if ( typeof nlj !== 'undefined' ){ 
+            var propList = nlj[feature.properties.ユーザ ][feature.properties.uid];
         
-        for ( let vf of propList ) {
-             tgtext = tgtext + vf.date + "<br>";
+           for ( let vf of propList ) {
+                tgtext = tgtext + vf.date + "<br>";
              
              
-           }
+              }
+            }
         }
         
         
