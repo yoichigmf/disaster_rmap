@@ -347,13 +347,15 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
 
      if ( count($ivalue) > 0 ) {
      echo "var vproc ={};\n";  
+     
+    echo "var varr = new Array();\n";
            
       //  ユーザ別データ
       foreach ( $ivalue  as $vkey => $vrec ) {
 
      //  echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
        
-         echo "var varr = new Array();\n";
+
           foreach ( $vrec as $vv ) {
             //  echo 'ercord '. $vv . 'hh<br>';
             
