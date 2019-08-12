@@ -311,20 +311,21 @@ echo "\nindex ${index}  ";
            
            $ukey = $uid_ar[$userd];
        
-          echo "  userd ${userd}  ukey ${ukey}  <br> ";
+          echo "  userd ${userd}  ukey ${ukey}  ";
            if (array_key_exists($non_loc_ar[$userd], $ukey ) ) {
        
-
+   echo " ari <br>";
               }
             else  {
               
+      echo " nasi <br>";       
                              $non_loc_ar[$userd][$ukey] = array();
              }
    
                    
               $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
               
-              array_push( $non_loc_ar[$userd][$ukey], $non_locr );
+              $non_loc_ar[$userd][$ukey][] = $non_locr ;;
               
           }
        }
