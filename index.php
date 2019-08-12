@@ -371,11 +371,11 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
           
           if ( strlen($vkey) > 0 ) {
 
-          echo "vproc[\"" . $vkey ."\"]= varr;\n" ;
+          echo "vproc[\"" . $ikey ."\"]= varr;\n" ;
           }
           else {
           
-          echo "vproc = {}\n";
+          echo "vproc[\"" . $ikey ."\"]= {};\n" ;
           }
           
           
