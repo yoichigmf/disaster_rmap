@@ -346,10 +346,11 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
       
 
      if ( count($ivalue) > 0 ) {
-      
+     echo "var vproc ={};\n";  
+           
       //  ユーザ別データ
       foreach ( $ivalue  as $vkey => $vrec ) {
-       echo "var vproc ={};\n";
+
      //  echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>'; 
        
          echo "var varr = new Array();\n";
