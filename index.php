@@ -238,9 +238,7 @@ $non_locr = array();
 
 foreach ($sheetd as $index => $cols) {
 
-//echo "\n ${index} col =>${cols[0]},${cols[1]},${cols[2]},${cols[3]}";
 
- // if ( intval($index) > 0 ) {  //  1行目は項目名だからスキップ
   
      $dated = $cols[0];
      $userd = $cols[1];
@@ -257,7 +255,7 @@ foreach ($sheetd as $index => $cols) {
 
      if ( strcmp( $kind ,'location' ) == 0 ) {
      
-      $topc = "{";
+          $topc = "{";
       
           if ( $isdone   ) {
       	    $topc = " ,{";
@@ -268,7 +266,7 @@ foreach ($sheetd as $index => $cols) {
      
      		}
      
-        $xcod =$cols[6];
+        $xcod =$cols[6];    //  coordinate
         $ycod = $cols[5];
         
         if (array_key_exists( $userd, $uid_ar)){
@@ -285,19 +283,30 @@ foreach ($sheetd as $index => $cols) {
              
         
      
-    echo ${topc};
-    echo sprintf(' \\"type\\":\\"Feature\\",\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinates\\":[%s,%s]}, \\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\",\\"種別\\":\\"%s\\",\\"uid\\":\\"%d\\",\\"url\\":\\"%s\\",\\"テキスト\\":\\"%s\\"}}',$xcod,$ycod, $dated,$userd,$kind,$ckey,$url,$stext);
+         echo ${topc};
+         echo sprintf(' \\"type\\":\\"Feature\\",\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinates\\":[%s,%s]}, \\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\",\\"種別\\":\\"%s\\",\\"uid\\":\\"%d\\",\\"url\\":\\"%s\\",\\"テキスト\\":\\"%s\\"}}',$xcod,$ycod, $dated,$userd,$kind,$ckey,$url,$stext);
   
-   //   echo sprintf(' \\"type\\":\\"Feature\\",\\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\"},\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinate\\":[%s,%s]}}',$dated,$userd,$xcod,$ycod);
-      //  $itemd = "${topc} \"type\\":\\"Feature\\",\\"properties\\":{\\"日付\\":\\"${dated}\\",\\"ユーザ\\":\\"${userd}\\"},\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinate\\":[${xcod},${ycod}]}}";
-        
-       // echo "${itemd};\n";
+
   
        }
        else  {
        
        if ( strcmp( $kind ,"種別" ) <> 0 ){ 
+       
+       
+           if (array_key_exists( $userd, $uid_ar)){
+            }
+           else {
+                   $ckey = 0;
+                   $uid_ar[$userd] = $ckey;
+            
+                   $non_loc_ar[$userd] = array();
+           
+           }
+           
            $ukey = $uid_ar[$userd];
+       
+       
            if (array_key_exists($non_loc_ar[$userd], $ukey ) ) {
        
 
