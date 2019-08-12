@@ -291,6 +291,8 @@ foreach ($sheetd as $index => $cols) {
        }
        else  {
        
+       echo "// kind " . $kind . " date ". $dated . "\n";
+       
        if ( strcmp( $kind ,"種別" ) <> 0 ){ 
        
        
