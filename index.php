@@ -327,9 +327,6 @@ echo "var sample_contents=\"sample contents\"\n";
 echo "dSearch = L.geoJSON(features, \n";
 echo " { onEachFeature:function ( feature, layer ) {\n";
 echo         " PropContents (feature, layer); \n";
-//echo "        layer.bindPopup(feature.properties.popupContent); \n";
-
-// echo "        layer.bindPopup(sample_contents); \n";
 echo " }  } ); \n";
 
 

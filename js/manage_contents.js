@@ -6,31 +6,41 @@ function PropContents(feature, layer) {
     
        var tgtext = "";
        
-        var kind = feature.properties.種別
+        var kind = feature.properties.種別;
      
-        tgtext = feature.properties.日付 + "<br>" + kind + "<br>報告者:" +  feature.properties.ユーザ 
+        tgtext = feature.properties.日付 + "<br>" + kind + "<br>報告者:" +  feature.properties.ユーザ ;
    
      
+     
+        
         if ( kind === 'image' ) {
         
-        imageurl = feature.properties.url
+        imageurl = feature.properties.url;
         
         dlurl = imageurl;
         
-        mmurl = dlurl.replace('?dl=0', '')
-        mmurl = mmurl.replace('www.dropbox.com', 'dl.dropboxusercontent.com')
+        mmurl = dlurl.replace('?dl=0', '');
+        mmurl = mmurl.replace('www.dropbox.com', 'dl.dropboxusercontent.com');
         
-        tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\">" + imageurl + "</a>"
+        tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\">" + imageurl + "</a>";
         
-        tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\"><img src=\"" + mmurl + "\"  width=\"200\"></a>"
+        tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\"><img src=\"" + mmurl + "\"  width=\"200\"></a>";
         
         }
         else {
         
-        tgtext = tgtext +  "<br>" + feature.properties.テキスト
+        tgtext = tgtext +  "<br>" + feature.properties.テキスト + "<br>";
         
         }
         
+        
+        var propList = nlj[feature.properties.ユーザ ][feature.properties.uid];
+        
+        for ( let vf of propList ) {
+             tgtext = tgtext + vf.date + "<br>";
+             
+             
+           }
         
         layer.bindPopup(tgtext);
     }
