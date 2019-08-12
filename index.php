@@ -239,7 +239,7 @@ $non_locr = array();
 
 foreach ($sheetd as $index => $cols) {
 
-//echo "\nindex ${index}  <br>";
+echo "\nindex ${index}  <br>";
   
      $dated = $cols[0];
      $userd = $cols[1];
@@ -274,13 +274,13 @@ foreach ($sheetd as $index => $cols) {
           
             $ckey = $uid_ar[$userd] + 1;
             $uid_ar[$userd] = $ckey;
-           }
+               }
         else   {
             $ckey = 0;
             $uid_ar[$userd] = $ckey;
             
             $non_loc_ar[$userd] = array();
-        }
+            }
              
         
      
@@ -289,7 +289,7 @@ foreach ($sheetd as $index => $cols) {
   
 
   
-       }
+       }    // location
        else  {
        
      //  echo "// kind " . $kind . " date ". $dated . "\n";
@@ -298,7 +298,7 @@ foreach ($sheetd as $index => $cols) {
        
        
            if (array_key_exists( $userd, $uid_ar)){
-            }
+                }
            else {
                    $ckey = 0;
                    $uid_ar[$userd] = $ckey;
@@ -334,7 +334,7 @@ foreach ($sheetd as $index => $cols) {
 echo "]} \" ; \n";
 
 echo "</script>\n";
-var_dump( $non_loc_ar );
+//var_dump( $non_loc_ar );
 
 
 echo "<script>\n";
