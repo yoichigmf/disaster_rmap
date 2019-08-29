@@ -39,6 +39,8 @@ function PropContents(feature, layer) {
            if ( typeof nlj !== 'undefined' ){ 
             var propList = nlj[feature.properties.ユーザ ][feature.properties.uid];
         
+        
+           if ( propList ) {
            for ( let vf of propList ) {
                 tgtext = tgtext + "<br>" + vf.date ;
                 
@@ -65,6 +67,7 @@ function PropContents(feature, layer) {
                      
                  
                  
+                 }
                  }
                  
                      
