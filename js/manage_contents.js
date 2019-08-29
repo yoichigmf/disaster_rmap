@@ -68,14 +68,14 @@ function PropContents(feature, layer) {
                  
                  
                  }
-                 }
+                
                  
                      
                   if ( vf.text  ) {
                       tgtext = tgtext +  " " + vf.text + "<br>";
                   
                    }
-             
+                }
               }
             }
         }
