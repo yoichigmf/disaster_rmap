@@ -236,13 +236,13 @@ echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\", \\"features\\":[ 
 $isdone = false;
 
 
-$uid_ar = array();
+$uid_ar = array();   //  array of user id
 
-$non_loc_ar = array();
+$non_loc_ar = array();  // array of non location data
 
 $ckey = 0;
      
-$non_locr = array();
+$non_locr = array();    //  arrray of non location data for a user
 
 foreach ($sheetd as $index => $cols) {
 
@@ -261,7 +261,7 @@ foreach ($sheetd as $index => $cols) {
      
    //  echo "\nkind ${kind}  ";
 
-     if ( strcmp( $kind ,'location' ) == 0 ) {
+     if ( strcmp( $kind ,'location' ) == 0 ) {   //  if record is location data
      
           $topc = "{";
       
@@ -277,7 +277,7 @@ foreach ($sheetd as $index => $cols) {
         $xcod =$cols[6];    //  coordinate
         $ycod = $cols[5];
         
-        if (array_key_exists( $userd, $uid_ar)){
+        if (array_key_exists( $userd, $uid_ar)){   //  is the user id in the array ?
           
             $ckey = $uid_ar[$userd] + 1;
             $uid_ar[$userd] = $ckey;
@@ -307,32 +307,40 @@ foreach ($sheetd as $index => $cols) {
        
        
            if (array_key_exists( $userd, $uid_ar)){
+           
+           
+                   $ukey = $uid_ar[$userd];
+                           
+                   if (array_key_exists($ukey ,$non_loc_ar[$userd] ) ) {
+       
+
+                  }
+            else  {
+              
+        
+                             $non_loc_ar[$userd][$ukey] = array();
+                     }
+                     
+                $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
+              
+              $non_loc_ar[$userd][$ukey][] = $non_locr ;  
+                     
+   
                 }
            else {
-                   $ckey = 0;
-                   $uid_ar[$userd] = $ckey;
+             //      $ckey = 0;
+              //     $uid_ar[$userd] = $ckey;
             
-                   $non_loc_ar[$userd] = array();
+             //      $non_loc_ar[$userd] = array();
            
            }
            
-           $ukey = $uid_ar[$userd];
-       
-      //    echo "  userd ${userd}  ukey ${ukey}  ";
-           if (array_key_exists($ukey ,$non_loc_ar[$userd] ) ) {
-       
- //  echo " ari <br>";
-              }
-            else  {
-              
-  //    echo " nasi <br>";       
-                             $non_loc_ar[$userd][$ukey] = array();
-             }
+ 
    
                    
-              $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
+         //     $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
               
-              $non_loc_ar[$userd][$ukey][] = $non_locr ;;
+           //   $non_loc_ar[$userd][$ukey][] = $non_locr ;
               
           }
        }
