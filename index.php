@@ -246,7 +246,7 @@ $non_locr = array();    //  arrray of non location data for a user
 
 foreach ($sheetd as $index => $cols) {
 
-//echo "\nindex ${index}  ";
+//echo "\nindex ${index}  ";  //////
   
      $dated = $cols[0];
      $userd = $cols[1];
@@ -259,7 +259,7 @@ foreach ($sheetd as $index => $cols) {
      
 
      
-   //  echo "\nkind ${kind}  ";
+   //  echo "\nkind ${kind}  ";  sample
 
      if ( strcmp( $kind ,'location' ) == 0 ) {   //  if record is location data
      
