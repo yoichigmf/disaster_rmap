@@ -433,7 +433,7 @@ echo " }  } ); \n";
 
 echo "default_d = dSearch;\n";
 echo "overlays[\"nsearch\"]=dSearch;\n";
-echo "SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png', {    attribution : \'Dronebird\', minZoom: 13, maxZoom: 20, zIndex:3 });\n";
+echo "SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png', {    attribution : 'Dronebird', minZoom: 13, maxZoom: 20, zIndex:3 });\n";
  
 echo "overlays[\"20190904oomati\"]=SagaOOmati ;\n";
 
