@@ -1,9 +1,9 @@
 
 
- 
- 
- 
-     
+
+
+
+
 </head>
 
 <body>
@@ -13,68 +13,64 @@
     data-dismissible="false" style="max-width:500px;">
     <div data-role="header" data-theme="b">
       <h1>確認</h1>
-    </div> 
+    </div>
+
     <div role="main" class="ui-content">
       <p>ログアウトしますか？</p>
 
       <!--2ダイアログを閉じるためのボタン -->
-      <a href="JavaScript:midori_logout()" 
+      <a href="JavaScript:midori_logout()"
         class="ui-btn ui-btn-inline ui-corner-all ui-btn-b">ログアウト</a>
       <a href="#" data-rel="back"
         class="ui-btn ui-btn-inline ui-corner-all">閉じる</a>
     </div>
   </div>
-  
-  
 
-      <div id="panel" data-role="panel" data-display="overlay" data-position="left">
+
+
+<div id="panel" data-role="panel" data-display="overlay" data-position="left">
       <!--3パネルを閉じるためのリンクボタン -->
     <a href="#" data-rel="close"
       class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
- 
-  
-     
-     
-    <h3>表示位置指定</h3>
-    
-    
-    <div class="ui-field-contain">
-	<fieldset data-role="controlgroup">
 
-	
-		
-		
-	</fieldset>
-	
+    <h3>表示位置指定</h3>
+
+
+    <div class="ui-field-contain">
+	      <fieldset data-role="controlgroup">
+
+
+
+     	</fieldset>
+
 <!--	<div id="selected_chiiki" >
 
 	</div>
 	-->
-	
-  </div>
-       
-      
+	   </div>
+
+
      <a href="JavaScript:PanMap()"  class="ui-btn ui-corner-all ui-icon-arrow-u ui-btn-icon-left">表示位置移動</a>
-     
-  
+
+
   <script>
 
-  
-  
-  
-  
+
+
+
+
   var   fstatus = {
                 NONE : 0,
                 MOUSE : 1,
                 FUDE : 2, };
-                
-  var   click_status = fstatus.NONE;
-  
- 
 
-    
+  var   click_status = fstatus.NONE;
+
+
+
+
   var  use_geolocation = true;    //  geolocation を利用可能かどうか
-  
+
   var redMarker  = L.icon({
     iconUrl: 'images/marker_red.png',
     shadowUrl: 'images/marker-shadow.png',
@@ -88,151 +84,150 @@
 
 
 
-  
-  
-   
+
+
+
 
 </script>
 
+</div> <!--  end of address search panael -->
 
-  </div> <!--  end of address search panael -->
-  
-  
-    <div id="panel_layer" data-role="panel" data-display="overlay" data-position="right">
+
+<div id="panel_layer" data-role="panel" data-display="overlay" data-position="right">
       <a href="#" data-rel="close"
       class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
           <h3>表示指定</h3>
-         
-          
-    <div id="tabs" data-role="tabs">  
+
+
+    <div id="tabs" data-role="tabs">
       <!--2タブリストを準備-->
      <div data-role="navbar">
         <ul>
           <li><a href="#backgr" id="ly_back"   class="ui-btn-active">表示地図選択</a></li>
           <li><a href="#overlay"  id="ly_thema" >災害情報</a></li>
         </ul>
-      </div>  
-      
-      
+      </div>
+
+
       <form method="POST" action="">
       <!--1パネル（コンテンツ領域）を準備-->
       <div id="backgr" class="ui-body ui-body-a">
-      
-    
+
+
       <!--ラジオボタンで単一選択ボタンを作成-->
-      <div class="ui-field-contain">  
-      
+      <div class="ui-field-contain">
+
     <!-- <div data-role="fieldcontain"> -->
        <!--   <fieldset id="baselayers" data-role="controlgroup"> -->
-      <fieldset data-role="controlgroup"> 
-          
+      <fieldset data-role="controlgroup">
+
           <input id="e2" name="base_layer" type="radio" value="オープンストリートマップ" checked />
           <label for="e2">オープンストリートマップ</label>
-          
-          
+
+
           <input id="e1" name="base_layer" type="radio" value="地理院地図 標準地図" />
           <label for="e1">標準地図 地理院地図</label>
-  
+
          <input id="e5" name="base_layer" type="radio" value="電子国土基本図（オルソ画像)" />
           <label for="e5">写真 地理院地図</label>
-                   
+
           <input id="e6" name="base_layer" type="radio" value="淡色地図" />
           <label for="e6">淡色地図 地理院地図</label>
            <input id="e8" name="base_layer" type="radio" value="地理院地図 色別標高図" />
           <label for="e8">色別標高図 地理院地図</label>
-  <!--    
+  <!--
           <input id="e7" name="base_layer" type="radio" value="白地図" />
           <label for="e7">白地図</label>
-          
 
-          
-     -->     
-          
+
+
+     -->
+
           </fieldset>      <!--  </fieldset> -->
-        </div>  <!--  fieldcontain -->
+      <!--  </div>  <!--  fieldcontain -->  -->
         </div>  <!-- ui-field-contain  -->
       </div>   <!--  backgr  -->
-      
-        <div id="overlay" class="ui-body ui-body-a">
+
+      <div id="overlay" class="ui-body ui-body-a">
           <div class="ui-field-contain">
-        <fieldset data-role="controlgroup">
-         <input id="ov1"
+             <fieldset data-role="controlgroup">
+           <input id="ov1"
             name="ov_layer1" type="checkbox" value="nsearch" onChange='changechk( this )'    checked />
-          <label for="ov1">調査データ</label>
-          
-           
-        </fieldset>
-      </div>
-        
+            <label for="ov1">調査データ</label>
+
+
+             </fieldset>
+        </div>
+
       </div>   <!--  overlay  -->
-     
-     
-     
-     
-     
+
+
+
+
+
       </form>
-      
-      
-     </div> 
-  </div>
-  
-  
-      
-    </div>
-    
-  
-  
-  
+
+
+     </div>  <!-- tab -->
+  </div>  <!-- panel layer -->
+
+
+<!--
+    </div>  -->
+
+
+
+
   <div id="panel_r" data-role="panel" data-display="overlay" data-position="right">
       <a href="#" data-rel="close"
       class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
-      
-      
-   <div id="item_info" >
-  
- 
+
+
+      <div id="item_info" >
+
+
     <!--3パネルを閉じるためのリンクボタン -->
     </div>
   </div>
-  
-  
- 
+
+
+
 	<div data-role="header" data-position="fixed" data-tap-toggle="true" data-fullscreen="false">
 		<h2>災害情報報告マップ</h2>
-		
+
 		 	<div data-role="navbar" data-position="fixed" data-tap-toggle="false" >
 		<ul>
 		<!--	<li><a href="#panel" id="CONTACTS" class="ui-btn ui-btn-inline ui-icon-search ui-btn-icon-top">位置検索</a></li> -->
 			<li><a href="JavaScript:PanCurrentLocation()"  class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">現在地</a></li>
-			
+
 	        <li><a href="JavaScript:GetItemInfo()" id="TRIPS" class="ui-btn ui-btn-inline ui-icon-info ui-btn-icon-top">情報選択</a></li>
 			<li><a href="JavaScript:OpenLayerProp()" id="layer_property" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-top">表示地図指定</a></li>
-			
-		
-	
+
+
+
 		</ul>
 		  </div>  <!--  navbar -->
-			
+
 
 	</div><!-- /header -->
-	
-	
 
-	<div data-role="content"  data-position="fixed"  data-fullscreen="false" >	
-	
-	
-	
-	
+
+
+	<div data-role="content"  data-position="fixed"  data-fullscreen="false" >
+
+
+
+
 
 	<div id="map">
-  
-	</div>
- 
-    </div>  <!-- content -->
 
- 	
- 
- 
+	</div>
+
+  </div>  <!-- content -->
+
+
+
+
 <script>
 
 //    レイヤ選択 種別
@@ -282,7 +277,7 @@ function  OpenLayerProp() {
 
 	  //  $('#ly_thema').removeClass( 'ui-btn-active' );
 	    $('#ly_back').removeClass('ui-btn-active' );
-	    
+
    if ( CurlayerKind == "background" ) {
        $('#tabs').tabs({
   			active: 0
@@ -297,9 +292,9 @@ function  OpenLayerProp() {
 		});
 
      $('#ly_thema').addClass( 'ui-btn-active' );
-    
+
    }
-   
+
     $("#panel_layer").panel("open");
 }
 
@@ -311,15 +306,15 @@ function changechk( cb ){
 
   var tgkey = cb.value;
   var tgstat = cb.checked;
-  
+
   var tgLayer =  overlays[tgkey ];
-  
+
   if ( tgstat ) {
       tgLayer.addTo( map );
   }
   else {
      map.removeLayer( tgLayer );
-  
+
   }
 //  alert(cb.value);
 //  alert( cb.checked);
@@ -330,23 +325,23 @@ function changechk( cb ){
 
 
 //     base layer radio button handler
-    $( 'input[name="base_layer"]:radio' ).change( function() {  
-    
-    
+    $( 'input[name="base_layer"]:radio' ).change( function() {
+
+
      map.removeLayer( CbaseLayer );
-      
+
      // BaseMaps[$( this ).val()].addTo( map );
      CbaseLayer = BaseMaps[$( this ).val()];
-     
+
     CbaseLayer.setZIndex(0);
     CbaseLayer.addTo( map );
     // map.addLayer( CBaseLayer, true );
-     
+
     // CBaseLayer.setZIndex(0);
-     
+
       //map.addLayer( BaseMaps[$( this ).val()], true );
-    //alert( $( this ).val()); // valueを表示  
-    });  
+    //alert( $( this ).val()); // valueを表示
+    });
 
 
 //  現在位置マーカー
@@ -354,36 +349,36 @@ var  CPosMarker;
 
 //  現在位置マーカー表示
 function onLocationFound(e) {
-  
+
 
 if ( CPosMarker  ) {
-        
-       CPosMarker.setLatLng(e.latlng); 
+
+       CPosMarker.setLatLng(e.latlng);
     }
     else {
      CPosMarker = L.marker(e.latlng,{icon:redMarker}).addTo(map);
     }
-    
-    
-    
+
+
+
 
 }
 
 function onLocationError(e){
    // var radius = e.accuracy / 2;
 
-   var ermess = "位置取得に失敗しました  " +  ermess 
+   var ermess = "位置取得に失敗しました  " +  ermess
     alert( ermess );
-    
+
 
 }
 
 
 function  PanCurrentLocation(){
 		 map.locate({setView: true, maxZoom: 18});
-		 
+
 	   //  map.stopLocate();
-		
+
 		}
 
 
@@ -396,26 +391,26 @@ function  PanCurrentLocation(){
 //map.addControl(panelLayers);
 
 
-//map.addEventListener("click" ,onMapclick, true);  
+//map.addEventListener("click" ,onMapclick, true);
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
 
- 
+
 var popup = new L.Popup({maxwidth: 800});
 
    OSMLayer.setZIndex(0);
 
     OSMLayer.addTo(map);
-       
+
  CbaseLayer = OSMLayer;
- 
+
 default_d.addTo(map);
- 
+
  var featureG = L.featureGroup([ default_d ]);
- 
+
  map.fitBounds(featureG.getBounds());
- 
+
 
 
 
@@ -431,36 +426,36 @@ default_d.addTo(map);
 function  SetMarker( latlng ){
 
   if ( Marker  ) {
-        
-       Marker.setLatLng(latlng); 
+
+       Marker.setLatLng(latlng);
     }
     else {
      Marker = L.marker( latlng).addTo(map);
- 
+
     }
 
 }
 
 function  SetMarkerLatLn( lat, lng ) {
 
-  
+
     var newLatLng = new L.LatLng(lat, lng);
-    
+
     SetMarker( newLatLng );
 }
 
 
 function GetClickedItemInfo( latlng ) {
 
-//   
+//
 
 
   }
 
 
  function getFeatureInfoExec( latlng, url )  {
- 
-       
+
+
      $.ajax({
       url: url,
       type: "POST",
@@ -473,26 +468,26 @@ function GetClickedItemInfo( latlng ) {
         showGetFeatureInfoD(err, latlng, data);
       },
       error: function (xhr, status, error) {
-       showGetFeatureInfoD(error);  
+       showGetFeatureInfoD(error);
       }
     });
-    
- 
+
+
  }
 
  function getFeatureInfoUrl(latlng, wmsl ) {
     // Construct a GetFeatureInfo request URL given a point
     var point = map.latLngToContainerPoint(latlng, map.getZoom()),
         size = map.getSize(),
-        
+
         params = {
           request: 'GetFeatureInfo',
           service: 'WMS',
           srs: 'EPSG:4326',
           styles: wmsl.wmsParams.styles,
           transparent: wmsl.wmsParams.transparent,
-          version: wmsl.wmsParams.version,      
-          
+          version: wmsl.wmsParams.version,
+
           format: wmsl.wmsParams.format,
           bbox: map.getBounds().toBBoxString(),
           height: size.y,
@@ -501,40 +496,40 @@ function GetClickedItemInfo( latlng ) {
           query_layers: wmsl.wmsParams.layers,
           info_format: 'text/html'
         };
-    
+
     params[params.version === '1.3.0' ? 'i' : 'x'] = Math.round(point.x);
     params[params.version === '1.3.0' ? 'j' : 'y'] = Math.round(point.y);
-    
+
     return wmsl._url + L.Util.getParamString(params, wmsl._url, true);
   }
 
 
 function showGetFeatureInfoD(err, latlng, content) {
     if (err) { console.log(err);  return; } // do nothing if there's an error
-    
+
     //alert(content)
     // Otherwise show the content in a popup, or something.
-    
+
     var htxt = $("#item_info").html();
-    
+
     htxt = htxt + " " + content
     $("#item_info").html(htxt);
-    
+
     $("#panel_r").panel("open");
-    
-    
-  
-    		
-  
+
+
+
+
+
   //  var marker = L.marker([]).addTo(map);
-   
-     
+
+
   }
 
- 
- 
- 
- 
+
+
+
+
 </script>
 </body>
 </html>

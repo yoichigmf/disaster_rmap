@@ -222,6 +222,14 @@ function GetSheet( $sheetid, $sheetname ) {
 //$sheetname = '20190703鹿児島';
 //$sheetname = 'シート1';
 $spreadsheetId = getenv('SPREADSHEET_ID');
+
+
+//  if sheet id is set in the argument   use it  201909112
+ if(isset($_GET['sheetid'])) {
+ $sheetname = $_GET['sheetid'];
+ }
+ 
+ 
  
 $sheetd = GetSheet( $spreadsheetId, $sheetname ); 
  
@@ -432,7 +440,13 @@ echo         " PropContents (feature, layer); \n";
 echo " }  } ); \n";
 
 echo "default_d = dSearch;\n";
-echo "overlays[\"nsearch\"]=dSearch;\n";
+
+
+
+
+echo "overlays[\"20190904oomati\"]=dSearch;\n";
+
+echo "overlays[\"nsearch\"]=SagaOOmati;\n";
  
 echo "\n</script>\n";  
 

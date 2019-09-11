@@ -21,6 +21,12 @@ var mainMap = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.
                     attribution : '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', minZoom: 3, maxZoom: 18, zIndex:5
                 });
  
+
+  SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png', {
+                    attribution : 'Dronebird', minZoom: 13, maxZoom: 20, zIndex:3
+                });
+
+ 
     // Add each wms layer using L.tileLayer.wms
 
 
@@ -160,6 +166,7 @@ var BaseMaps = {
 
 var overlays = {
 "nsearch":dSearch,
+"20190904oomati":SagaOOmati ,
 };
 
 
