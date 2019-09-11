@@ -440,18 +440,18 @@ echo         " PropContents (feature, layer); \n";
 echo " }  } ); \n";
 
 echo "default_d = dSearch;\n";
-<<<<<<< HEAD
 
 
 
 
-echo "overlays[\"20190904oomati\"]=dSearch;\n";
 
-echo "overlays[\"nsearch\"]=SagaOOmati;\n";
-=======
+//echo "overlays[\"20190904oomati\"]=dSearch;\n";
+
+//echo "overlays[\"nsearch\"]=SagaOOmati;\n";
+//=======
 echo "overlays[\"nsearch\"]=dSearch;\n";
 echo "SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png', {    attribution : 'Dronebird', minZoom: 13, maxZoom: 20, zIndex:3 });\n";
->>>>>>> 09d63a9fc205381a1f846c7f7957246cfd2227b7
+//>>>>>>> 09d63a9fc205381a1f846c7f7957246cfd2227b7
 
 echo "overlays[\"20190904oomati\"]=SagaOOmati ;\n";
 
