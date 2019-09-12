@@ -444,7 +444,7 @@ echo "SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904oma
 echo "overlays[\"20190904oomati\"]=SagaOOmati ;\n";
 
 echo "\n</script>\n";  
-//debug 2  3
+//debug 
     
 
 //var_dump( $non_loc_ar );   
