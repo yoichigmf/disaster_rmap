@@ -166,11 +166,8 @@ var BaseMaps = {
 
 var overlays = {
 "nsearch":dSearch,
-<<<<<<< HEAD
-"20190904oomati":SagaOOmati ,
-=======
 "20190904oomati":SagaOOmati 
->>>>>>> 09d63a9fc205381a1f846c7f7957246cfd2227b7
+
 };
 
 
