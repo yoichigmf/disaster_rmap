@@ -219,8 +219,6 @@ function GetSheet( $sheetid, $sheetname ) {
  }
  
  
-//$sheetname = '20190703鹿児島';
-//$sheetname = 'シート1';
 $spreadsheetId = getenv('SPREADSHEET_ID');
 
 
