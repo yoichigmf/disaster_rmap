@@ -222,6 +222,12 @@ function GetSheet( $sheetid, $sheetname ) {
 //$sheetname = '20190703鹿児島';
 //$sheetname = 'シート1';
 $spreadsheetId = getenv('SPREADSHEET_ID');
+
+
+ if(isset($_GET['sheetid'])) {
+ $spreadsheetId = $_GET['sheetid'];
+ }
+ 
  
 $sheetd = GetSheet( $spreadsheetId, $sheetname ); 
  
