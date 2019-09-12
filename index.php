@@ -230,7 +230,7 @@ $spreadsheetId = getenv('SPREADSHEET_ID');
 $sheetd = GetSheet( $spreadsheetId, $sheetname ); 
  
  
-//var_dump( $sheetd );
+//var_dump( $sheetd ); spread sheet
  
 echo "<script>\n";
 
