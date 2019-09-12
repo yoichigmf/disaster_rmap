@@ -219,14 +219,13 @@ function GetSheet( $sheetid, $sheetname ) {
  }
  
  
-//$sheetname = '20190703鹿児島';
-//$sheetname = 'シート1';
 $spreadsheetId = getenv('SPREADSHEET_ID');
 
 
  if(isset($_GET['sheetid'])) {
  $spreadsheetId = $_GET['sheetid'];
  }
+
  
 $sheetd = GetSheet( $spreadsheetId, $sheetname ); 
  
@@ -265,6 +264,8 @@ foreach ($sheetd as $index => $cols) {
 
      
    //  echo "\nkind ${kind}  ";  sample     
+   
+     $topc = "";
 
      if ( strcmp( $kind ,'location' ) == 0 ) {   //  if record is location data
      
@@ -443,10 +444,10 @@ echo "SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904oma
 echo "overlays[\"20190904oomati\"]=SagaOOmati ;\n";
 
 echo "\n</script>\n";  
-//debug 2
+//debug 2  3
     
 
-//var_dump( $non_loc_ar );
+//var_dump( $non_loc_ar );   
 
 
 include ('webpg.html'); 
