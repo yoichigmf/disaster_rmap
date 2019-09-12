@@ -267,6 +267,7 @@ foreach ($sheetd as $index => $cols) {
 
 
 
+    $topc = "";
    //  echo "\nkind ${kind}  ";  sample
 
      if ( strcmp( $kind ,'location' ) == 0 ) {   //  if record is location data
