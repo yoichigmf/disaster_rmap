@@ -443,6 +443,12 @@ echo "SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904oma
  
 echo "overlays[\"20190904oomati\"]=SagaOOmati ;\n";
 
+
+echo "t15  = L.tileLayer('https://tile.geospatial.jp/aeroasahi/t15chiba/{z}/{x}/{y}.png', {    attribution : 'Aeroasahi Corporation', minZoom: 5, maxZoom: 18, zIndex:3 });\n";
+
+
+echo "overlays[\"t15\"]=SagaOOmati ;\n";
+
 echo "\n</script>\n";  
 //debug 
     
