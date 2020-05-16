@@ -44,8 +44,12 @@ function getClient() {
 
     header("Content-Type: application/json; charset=UTF-8"); //ヘッダー情報の明記。必須。
     $ary_sel_obj = []; //配列宣言
-    $spreadsheetId  = filter_input(INPUT_POST,"sheetid"); //変数の出力。jQueryで指定したキー値optを用いる
+    $inputid = filter_input(INPUT_POST,"sheetid"); //変数の出力。jQueryで指定したキー値optを用いる
 
+   $spreadsheetId = getenv('SPREADSHEET_ID');
+   if (isset($inputid)){
+     $spreadsheetId = $inputid;
+   }
 
    $client = getClient();
 
