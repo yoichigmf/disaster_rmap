@@ -106,6 +106,7 @@ $(document).bind('mobileinit', function() {
   <!-- }); -->
 <script>
         $(document).on("mobileinit", function () {
+          alert('mobileinit');
           $.mobile.hashListeningEnabled = false;
           $.mobile.pushStateEnabled = false;
           $.mobile.changePage.defaults.changeHash = false;
