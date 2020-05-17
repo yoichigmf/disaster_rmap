@@ -100,7 +100,10 @@ function getClient() {
 <!--
 <script src="js/leaflet.ajax.js"></script>
 -->
-
+<!--
+$(document).bind('mobileinit', function() {
+  -->
+  <!-- }); -->
 <script>
         $(document).on("mobileinit", function () {
           $.mobile.hashListeningEnabled = false;
@@ -109,16 +112,16 @@ function getClient() {
         });
 
 
-<!-- $(document).bind('mobileinit', function() { -->
+
   //  alert('mobileinit');
     $(document).bind('pageinit', function(e, data) {
         // initialize page
-        //alert('init');
+        alert('init');
     });
  $(document).bind('pagebeforeshow', function(e, data) {
         // before show page
         var $container = $('#baselayers').find('.ui-controlgroup-controls');
-//alert("befor");
+alert("befor");
 
         // build radio button list
         for (var i = 0; i < 3; i++) {
@@ -135,7 +138,7 @@ function getClient() {
         // refresh control group
         $container.find('input[type=radio]').checkboxradio();
     });
-<!-- }); -->
+
     </script>
 
 
