@@ -109,8 +109,8 @@ function getClient() {
         });
 
 
-$(document).bind('mobileinit', function() {
-    alert('mobileinit');
+<!-- $(document).bind('mobileinit', function() { -->
+  //  alert('mobileinit');
     $(document).bind('pageinit', function(e, data) {
         // initialize page
         //alert('init');
@@ -118,7 +118,7 @@ $(document).bind('mobileinit', function() {
  $(document).bind('pagebeforeshow', function(e, data) {
         // before show page
         var $container = $('#baselayers').find('.ui-controlgroup-controls');
-alert("befor");
+//alert("befor");
 
         // build radio button list
         for (var i = 0; i < 3; i++) {
@@ -135,7 +135,7 @@ alert("befor");
         // refresh control group
         $container.find('input[type=radio]').checkboxradio();
     });
-});
+<!-- }); -->
     </script>
 
 
