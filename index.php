@@ -138,10 +138,33 @@ $(document).bind('mobileinit', function() {
         }
         // refresh control group
         $container.find('input[type=radio]').checkboxradio();
+
+  //  set sheet name list
+  url = 'getsheetList.php'
+  $.ajax({
+   url: url,
+   type: "POST",
+   dataType: "json",
+   success: function (data, status, xhr) {
+     //var err = typeof data === 'string' ? null : data;
+//alert(status);
+//           alert( url );
+      print(data);
+    // showGetFeatureInfoD(err, latlng, data);
+   },
+   error: function (xhr, status, error) {
+     print(error);
+    //showGetFeatureInfoD(error);
+   }
+ });
+
+
     });
 
 
-    //  set sheet name list
+
+
+
 
     </script>
 
