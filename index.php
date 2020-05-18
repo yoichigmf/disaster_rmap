@@ -149,11 +149,11 @@ $(document).bind('mobileinit', function() {
      //var err = typeof data === 'string' ? null : data;
 //alert(status);
 //           alert( url );
-      print(data);
+      alert(data);
     // showGetFeatureInfoD(err, latlng, data);
    },
    error: function (xhr, status, error) {
-     print(error);
+     alert(error);
     //showGetFeatureInfoD(error);
    }
  });
