@@ -149,7 +149,17 @@ $(document).bind('mobileinit', function() {
      //var err = typeof data === 'string' ? null : data;
 //alert(status);
 //           alert( url );
-      alert(data);
+    //  alert(data);
+
+      var $buttonlist = $('#sheetselect').find('.ui-content');
+
+      var sheetnames = data['sheetnames'];
+
+      for(let v of sheetnames ) {
+             console.log(v);
+               }
+
+
     // showGetFeatureInfoD(err, latlng, data);
    },
    error: function (xhr, status, error) {
