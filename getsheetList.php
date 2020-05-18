@@ -64,7 +64,7 @@ foreach($response->getSheets() as $s) {
 $retar = array( "sheetnames" => $sheets );
 
 $retjson = json_encode( $retar );
-return $retjson;
+echo $retjson;
 
 
 ?>
