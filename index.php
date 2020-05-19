@@ -140,7 +140,10 @@ $(document).bind('mobileinit', function() {
         // refresh control group
         $container.find('input[type=radio]').checkboxradio();
 
+        SheetListSetup();
+
   //  set sheet name list
+  /*
     url = 'getsheetList.php'
     $.ajax({
       url: url,
@@ -167,10 +170,42 @@ $(document).bind('mobileinit', function() {
 
           }
         });
-
+*/
 
     });
 
+
+   function  SheetListSetup(){
+
+     //  set sheet name list
+       url = 'getsheetList.php'
+       $.ajax({
+         url: url,
+         type: "POST",
+         dataType: "json",
+         success: function (data, status, xhr) {
+
+
+             var $buttonlist = $('#sheetlist');
+
+             var sheetnames = data['sheetnames'];
+
+             for(let v of sheetnames ) {
+                 var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
+
+                 console.log( $btn );
+                 $( $btn ).appendTo($buttonlist);
+                 // console.log(v);
+                  }
+
+                },
+         error: function (xhr, status, error) {
+               alert(error);
+
+             }
+           });
+
+   }
 
    function SelectSheet( sheetname ){
        alert( sheetname);
