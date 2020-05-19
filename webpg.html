@@ -207,13 +207,37 @@
 
 
 
+
+    <div id="nav_panel" data-role="panel" data-display="overlay" data-position="left">
+        <a href="#" data-rel="close"
+        class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
+
+        <h3>表示位置指定</h3>
+
+        <div data-role="controlgroup" id="navlist" data-type="vertical">
+
+
+          <a href="JavaScript:PanCurrentLocation()" class="ui-btn">現在地</a>
+        　<a href="#" class="ui-btn">登録情報全域</a>
+    <!--
+          <button class="ui-btn">button要素ボタン</button>
+          <input type="button" value="フォームボタン">
+          <input type="submit" value="送信ボタン">
+          <input type="reset" value="リセットボタン">
+    -->
+
+        </div>
+
+    </div>
+
+
 	<div data-role="header" data-position="fixed" data-tap-toggle="true" data-fullscreen="false">
 		<h2>災害情報報告マップ    by IT DART</h2>
 
 		 	<div data-role="navbar" data-position="fixed" data-tap-toggle="false" >
 		<ul>
 
-			<li><a href="JavaScript:PanCurrentLocation()"  class="ui-btn ui-btn-inline ui-icon-navigation ui-btn-icon-top">現在地</a></li>
+			<li><a href="#nav_panel"  class="ui-btn ui-btn-inline ui-icon-navigation ui-btn-icon-top">表示位置指定</a></li>
 
 
 
