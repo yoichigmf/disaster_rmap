@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+require “functions.php”;
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -51,7 +52,7 @@ function getClient() {
      $spreadsheetId = $inputid;
    }
 
-   $client = getClient();
+   $client = getGoogleSheetClient();
 
 
   $service = new Google_Service_Sheets($client);
