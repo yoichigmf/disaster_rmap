@@ -150,7 +150,7 @@ table.fudeinfo tr th {
         // refresh control group
         $container.find('input[type=radio]').checkboxradio();
 */
-//         Google Sheet のリストをボタンにすてパネルにセットアップする
+//         Google Sheet のリストをボタンをパネルにセットアップする
         SheetListSetup();
 
 
