@@ -172,8 +172,8 @@ table.fudeinfo tr th {
 
  $(document).bind('pagebeforeshow', function(e, data) {
         // before show page
-        var $container = $('#baselayers').find('.ui-controlgroup-controls');
-//alert("befor");
+  /*      var $container = $('#baselayers').find('.ui-controlgroup-controls');
+
 
         // build radio button list
         for (var i = 0; i < 3; i++) {
@@ -189,48 +189,14 @@ table.fudeinfo tr th {
         }
         // refresh control group
         $container.find('input[type=radio]').checkboxradio();
-
+*/
+//         Google Sheet のリストをボタンにすてパネルにセットアップする
         SheetListSetup();
 
 
     });
 
 
-   function  SheetListSetup(){
-
-     //  set sheet name list
-       url = 'getsheetList.php'
-       $.ajax({
-         url: url,
-         type: "POST",
-         dataType: "json",
-         success: function (data, status, xhr) {
-
-
-             var $buttonlist = $('#sheetlist');
-
-             var sheetnames = data['sheetnames'];
-
-             for(let v of sheetnames ) {
-                 var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
-
-                 console.log( $btn );
-                 $( $btn ).appendTo($buttonlist);
-                 // console.log(v);
-                  }
-
-                },
-         error: function (xhr, status, error) {
-               alert(error);
-
-             }
-           });
-
-   }
-
-   function SelectSheet( sheetname ){
-       alert( sheetname);
-   }
 
     </script>
 
