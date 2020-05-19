@@ -115,10 +115,11 @@ $(document).bind('mobileinit', function() {
 
 
   //  alert('mobileinit');
-    $(document).bind('pageinit', function(e, data) {
+  $(document).bind('pageinit', function(e, data) {
         // initialize page
       //  alert('init');
     });
+
  $(document).bind('pagebeforeshow', function(e, data) {
         // before show page
         var $container = $('#baselayers').find('.ui-controlgroup-controls');
@@ -140,41 +141,38 @@ $(document).bind('mobileinit', function() {
         $container.find('input[type=radio]').checkboxradio();
 
   //  set sheet name list
-  url = 'getsheetList.php'
-  $.ajax({
-   url: url,
-   type: "POST",
-   dataType: "json",
-   success: function (data, status, xhr) {
-     //var err = typeof data === 'string' ? null : data;
-//alert(status);
-//           alert( url );
-    //  alert(data);
+    url = 'getsheetList.php'
+    $.ajax({
+      url: url,
+      type: "POST",
+      dataType: "json",
+      success: function (data, status, xhr) {
 
-      var $buttonlist = $('#sheetlist');
 
-      var sheetnames = data['sheetnames'];
+          var $buttonlist = $('#sheetlist');
 
-      for(let v of sheetnames ) {
-          var $btn =  '<a href="#" class="ui-btn">' + v + '</a>';
-          $( $btn ).appendTo($buttonlist);
-             console.log(v);
+          var sheetnames = data['sheetnames'];
+
+          for(let v of sheetnames ) {
+              var $btn =  '<a href="JavaScript:SelectSheet("' + v +'")" class="ui-btn">' + v + '</a>';
+              $( $btn ).appendTo($buttonlist);
+              // console.log(v);
                }
 
+             },
+      error: function (xhr, status, error) {
+            alert(error);
 
-    // showGetFeatureInfoD(err, latlng, data);
-   },
-   error: function (xhr, status, error) {
-     alert(error);
-    //showGetFeatureInfoD(error);
-   }
- });
+          }
+        });
 
 
     });
 
 
-
+   function SelectSheet( sheetname ){
+       alert( sheetname);
+   }
 
 
 
