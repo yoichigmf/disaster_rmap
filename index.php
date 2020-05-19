@@ -151,7 +151,7 @@ $(document).bind('mobileinit', function() {
 //           alert( url );
     //  alert(data);
 
-      var $buttonlist = $('#sheetselect').find('.ui-content');
+      var $buttonlist = $('#sheetlist');
 
       var sheetnames = data['sheetnames'];
 
