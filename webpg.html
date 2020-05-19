@@ -218,7 +218,7 @@
 
 
           <a href="JavaScript:PanCurrentLocation()" class="ui-btn">現在地</a>
-        　<a href="#" class="ui-btn">登録情報全域</a>
+        　<a href="JavaScript:FitBound()" class="ui-btn">登録情報全域</a>
     <!--
           <button class="ui-btn">button要素ボタン</button>
           <input type="button" value="フォームボタン">
@@ -464,6 +464,12 @@ default_d.addTo(map);
   map.on('move',function( e ) {
          click_status = fstatus.MOUSE;
   });
+
+function  FitBound() {
+
+  map.fitBounds(featureG.getBounds());
+}
+
 
 function  SetMarker( latlng ){
 
