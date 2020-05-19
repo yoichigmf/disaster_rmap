@@ -16,30 +16,7 @@ date_default_timezone_set('Asia/Tokyo');
 
 
 
-//  Google Spread Sheet 用クライアント作成
-function getClient() {
 
-
-   $auth_str = getenv('authstr');
-
-   $json = json_decode($auth_str, true);
-
-
-     $client = new Google_Client();
-
-    $client->setAuthConfig( $json );
-
-
-    $client->setScopes(Google_Service_Sheets::SPREADSHEETS);
-
-
-
-    $client->setApplicationName('ReadSheet');
-
-    return $client;
-
-
-}
 
 
 
@@ -55,17 +32,17 @@ function getClient() {
    $client = getGoogleSheetClient();
 
 
-  $service = new Google_Service_Sheets($client);
+   $service = new Google_Service_Sheets($client);
 
-$response = $service->spreadsheets->get($spreadsheetId);
-foreach($response->getSheets() as $s) {
-    $sheets[] = $s['properties']['title'];
-}
+   $response = $service->spreadsheets->get($spreadsheetId);
+   foreach($response->getSheets() as $s) {
+        $sheets[] = $s['properties']['title'];
+    }
 
-$retar = array( "sheetnames" => $sheets );
+    $retar = array( "sheetnames" => $sheets ); // set sheetnames list
 
-$retjson = json_encode( $retar );
-echo $retjson;
+     $retjson = json_encode( $retar );      // make json
+     echo $retjson;
 
 
 ?>

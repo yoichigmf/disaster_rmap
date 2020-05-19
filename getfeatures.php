@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+require 'functions.php';
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -12,105 +13,11 @@ $log->pushHandler(new StreamHandler('php://stderr', Logger::WARNING));
 
 date_default_timezone_set('Asia/Tokyo');
 
-
-
-function Getsheets($spreadsheetID, $client) {
-    $sheets = array();
-    // Load Google API library and set up client
-    // You need to know $spreadsheetID (can be seen in the URL)
-
-
-    $sheetService = new Google_Service_Sheets($client);
-    $spreadSheet = $sheetService->spreadsheets->get($spreadsheetID);
-    $sheets = $spreadSheet->getSheets();
-    foreach($sheets as $sheet) {
-        $sheets[] = $sheet->properties->sheetId;
-    }
-    return $sheets;
-}
-
-
-//  Google Spread Sheet 用クライアント作成
-function getClient() {
-
-
-   $auth_str = getenv('authstr');
-
-   $json = json_decode($auth_str, true);
-
-
-     $client = new Google_Client();
-
-    $client->setAuthConfig( $json );
-
-
-    $client->setScopes(Google_Service_Sheets::SPREADSHEETS);
+header("Content-Type: application/json; charset=UTF-8"); //ヘッダー情報の明記。必須。
 
 
 
-    $client->setApplicationName('ReadSheet');
 
-    return $client;
-
-
-}
-
-
-?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>災害情報報告マップ</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<!--
-<link rel="stylesheet" href="js/leaflet-0.7.3/leaflet.css" />
--->
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
-
-<!--
-<script src="js/leaflet-0.7.3/leaflet-src.js"></script>
--->
-
- <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
-
-<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-
-<script src="js/jquery.js"></script>
-<script src="js/jquery.mobile-1.4.5.min.js"></script>
-
-<!--
-<script src="js/leaflet.ajax.js"></script>
--->
-
-
-<?php
-
-function GetSheet( $sheetid, $sheetname ) {
-  $client = getClient();
-
-
-    $client->addScope(Google_Service_Sheets::SPREADSHEETS);
-    $client->setApplicationName('ReadSheet');
-
-    $service = new Google_Service_Sheets($client);
-
-    $response = $service->spreadsheets_values->get($sheetid, $sheetname);
-
-    $values = $response->getValues();
-
-    return $values;
-    //var_dump( $values );
-
-}
 
  $sheetname = 'シート1';
 
