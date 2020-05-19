@@ -99,6 +99,13 @@ function getClient() {
 
 
 
+
+<script src="js/layersdef.js"></script>
+
+<script src="js/L.TileLayer.BetterWMS.js"></script>
+
+<script src="js/manage_contents.js"></script>
+
 <style>
   ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
   li { margin: 5px; padding: 5px; width: 150px; }
@@ -228,13 +235,6 @@ table.fudeinfo tr th {
     </script>
 
 
-
-
-     <script src="js/layersdef.js"></script>
-
-     <script src="js/L.TileLayer.BetterWMS.js"></script>
-
-     <script src="js/manage_contents.js"></script>
 
      <script>
 
