@@ -97,123 +97,6 @@ function getClient() {
 <script src="js/jquery.js"></script>
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
 
-<!--
-<script src="js/leaflet.ajax.js"></script>
--->
-<!--
-$(document).bind('mobileinit', function() {
-  -->
-  <!-- }); -->
-<script>
-        $(document).on("mobileinit", function () {
-        //  alert('mobileinit');
-          $.mobile.hashListeningEnabled = false;
-          $.mobile.pushStateEnabled = false;
-          $.mobile.changePage.defaults.changeHash = false;
-        });
-
-
-
-  //  alert('mobileinit');
-  $(document).bind('pageinit', function(e, data) {
-        // initialize page
-      //  alert('init');
-    });
-
- $(document).bind('pagebeforeshow', function(e, data) {
-        // before show page
-        var $container = $('#baselayers').find('.ui-controlgroup-controls');
-//alert("befor");
-
-        // build radio button list
-        for (var i = 0; i < 3; i++) {
-            var id = 'option_' + i,
-                label = 'Option ' + i;
-
-            $('<input />', {
-                'id': id,
-                'type': 'radio',
-                'name': 'options',
-                'value': i
-            }).append('<label for="' + id + '">' + label + '</label>').appendTo($container);
-        }
-        // refresh control group
-        $container.find('input[type=radio]').checkboxradio();
-
-        SheetListSetup();
-
-  //  set sheet name list
-  /*
-    url = 'getsheetList.php'
-    $.ajax({
-      url: url,
-      type: "POST",
-      dataType: "json",
-      success: function (data, status, xhr) {
-
-
-          var $buttonlist = $('#sheetlist');
-
-          var sheetnames = data['sheetnames'];
-
-          for(let v of sheetnames ) {
-              var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
-
-              console.log( $btn );
-              $( $btn ).appendTo($buttonlist);
-              // console.log(v);
-               }
-
-             },
-      error: function (xhr, status, error) {
-            alert(error);
-
-          }
-        });
-*/
-
-    });
-
-
-   function  SheetListSetup(){
-
-     //  set sheet name list
-       url = 'getsheetList.php'
-       $.ajax({
-         url: url,
-         type: "POST",
-         dataType: "json",
-         success: function (data, status, xhr) {
-
-
-             var $buttonlist = $('#sheetlist');
-
-             var sheetnames = data['sheetnames'];
-
-             for(let v of sheetnames ) {
-                 var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
-
-                 console.log( $btn );
-                 $( $btn ).appendTo($buttonlist);
-                 // console.log(v);
-                  }
-
-                },
-         error: function (xhr, status, error) {
-               alert(error);
-
-             }
-           });
-
-   }
-
-   function SelectSheet( sheetname ){
-       alert( sheetname);
-   }
-
-
-
-    </script>
 
 
 <style>
@@ -264,8 +147,94 @@ table.fudeinfo tr th {
 </style>
 
 
+<script>
+        $(document).on("mobileinit", function () {
+        //  alert('mobileinit');
+          $.mobile.hashListeningEnabled = false;
+          $.mobile.pushStateEnabled = false;
+          $.mobile.changePage.defaults.changeHash = false;
+        });
+
+
+
+  //  alert('mobileinit');
+  $(document).bind('pageinit', function(e, data) {
+        // initialize page
+      //  alert('init');
+    });
+
+ $(document).bind('pagebeforeshow', function(e, data) {
+        // before show page
+        var $container = $('#baselayers').find('.ui-controlgroup-controls');
+//alert("befor");
+
+        // build radio button list
+        for (var i = 0; i < 3; i++) {
+            var id = 'option_' + i,
+                label = 'Option ' + i;
+
+            $('<input />', {
+                'id': id,
+                'type': 'radio',
+                'name': 'options',
+                'value': i
+            }).append('<label for="' + id + '">' + label + '</label>').appendTo($container);
+        }
+        // refresh control group
+        $container.find('input[type=radio]').checkboxradio();
+
+        SheetListSetup();
+
+
+    });
+
+
+   function  SheetListSetup(){
+
+     //  set sheet name list
+       url = 'getsheetList.php'
+       $.ajax({
+         url: url,
+         type: "POST",
+         dataType: "json",
+         success: function (data, status, xhr) {
+
+
+             var $buttonlist = $('#sheetlist');
+
+             var sheetnames = data['sheetnames'];
+
+             for(let v of sheetnames ) {
+                 var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
+
+                 console.log( $btn );
+                 $( $btn ).appendTo($buttonlist);
+                 // console.log(v);
+                  }
+
+                },
+         error: function (xhr, status, error) {
+               alert(error);
+
+             }
+           });
+
+   }
+
+   function SelectSheet( sheetname ){
+       alert( sheetname);
+   }
+
+    </script>
+
+
+
 
      <script src="js/layersdef.js"></script>
+
+     <script src="js/L.TileLayer.BetterWMS.js"></script>
+
+     <script src="js/manage_contents.js"></script>
 
      <script>
 
@@ -274,9 +243,7 @@ table.fudeinfo tr th {
      </script>
 
 
-<script src="js/L.TileLayer.BetterWMS.js"></script>
 
-    <script src="js/manage_contents.js"></script>
 
 
 <?php
