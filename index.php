@@ -155,6 +155,8 @@ $(document).bind('mobileinit', function() {
 
           for(let v of sheetnames ) {
               var $btn =  '<a href="JavaScript:SelectSheet(' + v +')" class="ui-btn">' + v + '</a>';
+
+              console.log( $btn );
               $( $btn ).appendTo($buttonlist);
               // console.log(v);
                }
