@@ -39,10 +39,11 @@ $sheetd = GetSheet( $spreadsheetId, $sheetname );
 //echo "<script>\n";
 
 
-echo sprintf('{\\"type\\":\\"FeatureCollection\\", \\"features\\":[ ');
+//echo sprintf('{\\"type\\":\\"FeatureCollection\\", \\"features\\":[ ');
 
 $isdone = false;
 
+$output_ar = array();    // array of output data
 
 $uid_ar = array();   //  array of user id
 
@@ -65,24 +66,11 @@ foreach ($sheetd as $index => $cols) {
      $stext = $cols[4];
 
 
-
+ if ( strcmp( $kind ,'location' ) == 0 ) {   //  if record is location data
 
    //  echo "\nkind ${kind}  ";  sample
 
-     $topc = "";
 
-     if ( strcmp( $kind ,'location' ) == 0 ) {   //  if record is location data
-
-          $topc = "{";
-
-          if ( $isdone   ) {
-      	    $topc = " ,{";
-     		  }
-     		else   {
-         		 $topc = "{ ";
-         		 $isdone = true;
-
-     		}
 
         $xcod =$cols[6];    //  coordinate
         $ycod = $cols[5];
@@ -99,10 +87,40 @@ foreach ($sheetd as $index => $cols) {
             $non_loc_ar[$userd] = array();
             }
 
+         $arkey = $userd + "_" + strval( $ckey );
 
+         $atrarray = array();
 
-         echo ${topc};
-         echo sprintf(' \\"type\\":\\"Feature\\",\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinates\\":[%s,%s]}, \\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\",\\"種別\\":\\"%s\\",\\"uid\\":\\"%d\\",\\"url\\":\\"%s\\",\\"テキスト\\":\\"%s\\"}}',$xcod,$ycod, $dated,$userd,$kind,$ckey,$url,$stext);
+         $location_rec = array();
+
+         $head = array();
+
+         $head['key'] = $arkey;
+         $head['user'] = $userd;
+         $head['date'] = $dated;
+         $head['x'] = $xcod;
+         $head['y'] = $ycod;
+         $head['kind'] = $kind;
+         $head['stext'] = $stext;
+
+         $attr = array();
+
+         $attr['日付'] = $dated;
+         $attr['ユーザ'] = $userd;
+         $attr['種別'] = $kind;
+         $attr[''] = $stext;
+         $attr['url'] = $url;
+
+         $atrarray[] = $attr
+
+         $location_rec[ 'location'] = $head;
+
+         $location_rec[ 'attribute'] = $atrarray;
+
+         $output_ar[$arkey] =$location_rec;
+
+         //echo ${topc};
+        // echo sprintf(' \\"type\\":\\"Feature\\",\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinates\\":[%s,%s]}, \\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\",\\"種別\\":\\"%s\\",\\"uid\\":\\"%d\\",\\"url\\":\\"%s\\",\\"テキスト\\":\\"%s\\"}}',$xcod,$ycod, $dated,$userd,$kind,$ckey,$url,$stext);
 
 
 
@@ -114,7 +132,7 @@ foreach ($sheetd as $index => $cols) {
      //  echo "// kind " . $kind . " date ". $dated . "\n";
 
        if ( $index > 0 ){
-
+           //$arkey = $userd + "_" + strval( $ckey );
 
            if (array_key_exists( $userd, $uid_ar)){
 
@@ -128,110 +146,19 @@ foreach ($sheetd as $index => $cols) {
             else  {
 
 
-                             $non_loc_ar[$userd][$ukey] = array();
-                     }
+                    $output_ar[$arkey]['attribute'] = array();
+                  }
+         　　
 
-                $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
+           $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
 
-              $non_loc_ar[$userd][$ukey][] = $non_locr ;
-
-
-                }
-           else {
-             //      $ckey = 0;
-              //     $uid_ar[$userd] = $ckey;
-
-             //      $non_loc_ar[$userd] = array();
-
-           }
-
-
-
-
-         //     $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
-
-           //   $non_loc_ar[$userd][$ukey][] = $non_locr ;
-
+           $output_ar[$arkey]['attribute'] [] = $non_locr;
           }
        }
 
+     }  //  foreach
 
-     }
-
-
-echo "]} \" ; \n";
-
-//echo "</script>\n";
-//var_dump( $non_loc_ar );
-
-
-//echo "<script>\n";
-
-echo "var nlj = {};\n";
-
-
-$line_array = ["\r\n", "\r", "\n"];
-
-foreach( $non_loc_ar as $ikey => $ivalue ) {
-
-  //    echo 'key => '. $ikey  .' value ' . $ivalue . ' <br>';
-
-      echo "if( \"' .$ikey .'\" in nlj ) { \n";
-      echo "  } \n";
-      echo " else { \n";
-      echo "     nlj[\"" . $ikey ."\"]= new Array();\n";
-      echo " }\n";
-
-
-
-     if ( count($ivalue) > 0 ) {
-     echo "var vproc ={};\n";
-
-
-
-      //  ユーザ別データ
-      foreach ( $ivalue  as $vkey => $vrec ) {
-
-     //  echo 'vkey => '. $vkey  .' value ' . $vrec . ' <br>';
-       echo "var varr = new Array();\n";
-
-          foreach ( $vrec as $vv ) {
-            //  echo 'ercord '. $vv . 'hh<br>';
-
-             echo  "var vvc = {};\n";
-
-             echo "vvc.date=\"". $vv["日付"] ."\";\n";
-             echo "vvc.user=\"". $vv["ユーザ"] ."\";\n";
-             echo "vvc.kind=\"". $vv["種別"] ."\";\n";
-
-              echo "vvc.url=\"". $vv["url"] ."\";\n";
-
-
-             $vtext= str_replace($line_array, '',  $vv["TEXT"]);
-             echo "vvc.text=\"". $vtext ."\";\n";
-
-             echo "varr.push( vvc );\n";
-
-          }
-
-          if ( strlen($vkey) > 0 ) {
-
-          echo "vproc[\"" . $vkey ."\"]= varr;\n" ;
-          }
-          else {
-
-          echo "vproc[\"" . $vkey ."\"]= {};\n" ;
-          }
-
-
-          echo "nlj[\"". $ikey . "\"]=vproc;\n";
-         }
-        }
-
-
-    }
-
-
-
+     $retjson = json_encode( $output_ar );      // make json
+     echo $retjson;
 
 ?>
