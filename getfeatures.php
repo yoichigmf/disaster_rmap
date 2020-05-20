@@ -84,7 +84,7 @@ foreach ($sheetd as $index => $cols) {
             $ckey = 0;
             $uid_ar[$userd] = $ckey;
 
-            $non_loc_ar[$userd] = array();
+            //$non_loc_ar[$userd] = array();
             }
 
          $arkey = $userd + "_" + strval( $ckey );

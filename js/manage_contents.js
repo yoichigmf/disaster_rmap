@@ -41,10 +41,10 @@
          data:{sheetname: sheetname},
          dataType: "json",
          success: function (data, status, xhr) {
-
-          for ( var item in data){
-               console.log( item['location']);
-          }
+              console.log( data );
+          //for ( var item in data){
+          //     console.log( item['location']);
+        //  }
 
 /*
              var $buttonlist = $('#sheetlist');
