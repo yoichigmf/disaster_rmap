@@ -93,10 +93,12 @@
 
                    Features.push(feature);
 
-                    console.log(feature);
+                  //  console.log(feature);
               }
 
               PointArray["features"]= Features;
+
+              console.log(PointArray);
               PointACluster.addLayer(L.geoJson(PointArray,{
               onEachFeature: function (feature, layer) {
                 var field = "id: " + feature.properties.id;
@@ -104,7 +106,10 @@
                 },
            clickable: true
          }));
-            map.addLayer(PointACluster);
+
+            PointACluster.setZIndex(250);
+            PointACluster.addTo(map);
+          //  map.addLayer(PointACluster);
 
 
 
