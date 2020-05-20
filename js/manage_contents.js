@@ -67,8 +67,8 @@
                    var dheader = pfeature["location"];
                    var dprop   = pfeature["attribute"];
 
-                   xpp = nheader['x'];
-                   ypp = nheader['y'];
+                   xpp = dheader['x'];
+                   ypp = dheader['y'];
 
                   //var pmarker = L.marker(xpp, ypp);
 
