@@ -41,7 +41,9 @@
          data:{sheetname: sheetname},
          dataType: "json",
          success: function (data, status, xhr) {
+              console.log( data.length)
               console.log( data );
+
           //for ( var item in data){
           //     console.log( item['location']);
         //  }

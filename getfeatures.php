@@ -117,6 +117,7 @@ foreach ($sheetd as $index => $cols) {
 
          $location_rec[ 'attribute'] = $atrarray;
 
+         
          $output_ar[$arkey] =$location_rec;
 
          //echo ${topc};
