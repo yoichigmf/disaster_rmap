@@ -108,10 +108,10 @@ foreach ($sheetd as $index => $cols) {
          $attr['日付'] = $dated;
          $attr['ユーザ'] = $userd;
          $attr['種別'] = $kind;
-         $attr[''] = $stext;
+         $attr['TEXT'] = $stext;
          $attr['url'] = $url;
 
-         $atrarray[] = $attr
+         $atrarray[] = $attr;
 
          $location_rec[ 'location'] = $head;
 
