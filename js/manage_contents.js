@@ -84,8 +84,10 @@
                    ngeometry["type"] = "Point";
                    ngeometry["coordinates"] = array();
 
-                   ngeometry["coordinates"] [] = xpp;
-                   ngeometry["coordinates"] [] = ypp;                   feature["type"] = "Feature";
+                   ngeometry["coordinates"].push(xpp);
+                   ngeometry["coordinates"].push(ypp);
+
+                  feature["type"] = "Feature";
                    feature["properties"]= nproperties;
                    feature["geometry"]= ngeometry;
 
