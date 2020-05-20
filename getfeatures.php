@@ -146,11 +146,17 @@ foreach ($sheetd as $index => $cols) {
 
                     $output_ar[$arkey]['attribute'] = array();
                   }
-         　　
+                  $attr = array();
 
-           $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
+                     $attr['日付'] = $dated;
+                     $attr['ユーザ'] = $userd;
+                     $attr['種別'] = $kind;
+                     $attr['TEXT'] = $stext;
+                     $attr['url'] = $url;
 
-           $output_ar[$arkey]['attribute'] [] = $non_locr;
+          // $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
+
+           $output_ar[$arkey]['attribute'] [] = $attr;
           }
        }
 
