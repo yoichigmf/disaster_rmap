@@ -57,7 +57,7 @@
                 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } }
               };
 
-              var Features = array();
+              var Features = [];
 
 
 
@@ -72,17 +72,17 @@
 
                   //var pmarker = L.marker(xpp, ypp);
 
-                   var feature = array();
+                   var feature = [];
 
-                   nproperties = array();
-                   ngeometry = array();
+                   nproperties = [];
+                   ngeometry = [];
 
                    nproperties["id"] = dheader["vkey"];
                    nproperties["user"] = dheader["user"];
                    nproperties["date"] = dheader["date"];
 
                    ngeometry["type"] = "Point";
-                   ngeometry["coordinates"] = array();
+                   ngeometry["coordinates"] = [];
 
                    ngeometry["coordinates"].push(xpp);
                    ngeometry["coordinates"].push(ypp);
