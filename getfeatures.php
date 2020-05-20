@@ -95,7 +95,7 @@ foreach ($sheetd as $index => $cols) {
 
          $head = array();
 
-         $head['key'] = $arkey;
+         $head['vkey'] = $arkey;
          $head['user'] = $userd;
          $head['date'] = $dated;
          $head['x'] = $xcod;

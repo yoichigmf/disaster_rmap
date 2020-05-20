@@ -45,7 +45,7 @@
               console.log( data );
 
               for ( var i=0; i < data.lengh; i++ ){
-                    comsole(data[i]);
+                    comsole.log(data[i]);
               }
 
 
