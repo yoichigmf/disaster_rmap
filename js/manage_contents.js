@@ -107,8 +107,12 @@
            clickable: true
          }));
 
+            map.removeLayer(default_d);
             PointACluster.setZIndex(250);
             PointACluster.addTo(map);
+
+            default_d = PointACluster;
+
           //  map.addLayer(PointACluster);
 
 
