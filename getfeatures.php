@@ -139,8 +139,6 @@ foreach ($sheetd as $index => $cols) {
 
                    $ukey = $uid_ar[$userd];
 
-                   if (array_key_exists($ukey ,$non_loc_ar[$userd] ) ) {
-
 
                   }
             else  {
