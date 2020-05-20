@@ -91,7 +91,7 @@
                    feature["properties"]= nproperties;
                    feature["geometry"]= ngeometry;
 
-                   Features[] = feature;
+                   Features.push(feature);
 
                     console.log(feature);
               }
