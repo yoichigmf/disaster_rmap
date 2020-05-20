@@ -42,7 +42,9 @@
          dataType: "json",
          success: function (data, status, xhr) {
 
-           alert(data);
+          for ( var item in data){
+               console.log( item['location']['key']);
+          }
 
 /*
              var $buttonlist = $('#sheetlist');
