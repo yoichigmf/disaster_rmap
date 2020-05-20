@@ -44,37 +44,68 @@
             //  console.log( data.length)
               console.log( data );
 
-              var markercluster = L.markerClusterGroup();
+              //マーカークラスター設定
+            var PointACluster = L.markerClusterGroup({
+              showCoverageOnHover: false,
+              spiderfyOnMaxZoom: true,
+              removeOutsideVisibleBounds: true,
+              disableClusteringAtZoom: 18
+                  });
+
+              var PointArray = {
+                "type": "FeatureCollection",
+                "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } }
+              };
+
+              var Features = array();
+
+
+
               for ( var item in data  ){
-                   feature = data[item];
+                   pfeature = data[item];
 
-                   xpp = feature['location']['x'];
-                   ypp = feature['location']['y'];
+                   var dheader = pfeature["location"];
+                   var dprop   = pfeature["attribute"];
 
-                  var pmarker = L.marker(xpp, ypp);
+                   xpp = nheader['x'];
+                   ypp = nheader['y'];
 
-                  markercluster.addLayer(pmarker);
+                  //var pmarker = L.marker(xpp, ypp);
+
+                   var feature = array();
+
+                   nproperties = array();
+                   ngeometry = array();
+
+                   nproperties["id"] = dheader["vkey"];
+                   nproperties["user"] = dheader["user"];
+                   nproperties["date"] = dheader["date"];
+
+                   ngeometry["type"] = "Point";
+                   ngeometry["coordinates"] = array();
+
+                   ngeometry["coordinates"] [] = xpp;
+                   ngeometry["coordinates"] [] = ypp;                   feature["type"] = "Feature";
+                   feature["properties"]= nproperties;
+                   feature["geometry"]= ngeometry;
+
+                   Features[] = feature;
+
                     console.log(feature);
               }
-            map.addLayer(markercluster);
 
-          //for ( var item in data){
-          //     console.log( item['location']);
-        //  }
+              PointArray["features"]= Features;
+              PointACluster.addLayer(L.geoJson(PointArray)),{
+              onEachFeature: function (feature, layer) {
+                var field = "id: " + feature.properties.id;
+                  layer.bindPopup(field);
+                },
+           clickable: true
+            }));
+            map.addLayer(PointACluster);
 
-/*
-             var $buttonlist = $('#sheetlist');
 
-             var sheetnames = data['sheetnames'];
 
-             for(let v of sheetnames ) {
-                 var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
-
-                 console.log( $btn );
-                 $( $btn ).appendTo($buttonlist);
-                 // console.log(v);
-                  }
-*/
                 },
          error: function (xhr, status, error) {
                alert(error);
