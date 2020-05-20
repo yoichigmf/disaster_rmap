@@ -44,11 +44,19 @@
             //  console.log( data.length)
               console.log( data );
 
+              var markers = L.markerClusterGroup();
               for ( var item in data  ){
                    feature = data[item];
-                    console.log(feature);
-              }
 
+                   xp = feature['location']['x'];
+                   yp = feature['location']['y'];
+
+                  var pmarker = L.marker(xp, yp);
+
+                  markers.addLayer(pmarker);
+                  //  console.log(feature);
+              }
+            map.addLayer(markers);
 
           //for ( var item in data){
           //     console.log( item['location']);
