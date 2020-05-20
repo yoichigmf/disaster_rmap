@@ -72,10 +72,10 @@
 
                   //var pmarker = L.marker(xpp, ypp);
 
-                   var feature = [];
+                   var feature = {};
 
-                   nproperties = [];
-                   ngeometry = [];
+                   nproperties = {};
+                   ngeometry = {};
 
                    nproperties["id"] = dheader["vkey"];
                    nproperties["user"] = dheader["user"];
