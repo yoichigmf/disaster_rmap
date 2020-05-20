@@ -45,7 +45,8 @@
               console.log( data );
 
               for ( var item in data  ){
-                    console.log(item);
+                   feature = data[item];
+                    console.log(feature);
               }
 
 
