@@ -41,11 +41,11 @@
          data:{sheetname: sheetname},
          dataType: "json",
          success: function (data, status, xhr) {
-              console.log( data.length)
+            //  console.log( data.length)
               console.log( data );
 
-              for ( var i=0; i < data.lengh; i++ ){
-                    comsole.log(data[i]);
+              for ( var item in data  ){
+                    comsole.log(item);
               }
 
 
