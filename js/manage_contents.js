@@ -33,9 +33,38 @@
    }
 
    function SelectSheet( sheetname ){
-       alert( sheetname);
+     //  set sheet name list
+       url = 'getfeatures.php'
+       $.ajax({
+         url: url,
+         type: "POST",
+         data:{sheetname: sheetname},
+         dataType: "json",
+         success: function (data, status, xhr) {
+
+           alert(data);
+
+/*
+             var $buttonlist = $('#sheetlist');
+
+             var sheetnames = data['sheetnames'];
+
+             for(let v of sheetnames ) {
+                 var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
+
+                 console.log( $btn );
+                 $( $btn ).appendTo($buttonlist);
+                 // console.log(v);
+                  }
+*/
+                },
+         error: function (xhr, status, error) {
+               alert(error);
+
+             }
+           });
    }
-   
+
 function PropContents(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.日付) {

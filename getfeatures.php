@@ -17,21 +17,18 @@ header("Content-Type: application/json; charset=UTF-8"); //ヘッダー情報の
 
 
 
+ $sheetname = filter_input(INPUT_POST,"sheetname"); //変数の出力。jQueryで指定したキー値optを用いる
 
 
- $sheetname = 'シート1';
+ //$sheetname = 'シート1';
 
- if(isset($_GET['sheetname'])) {
- $sheetname = $_GET['sheetname'];
- }
+ //if(isset($_GET['sheetname'])) {
+ //$sheetname = $_GET['sheetname'];
+ //}
 
 
 $spreadsheetId = getenv('SPREADSHEET_ID');
 
-
- if(isset($_GET['sheetid'])) {
- $spreadsheetId = $_GET['sheetid'];
- }
 
 
 $sheetd = GetSheet( $spreadsheetId, $sheetname );
@@ -39,10 +36,10 @@ $sheetd = GetSheet( $spreadsheetId, $sheetname );
 
 //var_dump( $sheetd ); spread sheet
 
-echo "<script>\n";
+//echo "<script>\n";
 
 
-echo sprintf('var tgjson="{\\"type\\":\\"FeatureCollection\\", \\"features\\":[ ');
+echo sprintf('{\\"type\\":\\"FeatureCollection\\", \\"features\\":[ ');
 
 $isdone = false;
 
@@ -164,11 +161,11 @@ foreach ($sheetd as $index => $cols) {
 
 echo "]} \" ; \n";
 
-echo "</script>\n";
+//echo "</script>\n";
 //var_dump( $non_loc_ar );
 
 
-echo "<script>\n";
+//echo "<script>\n";
 
 echo "var nlj = {};\n";
 
