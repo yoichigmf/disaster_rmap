@@ -43,7 +43,7 @@
          success: function (data, status, xhr) {
 
           for ( var item in data){
-               console.log( item['location']['key']);
+               console.log( item['location']);
           }
 
 /*
