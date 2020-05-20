@@ -97,13 +97,13 @@
               }
 
               PointArray["features"]= Features;
-              PointACluster.addLayer(L.geoJson(PointArray)),{
+              PointACluster.addLayer(L.geoJson(PointArray,{
               onEachFeature: function (feature, layer) {
                 var field = "id: " + feature.properties.id;
                   layer.bindPopup(field);
                 },
            clickable: true
-            }));
+         }));
             map.addLayer(PointACluster);
 
 
