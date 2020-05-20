@@ -44,6 +44,11 @@
               console.log( data.length)
               console.log( data );
 
+              for ( var i=0; i < data.lengh; i++ ){
+                    comsole(data[i]);
+              }
+
+
           //for ( var item in data){
           //     console.log( item['location']);
         //  }

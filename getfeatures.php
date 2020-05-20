@@ -87,7 +87,7 @@ foreach ($sheetd as $index => $cols) {
             //$non_loc_ar[$userd] = array();
             }
 
-         $arkey = $userd + "_" + strval( $ckey );
+         $arkey = $userd + "_" + $ckey ;
 
          $atrarray = array();
 
@@ -117,7 +117,7 @@ foreach ($sheetd as $index => $cols) {
 
          $location_rec[ 'attribute'] = $atrarray;
 
-         
+
          $output_ar[$arkey] =$location_rec;
 
          //echo ${topc};
