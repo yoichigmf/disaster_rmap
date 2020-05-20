@@ -45,7 +45,7 @@
               console.log( data );
 
               for ( var item in data  ){
-                    comsole.log(item);
+                    console.log(item);
               }
 
 
