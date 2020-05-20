@@ -87,7 +87,7 @@ foreach ($sheetd as $index => $cols) {
             //$non_loc_ar[$userd] = array();
             }
 
-         $arkey = $userd + "_" + $ckey ;
+         $arkey = $userd . "_" . $ckey ;
 
          $atrarray = array();
 
