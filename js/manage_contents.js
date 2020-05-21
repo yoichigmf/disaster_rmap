@@ -129,7 +129,10 @@
            clickable: true
          }));
 
-            map.removeLayer(default_d);
+            if ( default_d){
+                  map.removeLayer(default_d);
+              }
+              
             PointACluster.setZIndex(250);
             PointACluster.addTo(map);
 
