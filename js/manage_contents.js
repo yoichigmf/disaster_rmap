@@ -119,13 +119,14 @@
 
               console.log(PointArray);
               PointACluster.addLayer(L.geoJson(PointArray,{
-              onEachFeature: function (feature, layer) {
+              onEachFeature: PropContents2(feature,layer),
+              //function (feature, layer) {
                 // 地物クリック時の関数記述　プロパティが配列化した場合
                      PropContents2(feature,layer);
                 //var field = "id: " + feature.properties.id;
                 //  layer.bindPopup(field);
 
-                },
+              //  },
            clickable: true
          }));
 
@@ -150,7 +151,9 @@
 
    function PropContents2(feature, layer) {
        // does this feature have a property named popupContent?
-       if (feature.properties && feature.properties.日付) {
+
+           console.log("propcontents2");
+    //   if (feature.properties && feature.properties.日付) {
 
           var tgtext = "";
 
@@ -203,7 +206,7 @@
 
 
            layer.bindPopup(tgtext);
-       }  //
+      // }  //
    }
 
 
