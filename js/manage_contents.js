@@ -98,13 +98,13 @@
                        property_array.push( propd );
                    }
 
-                    nproperties["properties"] = property_array ;
+                   nproperties["proplist"] = property_array ;
 
                    ngeometry["type"] = "Point";
                    ngeometry["coordinates"] = [];
 
                    ngeometry["coordinates"].push(xpp);
-                   ngeometry["coordinates"].push(ypp);
+                   ngeometry["coordinates"].push(ypp);s
 
                    feature["type"] = "Feature";
                    feature["properties"]= nproperties;
@@ -121,8 +121,9 @@
               PointACluster.addLayer(L.geoJson(PointArray,{
               onEachFeature: function (feature, layer) {
                 // 地物クリック時の関数記述　プロパティが配列化した場合
-                var field = "id: " + feature.properties.id;
-                  layer.bindPopup(field);
+                     PropContents2(feature,layer);
+                //var field = "id: " + feature.properties.id;
+                //  layer.bindPopup(field);
 
                 },
            clickable: true
@@ -145,6 +146,66 @@
              }
            });
    }
+
+
+   function PropContents2(feature, layer) {
+       // does this feature have a property named popupContent?
+       if (feature.properties && feature.properties.日付) {
+
+          var tgtext = "";
+
+           //var kind = feature.properties.種別;
+
+           tgtext = feature.properties.日付 + "<br>" + kind + "<br>報告者:" +  feature.properties.ユーザ ;
+
+
+               var propList = feature.properties.proplist;
+
+
+              if ( propList ) {
+              for ( let vf of propList ) {
+                   tgtext = tgtext + "<br>" + vf.date ;
+
+                    kind = vf.種別;
+
+
+                    if ( vf.url   ){
+                     imageurl = vf.url;
+
+                          dlurl = imageurl;
+
+                          mmurl = dlurl.replace('?dl=0', '');
+                         mmurl = mmurl.replace('www.dropbox.com', 'dl.dropboxusercontent.com');
+
+                          tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\">" + imageurl + "</a>";
+
+                           if ( kind === 'image' ) {
+
+
+
+                          tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\"><img src=\"" + mmurl + "\"  width=\"200\"></a>";
+
+                        　　　　　　}
+
+
+
+                    　　　　　}
+
+
+
+                     if ( vf.text  ) {
+                         tgtext = tgtext +  " " + vf. + "<br>";
+
+                      　　}
+                   }　// proplist loop
+
+           　　}  // if proplist
+
+
+           layer.bindPopup(tgtext);
+       }  //
+   }
+
 
 function PropContents(feature, layer) {
     // does this feature have a property named popupContent?
