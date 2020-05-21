@@ -18,154 +18,8 @@ date_default_timezone_set('Asia/Tokyo');
 
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>災害情報報告マップ</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
-
-
-
- <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
-
-<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"
-     crossorigin=""></script>
-
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
-
-        crossorigin=""/>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"
-                crossorigin=""/>
-
-
-<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-
-<script src="js/jquery.js"></script>
-<script src="js/jquery.mobile-1.4.5.min.js"></script>
-
-
-
-
-<script src="js/layersdef.js"></script>
-
-<script src="js/L.TileLayer.BetterWMS.js"></script>
-
-<script src="js/manage_contents.js"></script>
-
-<style>
-  ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
-  li { margin: 5px; padding: 5px; width: 150px; }
-  </style>
-
-     <style type="text/css">
-		body {
-			padding: 0;
-			margin: 0;
-		}
-		html, body{
-			height: 100%;
-		}
- 		#map { min-height:717px; height: 100vh;  margin: -15px;}
-//		#map {  height: 100%; margin: -15px;}
-
-
-/* Change cursor when mousing over clickable layer */
-.leaflet-clickable {
-  cursor: crosshair !important;
-}
-/* Change cursor when over entire map */
-.leaflet-container {
-  cursor: crosshair !important;
-//  cursor: help !important;
-}
-	</style>
-
-	<style>
-	table.fudeinfo {
-    width: 100%;
-    margin:20px 0 50px;
-    border-top: 1px solid #CCC;
-    border-left: 1px solid #CCC;
-    border-spacing:0;
-}
-table.fudeinfo tr th,table.fudeinfo tr td {
-    font-size: 12px;
-    border-bottom: 1px solid #CCC;
-    border-right: 1px solid #CCC;
-    padding: 7px;
-}
-table.fudeinfo tr th {
-    background: #E6EAFF;
-}
-</style>
-
-
-<script>
-        $(document).on("mobileinit", function () {
-        //  alert('mobileinit');
-          $.mobile.hashListeningEnabled = false;
-          $.mobile.pushStateEnabled = false;
-          $.mobile.changePage.defaults.changeHash = false;
-        });
-
-
-
-  //  alert('mobileinit');
-  $(document).bind('pageinit', function(e, data) {
-        // initialize page
-      //  alert('init');
-    });
-
- $(document).bind('pagebeforeshow', function(e, data) {
-        // before show page
-  /*      var $container = $('#baselayers').find('.ui-controlgroup-controls');
-
-
-        // build radio button list
-        for (var i = 0; i < 3; i++) {
-            var id = 'option_' + i,
-                label = 'Option ' + i;
-
-            $('<input />', {
-                'id': id,
-                'type': 'radio',
-                'name': 'options',
-                'value': i
-            }).append('<label for="' + id + '">' + label + '</label>').appendTo($container);
-        }
-        // refresh control group
-        $container.find('input[type=radio]').checkboxradio();
-*/
-//         Google Sheet のリストをボタンをパネルにセットアップする
-        SheetListSetup();
-
-
-  });
-
-
-
-    </script>
-
-
-
-     <script>
-
-      var  CbaseLayer;
-      var dSearch;
-
-     </script>
 
 
 
@@ -321,9 +175,9 @@ echo "]} \" ; \n";
 echo "</script>\n";
 //var_dump( $non_loc_ar );
 */
-
-echo "<script>\n";
 /*
+echo "<script>\n";
+
 echo "var nlj = {};\n";
 
 
@@ -401,7 +255,7 @@ echo " }  } ); \n";
 echo "default_d = dSearch;\n";
 */
 
-
+/*
 echo "overlays[\"nsearch\"]=dSearch;\n";
 echo "SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png', {    attribution : 'Dronebird', minZoom: 13, maxZoom: 20, zIndex:3 });\n";
 
@@ -414,6 +268,7 @@ echo "t15  = L.tileLayer('https://tile.geospatial.jp/aeroasahi/t15chiba/{z}/{x}/
 echo "overlays[\"t15\"]=t15 ;\n";
 
 echo "\n</script>\n";
+*/
 //debug
 
 
