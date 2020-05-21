@@ -104,7 +104,7 @@
                    ngeometry["coordinates"] = [];
 
                    ngeometry["coordinates"].push(xpp);
-                   ngeometry["coordinates"].push(ypp);s
+                   ngeometry["coordinates"].push(ypp);
 
                    feature["type"] = "Feature";
                    feature["properties"]= nproperties;
