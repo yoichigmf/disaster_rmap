@@ -158,7 +158,7 @@
 
            //var kind = feature.properties.種別;
 
-           tgtext = feature.properties.日付 + "<br>" + kind + "<br>報告者:" +  feature.properties.ユーザ ;
+           tgtext = feature.properties.日付 + "<br>報告者:" +  feature.properties.ユーザ ;
 
 
                var propList = feature.properties.proplist;
