@@ -155,10 +155,10 @@
     //   if (feature.properties && feature.properties.日付) {
 
           var tgtext = "";
-
+          console.log(feature);
            //var kind = feature.properties.種別;
 
-           tgtext = feature.properties.日付 + "<br>報告者:" +  feature.properties.ユーザ ;
+           tgtext = feature.properties.date + "<br>報告者:" +  feature.properties.user ;
 
 
                var propList = feature.properties.proplist;
@@ -166,13 +166,13 @@
 
               if ( propList ) {
               for ( let vf of propList ) {
-                   tgtext = tgtext + "<br>" + vf.date ;
+                   tgtext = tgtext + "<br>" + propList[vf].date ;
 
-                    kind = vf.種別;
+                    kind = propList[vf].種別;
 
 
-                    if ( vf.url   ){
-                     imageurl = vf.url;
+                    if ( propList[vf].url   ){
+                     imageurl = propLisy[vf].url;
 
                           dlurl = imageurl;
 
@@ -195,8 +195,8 @@
 
 
 
-                     if ( vf.text  ) {
-                         tgtext = tgtext +  " " + vf.TEXT + "<br>";
+                     if ( propList[vf].TEXT  ) {
+                         tgtext = tgtext +  " " + propList[vf].TEXT + "<br>";
 
                       　　}
                    }　// proplist loop
