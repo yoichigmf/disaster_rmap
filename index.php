@@ -163,6 +163,7 @@ table.fudeinfo tr th {
      <script>
 
       var  CbaseLayer;
+      var dSearch;
 
      </script>
 
@@ -191,7 +192,7 @@ $sheetd = GetSheet( $spreadsheetId, $sheetname );
 
 
 //var_dump( $sheetd ); spread sheet
-
+/*
 echo "<script>\n";
 
 
@@ -319,10 +320,10 @@ echo "]} \" ; \n";
 
 echo "</script>\n";
 //var_dump( $non_loc_ar );
-
+*/
 
 echo "<script>\n";
-
+/*
 echo "var nlj = {};\n";
 
 
@@ -387,8 +388,8 @@ foreach( $non_loc_ar as $ikey => $ivalue ) {
 
     }
 
-
-
+*/
+/*
 echo "var features = JSON.parse(tgjson);\n";
 //echo "var sample_contents=\"sample contents\"\n";
 
@@ -398,6 +399,9 @@ echo         " PropContents (feature, layer); \n";
 echo " }  } ); \n";
 
 echo "default_d = dSearch;\n";
+*/
+
+
 echo "overlays[\"nsearch\"]=dSearch;\n";
 echo "SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png', {    attribution : 'Dronebird', minZoom: 13, maxZoom: 20, zIndex:3 });\n";
 
