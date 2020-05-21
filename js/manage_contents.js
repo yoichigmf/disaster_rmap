@@ -194,7 +194,7 @@
 
 
                      if ( vf.text  ) {
-                         tgtext = tgtext +  " " + vf. + "<br>";
+                         tgtext = tgtext +  " " + vf.TEXT + "<br>";
 
                       　　}
                    }　// proplist loop
