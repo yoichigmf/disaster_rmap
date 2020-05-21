@@ -1,5 +1,5 @@
 
-
+//   シート選択ボタンのセットアップ
    function  SheetListSetup(){
 
      //  set sheet name list
@@ -52,11 +52,13 @@
               disableClusteringAtZoom: 18
                   });
 
+                //  ポイント geojson 定義
               var PointArray = {
                 "type": "FeatureCollection",
                 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } }
               };
 
+　　　　　　　　　　//  ポイント地物リスト
               var Features = [];
 
 
@@ -70,16 +72,32 @@
                    xpp = dheader['x'];
                    ypp = dheader['y'];
 
-                  //var pmarker = L.marker(xpp, ypp);
+
 
                    var feature = {};
 
-                   nproperties = {};
-                   ngeometry = {};
+                   var nproperties = {};
+                   var ngeometry = {};
 
+                        //  プロパティの配列化が必要
                    nproperties["id"] = dheader["vkey"];
                    nproperties["user"] = dheader["user"];
                    nproperties["date"] = dheader["date"];
+
+                   var property_array = [];
+
+                   for ( var iprop in dprop){
+                       var  propd = {};
+                       propd['日付'] = iprop['日付'] ;
+                       propd['ユーザ'] = iprop['ユーザ'] ;
+                       propd['種別'] = iprop['種別'] ;
+                       propd['TEXT'] = iprop['TEXT'];
+                       propd['url'] = iprop['url'] ;
+
+                       property_array.push( propd );
+                   }
+
+                    nproperties["properties"] = property_array ;
 
                    ngeometry["type"] = "Point";
                    ngeometry["coordinates"] = [];
@@ -87,7 +105,7 @@
                    ngeometry["coordinates"].push(xpp);
                    ngeometry["coordinates"].push(ypp);
 
-                  feature["type"] = "Feature";
+                   feature["type"] = "Feature";
                    feature["properties"]= nproperties;
                    feature["geometry"]= ngeometry;
 
@@ -101,8 +119,10 @@
               console.log(PointArray);
               PointACluster.addLayer(L.geoJson(PointArray,{
               onEachFeature: function (feature, layer) {
+                // 地物クリック時の関数記述　プロパティが配列化した場合
                 var field = "id: " + feature.properties.id;
                   layer.bindPopup(field);
+
                 },
            clickable: true
          }));
