@@ -88,12 +88,12 @@
 
                    for ( var iprop in dprop){
                        var  propd = {};
-                       console.log(iprop);
-                       propd['日付'] = iprop['日付'] ;
-                       propd['ユーザ'] = iprop['ユーザ'] ;
-                       propd['種別'] = iprop['種別'] ;
-                       propd['TEXT'] = iprop['TEXT'];
-                       propd['url'] = iprop['url'] ;
+                       console.log(dprop[iprop]);
+                       propd['日付'] = dprop[iprop]['日付'] ;
+                       propd['ユーザ'] = dprop[iprop]['ユーザ'] ;
+                       propd['種別'] = dprop[iprop]['種別'] ;
+                       propd['TEXT'] = dprop[iprop]['TEXT'];
+                       propd['url'] = dprop[iprop]['url'] ;
 
                        property_array.push( propd );
                    }
