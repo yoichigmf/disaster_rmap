@@ -197,11 +197,11 @@
 
 
                      if ( vf["TEXT"]  ) {
-                         tgtext = tgtext +  " " + vf["TEXT "]+ "<br>";
+                         tgtext = tgtext +  "<br>" + vf["TEXT"]+ "<br>";
 
                       　　}
 
-                    
+
                    }　// proplist loop
 
            　　}  // if proplist
