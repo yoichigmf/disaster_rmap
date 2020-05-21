@@ -167,13 +167,13 @@
               if ( propList ) {
               for ( let vf of propList ) {
                     console.log(vf);
-                /*   tgtext = tgtext + "<br>" + propList[vf].日付 ;
+                   tgtext = tgtext + "<br>" + vf["日付"] ;
 
-                    kind = propList[vf].種別;
+                    kind = vf["種別"];
 
 
-                    if ( propList[vf].url   ){
-                     imageurl = propLisy[vf].url;
+                    if ( vf["url"]   ){
+                     imageurl = vf["url"];
 
                           dlurl = imageurl;
 
@@ -196,12 +196,12 @@
 
 
 
-                     if ( propList[vf].TEXT  ) {
-                         tgtext = tgtext +  " " + propList[vf].TEXT + "<br>";
+                     if ( vf["TEXT"]  ) {
+                         tgtext = tgtext +  " " + vf["TEXT "]+ "<br>";
 
                       　　}
 
-                      */
+                    
                    }　// proplist loop
 
            　　}  // if proplist
