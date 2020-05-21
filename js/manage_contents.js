@@ -166,7 +166,7 @@
 
               if ( propList ) {
               for ( let vf of propList ) {
-                   tgtext = tgtext + "<br>" + propList[vf].date ;
+                   tgtext = tgtext + "<br>" + propList[vf].日付 ;
 
                     kind = propList[vf].種別;
 
