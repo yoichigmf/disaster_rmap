@@ -166,7 +166,8 @@
 
               if ( propList ) {
               for ( let vf of propList ) {
-                   tgtext = tgtext + "<br>" + propList[vf].日付 ;
+                    console.log(vf);
+                /*   tgtext = tgtext + "<br>" + propList[vf].日付 ;
 
                     kind = propList[vf].種別;
 
@@ -199,6 +200,8 @@
                          tgtext = tgtext +  " " + propList[vf].TEXT + "<br>";
 
                       　　}
+
+                      */
                    }　// proplist loop
 
            　　}  // if proplist
