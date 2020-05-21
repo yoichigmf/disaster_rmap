@@ -88,6 +88,7 @@
 
                    for ( var iprop in dprop){
                        var  propd = {};
+                       console.log(iprop);
                        propd['日付'] = iprop['日付'] ;
                        propd['ユーザ'] = iprop['ユーザ'] ;
                        propd['種別'] = iprop['種別'] ;
