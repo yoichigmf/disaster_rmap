@@ -139,9 +139,9 @@
             default_d = PointACluster;
             featureG = L.featureGroup([ default_d ]);
 
-            if ( zoomflag ){
+          //  if ( zoomflag ){
                   FitBound();
-            }
+        //    }
 
           //  map.addLayer(PointACluster);
 
