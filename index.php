@@ -42,7 +42,7 @@ $spreadsheetId = getenv('SPREADSHEET_ID');
  }
 
 
-$sheetd = GetSheet( $spreadsheetId, $sheetname );
+//$sheetd = GetSheet( $spreadsheetId, $sheetname );
 
 
 //var_dump( $sheetd ); spread sheet

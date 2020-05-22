@@ -107,8 +107,15 @@ table.fudeinfo tr th {
   $(document).bind('pageinit', function(e, data) {
         // initialize page
        alert('page init');
-       SelectSheet( "シート1" );
+       //SelectSheet( "シート1" );
     });
+
+    $(document).bind('pagecreate', function(e, data) {
+          // initialize page
+         alert('page create');
+         SelectSheet( "シート1" );
+      });
+
 
  $(document).bind('pagebeforeshow', function(e, data) {
         // before show page
