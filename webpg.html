@@ -98,6 +98,7 @@ table.fudeinfo tr th {
           $.mobile.hashListeningEnabled = false;
           $.mobile.pushStateEnabled = false;
           $.mobile.changePage.defaults.changeHash = false;
+          alert("mobile init");
         });
 
 
@@ -105,7 +106,7 @@ table.fudeinfo tr th {
   //  alert('mobileinit');
   $(document).bind('pageinit', function(e, data) {
         // initialize page
-      //  alert('init');
+       alert('page init');
     });
 
  $(document).bind('pagebeforeshow', function(e, data) {
