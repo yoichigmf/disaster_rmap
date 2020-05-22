@@ -16,7 +16,7 @@
              var sheetnames = data['sheetnames'];
 
              for(let v of sheetnames ) {
-                 var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
+                 var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\', false)" class="ui-btn">' + v + '</a>';
 
                  console.log( $btn );
                  $( $btn ).appendTo($buttonlist);
@@ -32,7 +32,7 @@
 
    }
 
-   function SelectSheet( sheetname ){
+   function SelectSheet( sheetname, zoomflag ){
      //  set sheet name list
        url = 'getfeatures.php'
        $.ajax({
@@ -40,7 +40,7 @@
          type: "POST",
          data:{sheetname: sheetname},
          dataType: "json",
-         success: function (data, status, xhr) {
+         success: function (data, status, xhr, zoomflag ) {
             //  console.log( data.length)
               console.log( data );
 
@@ -132,11 +132,16 @@
             if ( default_d){
                   map.removeLayer(default_d);
               }
-              
+
             PointACluster.setZIndex(250);
             PointACluster.addTo(map);
 
             default_d = PointACluster;
+            featureG = L.featureGroup([ default_d ]);
+
+            if ( zoomflag ){
+                  FitBound();
+            }
 
           //  map.addLayer(PointACluster);
 
