@@ -21,7 +21,7 @@ date_default_timezone_set('Asia/Tokyo');
 if (isset($_GET['sheetid'])) {
 $spreadsheetId = $_GET['sheetid'];
   }
-$arg_str = "?SEETID=$spreadsheetId";
+$arg_str = "webpg.html?SEETID=$spreadsheetId";
 
 
 
@@ -32,11 +32,11 @@ if (isset($_GET['sheetname'])) {
 }
 
 
-$tgurl = "webpg.html" . $arg_str;
+//$tgurl = "webpg.html" . $arg_str;
 
-$log->addWarning( $tgurl );
+$log->addWarning( $arg_str );
 
-include ($tgurl);
+include ($arg_str);
 
 
 
