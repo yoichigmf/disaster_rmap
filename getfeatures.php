@@ -19,12 +19,16 @@ header("Content-Type: application/json; charset=UTF-8"); //ヘッダー情報の
 
  $sheetname = filter_input(INPUT_POST,"sheetname"); //変数の出力。jQueryで指定したキー値optを用いる
 
-
+$envname  = getenv('SHEET_NAME');
+$envid= getenv('SPREADSHEET_ID');
  //$sheetname = 'シート1';
 
- //if(isset($_GET['sheetname'])) {
- //$sheetname = $_GET['sheetname'];
- //}
+ if( !$sheetname ) {
+     $sheetname  = getenv('SHEET_NAME');
+     if( !$sheetname ) {
+          $sheetname = 'シート1';
+     }
+ }
 
 
 $spreadsheetId = getenv('SPREADSHEET_ID');
@@ -34,12 +38,6 @@ $spreadsheetId = getenv('SPREADSHEET_ID');
 $sheetd = GetSheet( $spreadsheetId, $sheetname );
 
 
-//var_dump( $sheetd ); spread sheet
-
-//echo "<script>\n";
-
-
-//echo sprintf('{\\"type\\":\\"FeatureCollection\\", \\"features\\":[ ');
 
 $isdone = false;
 
@@ -128,12 +126,10 @@ foreach ($sheetd as $index => $cols) {
        }    // location
        else  {
 
-   //    echo "  index2  ${index} ";
 
-     //  echo "// kind " . $kind . " date ". $dated . "\n";
 
        if ( $index > 0 ){
-           //$arkey = $userd + "_" + strval( $ckey );
+
 
            if (array_key_exists( $userd, $uid_ar)){
 
