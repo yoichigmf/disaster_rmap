@@ -17,11 +17,15 @@
              var sheetnames = data['sheetnames'];
 
              for(let v of sheetnames ) {
-                 var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
 
-                 console.log( $btn );
-                 $( $btn ).appendTo($buttonlist);
+               if ( v !== 'config'){   //  設定ページを除く
+                    var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
+
+                       console.log( $btn );
+                       $( $btn ).appendTo($buttonlist);
                  // console.log(v);
+                        }
+
                   }
 
                 },
@@ -42,8 +46,48 @@
     }
 
 
-    SelectSheet(tgSheetname);
+    SelectSheetWithZoom(tgSheetname);
    }
+
+
+   function SelectSheetWithZoom( sheetname ){
+        //  set sheet name list
+          url = 'getfeatures.php'
+          $.ajax({
+            url: url,
+            type: "POST",
+            data:{sheetname: sheetname, sheetid:mapSheetId},
+            dataType: "json",
+            success: function (data, status, xhr) {
+               //  console.log( data.length)
+                 console.log( data );
+
+               var PointACluster;
+               PointACluster = CreatePointCluster( data  , PointACluster);
+                 //マーカークラスター設定
+
+
+               if ( default_d){
+                     map.removeLayer(default_d);
+                 }
+
+               PointACluster.setZIndex(250);
+               PointACluster.addTo(map);
+
+               default_d = PointACluster;
+               featureG = L.featureGroup([ default_d ]);
+
+
+                   FitBound();
+
+                   },
+            error: function (xhr, status, error) {
+                  alert(error);
+
+                }
+              });
+      }
+
 
 function SelectSheet( sheetname ){
      //  set sheet name list
@@ -73,7 +117,7 @@ function SelectSheet( sheetname ){
             featureG = L.featureGroup([ default_d ]);
 
 
-                FitBound();
+
 
 
           //  map.addLayer(PointACluster);

@@ -34,7 +34,7 @@ $client = getGoogleSheetClient();
  if( !$sheetname ) {
      $sheetname  = getenv('SHEET_NAME');
      if( !$sheetname ) {
-          $sheetname = 'シート1';
+          //$sheetname = 'シート1';
           $sheetname = GetFirstSheetName( $spreadsheetID, $client );
      }
  }
