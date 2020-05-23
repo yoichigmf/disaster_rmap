@@ -50,10 +50,10 @@ function SelectSheet( sheetname ){
             //  console.log( data.length)
               console.log( data );
 
-            //var PointACluster;
-            //PointACluster = CreatePointCluster( data  , PointACluster);
+            var PointACluster;
+            PointACluster = CreatePointCluster( data  , PointACluster);
               //マーカークラスター設定
-
+/*
 
             var PointACluster = L.markerClusterGroup({
               showCoverageOnHover: false,
@@ -138,7 +138,7 @@ function SelectSheet( sheetname ){
                },
            clickable: true
          }));
-
+*/
 
 
             if ( default_d){
@@ -169,7 +169,7 @@ function SelectSheet( sheetname ){
 
 
 
-function CreatePointCluster( data, PointClusterd)
+function CreatePointCluster( data, PointClusterd){
    //マーカークラスター設定
  PointClusterd = L.markerClusterGroup({
    showCoverageOnHover: false,
