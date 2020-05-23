@@ -24,22 +24,25 @@ header("Content-Type: application/json; charset=UTF-8"); //ヘッダー情報の
 $envname  = getenv('SHEET_NAME');
 $envid= getenv('SPREADSHEET_ID');
  //$sheetname = 'シート1';
+ $spreadsheetId = getenv('SPREADSHEET_ID');
 
+ if ( $sheetid ){
+     $spreadsheetId = $sheetid;
+ }
+
+$client = getGoogleSheetClient();
  if( !$sheetname ) {
      $sheetname  = getenv('SHEET_NAME');
      if( !$sheetname ) {
           $sheetname = 'シート1';
+          $sheetname = GetFirstSheetName( $spreadsheetID, $client );
      }
  }
 
 
-$spreadsheetId = getenv('SPREADSHEET_ID');
 
-if ( $sheetid ){
-    $spreadsheetId = $sheetid;
-}
 
-$sheetd = GetSheet( $spreadsheetId, $sheetname );
+$sheetd = GetSheet( $spreadsheetId, $sheetname, $client );
 
 
 

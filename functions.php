@@ -26,8 +26,8 @@ function getGoogleSheetClient() {
 
 }
 
-function GetSheet( $sheetid, $sheetname ) {
-  $client = getGoogleSheetClient();
+function GetSheet( $sheetid, $sheetname, $client ) {
+//  $client = getGoogleSheetClient();
 
 
     $client->addScope(Google_Service_Sheets::SPREADSHEETS);
@@ -44,11 +44,21 @@ function GetSheet( $sheetid, $sheetname ) {
 
 }
 
+function GetFirstSheetName( $spreadsheetID, $client ){
 
+  $service = new Google_Service_Sheets($client);
+
+  $response = $service->spreadsheets->get($spreadsheetId);
+  foreach($response->getSheets() as $s) {
+       $sheets[] = $s['properties']['title'];
+   }
+
+   $ret = $sheets[0];
+   return $ret ;
+
+}
 function Getsheets($spreadsheetID, $client) {
     $sheets = array();
-    // Load Google API library and set up client
-    // You need to know $spreadsheetID (can be seen in the URL)
 
 
     $sheetService = new Google_Service_Sheets($client);
