@@ -21,14 +21,14 @@ date_default_timezone_set('Asia/Tokyo');
 if (isset($_GET['sheetid'])) {
 $spreadsheetId = $_GET['sheetid'];
   }
-$arg_str = "?SEETID=$spreadsheetId"
+$arg_str = "?SEETID=$spreadsheetId";
 
 
 
 if (isset($_GET['sheetname'])) {
   $sheetname = $_GET['sheetname'];
 
-  $arg_str = $arg_str + "&SHEETNAME=$sheetname"
+  $arg_str = $arg_str + "&SHEETNAME=$sheetname";
 }
 
 
