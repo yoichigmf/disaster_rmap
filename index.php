@@ -34,7 +34,7 @@ if (isset($_GET['sheetname'])) {
 
 $tgurl = "webpg.html" + $arg_str;
 
-include ($tgurl);
+include ("webpg.html");
 
 
 
