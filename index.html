@@ -110,6 +110,9 @@ function GetURLParameta(){
          var kv = pair[i].split('=');
            urlParameta[kv[0]]=kv[1];
        }
+
+       mapSheetId = urlParameta["sheetid"];
+       mapSheetName = urlParameta["sheetname"];
   }
 
         $(document).on("mobileinit", function () {
@@ -126,8 +129,7 @@ function GetURLParameta(){
   $(document).bind('pageinit', function(e, data) {
         // initialize page
        //alert('page init');
-       mapSheetId = urlParameta["sheetid"];
-       mapSheetName = urlParameta["sheetname"];
+
 
        console.log( mapSheetId );
        console.log( mapSheetName);
@@ -145,27 +147,8 @@ function GetURLParameta(){
 
 
  $(document).bind('pagebeforeshow', function(e, data) {
-        // before show page
-  /*      var $container = $('#baselayers').find('.ui-controlgroup-controls');
 
-
-        // build radio button list
-        for (var i = 0; i < 3; i++) {
-            var id = 'option_' + i,
-                label = 'Option ' + i;
-
-            $('<input />', {
-                'id': id,
-                'type': 'radio',
-                'name': 'options',
-                'value': i
-            }).append('<label for="' + id + '">' + label + '</label>').appendTo($container);
-        }
-        // refresh control group
-        $container.find('input[type=radio]').checkboxradio();
-*/
-//         Google Sheet のリストをボタンをパネルにセットアップする
-        SheetListSetup();
+        SheetListSetup(mapSheetId);
 
 
   });

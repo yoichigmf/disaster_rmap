@@ -19,6 +19,8 @@ header("Content-Type: application/json; charset=UTF-8"); //ヘッダー情報の
 
  $sheetname = filter_input(INPUT_POST,"sheetname"); //変数の出力。jQueryで指定したキー値optを用いる
 
+ $sheetid= filter_input(INPUT_POST,"sheetid"); //変数の出力。jQueryで指定したキー値optを用いる
+
 $envname  = getenv('SHEET_NAME');
 $envid= getenv('SPREADSHEET_ID');
  //$sheetname = 'シート1';
@@ -33,7 +35,9 @@ $envid= getenv('SPREADSHEET_ID');
 
 $spreadsheetId = getenv('SPREADSHEET_ID');
 
-
+if ( $sheetid ){
+    $spreadsheetId = $sheetid;
+}
 
 $sheetd = GetSheet( $spreadsheetId, $sheetname );
 

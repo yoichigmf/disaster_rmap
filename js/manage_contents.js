@@ -1,12 +1,13 @@
 
 //   シート選択ボタンのセットアップ
-   function  SheetListSetup(){
+   function  SheetListSetup(sheetid){
 
      //  set sheet name list
        url = 'getsheetList.php'
        $.ajax({
          url: url,
          type: "POST",
+        data:{sheetid: sheetid},
          dataType: "json",
          success: function (data, status, xhr) {
 
@@ -40,7 +41,7 @@
       tgSheetname = sheetname;
     }
 
-    
+
     SelectSheet(tgSheetname);
    }
 
@@ -50,7 +51,7 @@ function SelectSheet( sheetname ){
        $.ajax({
          url: url,
          type: "POST",
-         data:{sheetname: sheetname},
+         data:{sheetname: sheetname, sheetid:mapSheetId},
          dataType: "json",
          success: function (data, status, xhr) {
             //  console.log( data.length)
