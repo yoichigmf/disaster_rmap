@@ -76,7 +76,7 @@
 
                default_d = PointACluster;
                featureG = L.featureGroup([ default_d ]);
-
+               overlays["default_d"]=default_d;
 
                    FitBound();
 
@@ -115,7 +115,7 @@ function SelectSheet( sheetname ){
 
             default_d = PointACluster;
             featureG = L.featureGroup([ default_d ]);
-
+            overlays["default_d"]=default_d;
 
 
 
