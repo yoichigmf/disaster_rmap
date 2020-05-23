@@ -35,7 +35,13 @@
 //   シートデータ設定　最初の場合
   function SelectSheetInit(sheetid, sheetname){
 
-    SelectSheet("シート1");
+    tgSheetname ="シート1"
+    if (sheetname){
+      tgSheetname = sheetname;
+    }
+
+    
+    SelectSheet(tgSheetname);
    }
 
 function SelectSheet( sheetname ){

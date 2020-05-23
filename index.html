@@ -127,9 +127,12 @@ function GetURLParameta(){
         // initialize page
        //alert('page init');
        mapSheetId = urlParameta["sheetid"];
-       mapSheetName = urlParameta["sheetname"]
-       alert( mapSheetId );
-       alert( mapSheetName );
+       mapSheetName = urlParameta["sheetname"];
+
+       console.log( mapSheetId );
+       console.log( mapSheetName);
+       //alert( mapSheetId );
+       //alert( mapSheetName );
        //SelectSheet( "シート1" );
             SelectSheetInit( mapSheetId, mapSheetName );   // 最初のシートデータ設定
     });
