@@ -21,22 +21,22 @@ date_default_timezone_set('Asia/Tokyo');
 if (isset($_GET['sheetid'])) {
 $spreadsheetId = $_GET['sheetid'];
   }
-$arg_str = "/webpg.html?SEETID=$spreadsheetId";
+$ag_str = "/webpg.html?SEETID=$spreadsheetId";
 
 
 
 if (isset($_GET['sheetname'])) {
   $sheetname = $_GET['sheetname'];
 
-  $arg_str = $arg_str . "&SHEETNAME=$sheetname";
+  $ag_str = $ag_str . "&SHEETNAME=$sheetname";
 }
 
 
 //$tgurl = "webpg.html" . $arg_str;
 
-$log->addWarning( $arg_str );
+$log->addWarning( $ag_str );
 
-include ($arg_str);
+include ($ag_str);
 
 
 
