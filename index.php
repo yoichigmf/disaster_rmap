@@ -34,9 +34,9 @@ if (isset($_GET['sheetname'])) {
 
 //$tgurl = "webpg.html" . $arg_str;
 
-$log->addWarning( $ag_str );
+$log->addWarning( $ag_str[0] );
 
-include ($ag_str);
+include ($ag_str[0]);
 
 
 
