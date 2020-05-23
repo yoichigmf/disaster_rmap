@@ -18,10 +18,8 @@ date_default_timezone_set('Asia/Tokyo');
  $spreadsheetId = getenv('SPREADSHEET_ID');
 
 
-  if(isset($_GET['sheetid'])) {
-  $spreadsheetId = $_GET['sheetid'];
-
-
+if(isset($_GET['sheetid'])) {
+$spreadsheetId = $_GET['sheetid'];
   }
 $arg_str = "?SEETID=$spreadsheetId"
 
