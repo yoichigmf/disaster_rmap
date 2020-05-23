@@ -98,7 +98,7 @@ table.fudeinfo tr th {
           $.mobile.hashListeningEnabled = false;
           $.mobile.pushStateEnabled = false;
           $.mobile.changePage.defaults.changeHash = false;
-          alert("mobile init");
+        //  alert("mobile init");
         });
 
 
@@ -108,7 +108,7 @@ table.fudeinfo tr th {
         // initialize page
        //alert('page init');
        //SelectSheet( "シート1" );
-            SelectSheet( "シート1", true );
+            SelectSheetInit();   // 最初のシートデータ設定
     });
 
     $(document).bind('pagecreate', function(e, data) {
