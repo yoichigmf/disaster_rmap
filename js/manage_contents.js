@@ -50,11 +50,11 @@ function SelectSheet( sheetname ){
             //  console.log( data.length)
               console.log( data );
 
-            var PointACluster;
-            PointACluster = CreatePointCluster( data  , PointACluster);
+            //var PointACluster;
+            //PointACluster = CreatePointCluster( data  , PointACluster);
               //マーカークラスター設定
 
-              /*
+
             var PointACluster = L.markerClusterGroup({
               showCoverageOnHover: false,
               spiderfyOnMaxZoom: true,
@@ -139,7 +139,7 @@ function SelectSheet( sheetname ){
            clickable: true
          }));
 
-           */
+
 
             if ( default_d){
                   map.removeLayer(default_d);
