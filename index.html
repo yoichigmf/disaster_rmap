@@ -93,6 +93,25 @@ table.fudeinfo tr th {
 
 
 <script>
+
+
+var  urlParameta = new Object;
+
+var mapSheetId;
+var mapSheetName;
+
+GetURLParameta();
+
+//    引数解析
+function GetURLParameta(){
+
+     var pair=location.search.substring(1).split('&');
+     for(var i=0;pair[i];i++) {
+         var kv = pair[i].split('=');
+           urlParameta[kv[0]]=kv[1];
+       }
+  }
+
         $(document).on("mobileinit", function () {
         //  alert('mobileinit');
           $.mobile.hashListeningEnabled = false;
@@ -107,8 +126,12 @@ table.fudeinfo tr th {
   $(document).bind('pageinit', function(e, data) {
         // initialize page
        //alert('page init');
+       mapSheetId = urlParameta["sheetid"];
+       mapSheetName = urlParameta["sheetname"]
+       alert( mapSheetId );
+       alert( mapSheetName );
        //SelectSheet( "シート1" );
-            SelectSheetInit();   // 最初のシートデータ設定
+            SelectSheetInit( mapSheetId, mapSheetName );   // 最初のシートデータ設定
     });
 
     $(document).bind('pagecreate', function(e, data) {

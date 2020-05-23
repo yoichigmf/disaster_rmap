@@ -33,7 +33,7 @@
    }
 
 //   シートデータ設定　最初の場合
-  function SelectSheetInit(){
+  function SelectSheetInit(sheetid, sheetname){
 
     SelectSheet("シート1");
    }
@@ -53,92 +53,6 @@ function SelectSheet( sheetname ){
             var PointACluster;
             PointACluster = CreatePointCluster( data  , PointACluster);
               //マーカークラスター設定
-/*
-
-            var PointACluster = L.markerClusterGroup({
-              showCoverageOnHover: false,
-              spiderfyOnMaxZoom: true,
-              removeOutsideVisibleBounds: true,
-              disableClusteringAtZoom: 18
-                  });
-
-                //  ポイント geojson 定義
-              var PointArray = {
-                "type": "FeatureCollection",
-                "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } }
-              };
-
-　　　　　　　　　　//  ポイント地物リスト
-              var Features = [];
-
-
-
-              for ( var item in data  ){
-                   pfeature = data[item];
-
-                   var dheader = pfeature["location"];
-                   var dprop   = pfeature["attribute"];
-
-                   xpp = dheader['x'];
-                   ypp = dheader['y'];
-
-
-
-                   var feature = {};
-
-                   var nproperties = {};
-                   var ngeometry = {};
-
-                        //  プロパティの配列化が必要
-                   nproperties["id"] = dheader["vkey"];
-                   nproperties["user"] = dheader["user"];
-                   nproperties["date"] = dheader["date"];
-
-                   var property_array = [];
-
-                   for ( var iprop in dprop){
-                       var  propd = {};
-                       console.log(dprop[iprop]);
-                       propd['日付'] = dprop[iprop]['日付'] ;
-                       propd['ユーザ'] = dprop[iprop]['ユーザ'] ;
-                       propd['種別'] = dprop[iprop]['種別'] ;
-                       propd['TEXT'] = dprop[iprop]['TEXT'];
-                       propd['url'] = dprop[iprop]['url'] ;
-
-                       property_array.push( propd );
-                   }
-
-                   nproperties["proplist"] = property_array ;
-
-                   ngeometry["type"] = "Point";
-                   ngeometry["coordinates"] = [];
-
-                   ngeometry["coordinates"].push(xpp);
-                   ngeometry["coordinates"].push(ypp);
-
-                   feature["type"] = "Feature";
-                   feature["properties"]= nproperties;
-                   feature["geometry"]= ngeometry;
-
-                   Features.push(feature);
-
-                  //  console.log(feature);
-              }
-
-              PointArray["features"]= Features;
-
-              //console.log(PointArray);
-              PointACluster.addLayer(L.geoJson(PointArray,{
-              onEachFeature:function (feature, layer) {
-                // 地物クリック時の関数記述　プロパティが配列化した場合
-                     PropContents2(feature,layer);
-                //var field = "id: " + feature.properties.id;
-                //  layer.bindPopup(field);
-
-               },
-           clickable: true
-         }));
-*/
 
 
             if ( default_d){
