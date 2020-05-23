@@ -18,18 +18,18 @@ date_default_timezone_set('Asia/Tokyo');
  $spreadsheetId = getenv('SPREADSHEET_ID');
 
 
-if(isset($_GET['sheetid'])) {
+if (isset($_GET['sheetid'])) {
 $spreadsheetId = $_GET['sheetid'];
   }
 $arg_str = "?SEETID=$spreadsheetId"
 
 
 
- if(isset($_GET['sheetname'])) {
- $sheetname = $_GET['sheetname'];
+if (isset($_GET['sheetname'])) {
+  $sheetname = $_GET['sheetname'];
 
-$arg_str = $arg_str + "&SHEETNAME=$sheetname"
- }
+  $arg_str = $arg_str + "&SHEETNAME=$sheetname"
+}
 
 
 $tgurl = "webpg.html" + $arg_str;
