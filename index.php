@@ -28,11 +28,11 @@ $arg_str = "?SEETID=$spreadsheetId";
 if (isset($_GET['sheetname'])) {
   $sheetname = $_GET['sheetname'];
 
-  $arg_str = $arg_str + "&SHEETNAME=$sheetname";
+  $arg_str = $arg_str . "&SHEETNAME=$sheetname";
 }
 
 
-$tgurl = "webpg.html" + $arg_str;
+$tgurl = "webpg.html" . $arg_str;
 
 $log->addWarning( $tgurl );
 
