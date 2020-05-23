@@ -169,7 +169,7 @@ function SelectSheet( sheetname ){
 
 
 
-function CreatePointCluster( data  , PointClusterd)
+function CreatePointCluster( data, PointClusterd)
    //マーカークラスター設定
  PointClusterd = L.markerClusterGroup({
    showCoverageOnHover: false,
