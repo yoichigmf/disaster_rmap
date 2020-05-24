@@ -12,6 +12,16 @@ var CbaseLayer;           // Current　Base Layer
 //   レイヤ情報の設定
 function SetLayerinfo(　mapsheetId) {
 
+
+    var $overlaylist = $('#overlaylist');
+
+
+    var $btn =  '<input id="ov1"  name="ov_layer1" type="checkbox" value="default_d" onChange=\'changechk( this )\'    checked /><label for="ov1">調査データ</label>'
+
+     console.log( $btn );
+    $( $btn ).appendTo($overlaylist );
+
+
   OSMLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                       attribution : '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors', minZoom: 3, maxZoom: 18, zIndex:5
                   });

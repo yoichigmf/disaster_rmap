@@ -296,7 +296,9 @@ function GetURLParameta(){
 
         <div id="overlay" class="ui-body ui-body-a">
         　  <div class="ui-field-contain">
-        　　　<fieldset data-role="controlgroup">
+        　　　<fieldset data-role="controlgroup"  id="overlaylist">
+
+          <!--
          <input id="ov1"
             name="ov_layer1" type="checkbox" value="default_d" onChange='changechk( this )'    checked />
           <label for="ov1">調査データ</label>
@@ -308,6 +310,7 @@ function GetURLParameta(){
         <input id="ov3"
             name="ov_layer3" type="checkbox" value="t15" onChange='changechk( this )'    />
           <label for="ov3">201909千葉県南部朝日航洋撮影</label>
+-->
 
 
         </fieldset>
@@ -381,10 +384,10 @@ function GetURLParameta(){
       <div data-role="controlgroup" data-type="horizontal" data-position="fixed" class="ui-grid-a">
 　
 
-	　　　	<a href="#nav_panel"  id="move_display" data-role="button" class="ui-btn ui-btn-inline ui-btn-icon-top ui-icon-navigation">表示位置指定</a></li>
+	　　　	<a href="#nav_panel"  id="move_display" data-role="button" class="ui-btn ui-btn-inline ui-btn-icon-top ui-icon-navigation">位置指定</a></li>
 	       <a href="#panel" id="CONTACTS" data-role="button" class="ui-btn ui-btn-inline ui-btn-icon-top  ui-icon-grid">シート選択</a></li>
 	       <a href="#panel_r" id="TRIPS" data-role="button" class="ui-btn ui-btn-inline ui-btn-icon-top  ui-icon-info">情報選択</a></li>
-         <a href="JavaScript:OpenLayerProp()" id="layer_property" data-role="button" class="ui-btn ui-btn-inline ui-btn-icon-top  ui-icon-location">表示地図指定</a></li>
+         <a href="JavaScript:OpenLayerProp()" id="layer_property" data-role="button" class="ui-btn ui-btn-inline ui-btn-icon-top  ui-icon-location">地図指定</a></li>
 
 <!--         <li><a href="JavaScript:OpenLayerProp()" id="layer_property" class="ui-btn ui-btn-inline ui-icon-location">表示地図指定</a></li>
 -->
