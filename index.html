@@ -93,6 +93,28 @@ table.fudeinfo tr th {
 
 
 <script>
+
+
+var  urlParameta = new Object;
+
+var mapSheetId;
+var mapSheetName;
+
+GetURLParameta();
+
+//    引数解析
+function GetURLParameta(){
+
+     var pair=location.search.substring(1).split('&');
+     for(var i=0;pair[i];i++) {
+         var kv = pair[i].split('=');
+           urlParameta[kv[0]]=kv[1];
+       }
+
+       mapSheetId = urlParameta["sheetid"];
+       mapSheetName = urlParameta["sheetname"];
+  }
+
         $(document).on("mobileinit", function () {
         //  alert('mobileinit');
           $.mobile.hashListeningEnabled = false;
@@ -107,39 +129,22 @@ table.fudeinfo tr th {
   $(document).bind('pageinit', function(e, data) {
         // initialize page
        //alert('page init');
+
+
+       console.log( mapSheetId );
+       console.log( mapSheetName);
+       //alert( mapSheetId );
+       //alert( mapSheetName );
        //SelectSheet( "シート1" );
-            SelectSheetInit();   // 最初のシートデータ設定
+            SelectSheetInit( mapSheetId, mapSheetName );   // 最初のシートデータ設定
     });
 
-    $(document).bind('pagecreate', function(e, data) {
-          // initialize page
-         //alert('page create');
 
-      });
 
 
  $(document).bind('pagebeforeshow', function(e, data) {
-        // before show page
-  /*      var $container = $('#baselayers').find('.ui-controlgroup-controls');
 
-
-        // build radio button list
-        for (var i = 0; i < 3; i++) {
-            var id = 'option_' + i,
-                label = 'Option ' + i;
-
-            $('<input />', {
-                'id': id,
-                'type': 'radio',
-                'name': 'options',
-                'value': i
-            }).append('<label for="' + id + '">' + label + '</label>').appendTo($container);
-        }
-        // refresh control group
-        $container.find('input[type=radio]').checkboxradio();
-*/
-//         Google Sheet のリストをボタンをパネルにセットアップする
-        SheetListSetup();
+        SheetListSetup(mapSheetId);
 
 
   });
@@ -207,24 +212,11 @@ table.fudeinfo tr th {
 
     <div data-role="controlgroup" id="sheetlist" data-type="vertical">
 
-<!--
-    	<a href="#" class="ui-btn">a要素ボタン</a>
-    	<button class="ui-btn">button要素ボタン</button>
-    	<input type="button" value="フォームボタン">
-    	<input type="submit" value="送信ボタン">
-    	<input type="reset" value="リセットボタン">
--->
 
     </div>
 
 </div>
 
-
-
-
-  <!--   <a href="JavaScript:PanMap()"  class="ui-btn ui-corner-all ui-icon-arrow-u ui-btn-icon-left">表示位置移動</a>
-
--->
   <script>
 
 
@@ -290,8 +282,7 @@ table.fudeinfo tr th {
       <!--ラジオボタンで単一選択ボタンを作成-->
       <div class="ui-field-contain">
 
-    <!-- <div data-role="fieldcontain"> -->
-       <!--   <fieldset id="baselayers" data-role="controlgroup"> -->
+
       <fieldset data-role="controlgroup">
 
           <input id="e2" name="base_layer" type="radio" value="オープンストリートマップ" checked />
@@ -325,7 +316,7 @@ table.fudeinfo tr th {
           <div class="ui-field-contain">
         <fieldset data-role="controlgroup">
          <input id="ov1"
-            name="ov_layer1" type="checkbox" value="nsearch" onChange='changechk( this )'    checked />
+            name="ov_layer1" type="checkbox" value="default_d" onChange='changechk( this )'    checked />
           <label for="ov1">調査データ</label>
 
         <input id="ov2"
@@ -385,12 +376,7 @@ table.fudeinfo tr th {
 
           <a href="JavaScript:PanCurrentLocation()" class="ui-btn">現在地</a>
         　<a href="JavaScript:FitBound()" class="ui-btn">登録情報全域</a>
-    <!--
-          <button class="ui-btn">button要素ボタン</button>
-          <input type="button" value="フォームボタン">
-          <input type="submit" value="送信ボタン">
-          <input type="reset" value="リセットボタン">
-    -->
+
 
         </div>
 
@@ -474,8 +460,6 @@ for(var i=0;pair[i];i++) {
     arg[kv[0]]=kv[1];  // kv[0]がkey,kv[1]がvalue
 
 }
-
-//alert( arg.ilayer );
 
 
 
@@ -592,14 +576,6 @@ function  PanCurrentLocation(){
 
    var map = L.map('map');
 
-//var control = L.control.layers(BaseMaps, overlays ).addTo(map);
-
-//var panelLayers = new L.Control.PanelLayers(BaseMaps,  overlays, {collapsed: true});
-
-//map.addControl(panelLayers);
-
-
-//map.addEventListener("click" ,onMapclick, true);
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
@@ -613,11 +589,6 @@ var popup = new L.Popup({maxwidth: 800});
 
  CbaseLayer = OSMLayer;
 
-//default_d.addTo(map);
-
- //var featureG = L.featureGroup([ default_d ]);
-
- //map.fitBounds(featureG.getBounds());
 var featureG;
 
 
