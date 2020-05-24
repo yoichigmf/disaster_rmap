@@ -4,6 +4,37 @@ var overlays = {};    // overlay layers
 
 var backGrounds = {};    // backGround layers list
 
+var CbaseLayer;           // Current　Base Layer
+
+
+//var dSearch;
+
+//   レイヤ情報の設定
+function SetLayerinfo(　mapsheetId) {
+
+  OSMLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                      attribution : '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors', minZoom: 3, maxZoom: 18, zIndex:5
+                  });
+
+   backGrounds["オープンストリートマップ"]= OSMLayer;
+
+   CbaseLayer = OSMLayer;
+
+    //overlays[nsearch]=dSearch;
+    SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png',
+    {    attribution : 'Dronebird', minZoom: 13, maxZoom: 20, zIndex:3 });
+
+    overlays["20190904oomati"]=SagaOOmati ;
+
+
+    t15  = L.tileLayer('https://tile.geospatial.jp/aeroasahi/t15chiba/{z}/{x}/{y}.png',
+    {    attribution : 'Aeroasahi Corporation', minZoom: 5, maxZoom: 18, zIndex:3 });
+
+
+    overlays["t15"]=t15 ;
+
+
+}
    function  SheetListSetup(sheetid){
 
      //  set sheet name list
