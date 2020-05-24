@@ -1,0 +1,9 @@
+[
+{ "name":"オープンストリートマップ",  "protocol":"xyz", "url":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", 
+"attribute":'&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+"minZoom":3 , "maxZoom":18, "zIndex":5 },
+{ "name":"オープンストリートマップ",  "protocol":"xyz", "url":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", 
+"attribute":'&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+"minZoom":3 , "maxZoom":18, "zIndex":5 },
+{ "name":"オープンストリートマップ",  "protocol":"xyz", "url":"", "attribute":"" },
+]

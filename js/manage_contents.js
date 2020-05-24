@@ -2,7 +2,7 @@ var default_d;     //default display layer
 
 var overlays = {};    // overlay layers
 
-var backGrounds{};    // backGround layers list
+var backGrounds = {};    // backGround layers list
 
    function  SheetListSetup(sheetid){
 
