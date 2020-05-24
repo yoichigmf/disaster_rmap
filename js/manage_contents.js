@@ -20,6 +20,10 @@ function SetLayerinfo(　mapsheetId) {
 
    CbaseLayer = OSMLayer;
 
+   CbaseLayer.setZIndex(0);
+
+    CbaseLayer.addTo(map);
+
     //overlays[nsearch]=dSearch;
     SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png',
     {    attribution : 'Dronebird', minZoom: 13, maxZoom: 20, zIndex:3 });
