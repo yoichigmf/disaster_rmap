@@ -46,47 +46,9 @@
     }
 
 
-    SelectSheetWithZoom(tgSheetname);
+    SelectSheet  (tgSheetname);
    }
 
-
-   function SelectSheetWithZoom( sheetname ){
-        //  set sheet name list
-          url = 'getfeatures.php'
-          $.ajax({
-            url: url,
-            type: "POST",
-            data:{sheetname: sheetname, sheetid:mapSheetId},
-            dataType: "json",
-            success: function (data, status, xhr) {
-               //  console.log( data.length)
-                 console.log( data );
-
-               var PointACluster;
-               PointACluster = CreatePointCluster( data  , PointACluster);
-                 //マーカークラスター設定
-
-
-               if ( default_d){
-                     map.removeLayer(default_d);
-                 }
-
-               PointACluster.setZIndex(250);
-               PointACluster.addTo(map);
-
-               default_d = PointACluster;
-               featureG = L.featureGroup([ default_d ]);
-               overlays["default_d"]=default_d;
-
-                   FitBound();
-
-                   },
-            error: function (xhr, status, error) {
-                  alert(error);
-
-                }
-              });
-      }
 
 
 function SelectSheet( sheetname ){
@@ -115,9 +77,9 @@ function SelectSheet( sheetname ){
 
             default_d = PointACluster;
             featureG = L.featureGroup([ default_d ]);
-            overlays["default_d"]=default_d;
 
 
+                FitBound();
 
 
           //  map.addLayer(PointACluster);
@@ -160,48 +122,50 @@ function CreatePointCluster( data, PointClusterd){
         var dheader = pfeature["location"];
         var dprop   = pfeature["attribute"];
 
-        xpp = dheader['x'];
-        ypp = dheader['y'];
+        if ( dheader ){
+          xpp = dheader['x'];
+          ypp = dheader['y'];
 
 
 
-        var feature = {};
+          var feature = {};
 
-        var nproperties = {};
-        var ngeometry = {};
+          var nproperties = {};
+          var ngeometry = {};
 
              //  プロパティの配列化が必要
-        nproperties["id"] = dheader["vkey"];
-        nproperties["user"] = dheader["user"];
-        nproperties["date"] = dheader["date"];
+             nproperties["id"] = dheader["vkey"];
+             nproperties["user"] = dheader["user"];
+             nproperties["date"] = dheader["date"];
 
-        var property_array = [];
+             var property_array = [];
 
-        for ( var iprop in dprop){
-            var  propd = {};
-            console.log(dprop[iprop]);
-            propd['日付'] = dprop[iprop]['日付'] ;
-            propd['ユーザ'] = dprop[iprop]['ユーザ'] ;
-            propd['種別'] = dprop[iprop]['種別'] ;
-            propd['TEXT'] = dprop[iprop]['TEXT'];
-            propd['url'] = dprop[iprop]['url'] ;
+             for ( var iprop in dprop){
+               var  propd = {};
+              // console.log(dprop[iprop]);
+               propd['日付'] = dprop[iprop]['日付'] ;
+               propd['ユーザ'] = dprop[iprop]['ユーザ'] ;
+               propd['種別'] = dprop[iprop]['種別'] ;
+               propd['TEXT'] = dprop[iprop]['TEXT'];
+               propd['url'] = dprop[iprop]['url'] ;
 
-            property_array.push( propd );
-        }
+               property_array.push( propd );
+             }
 
-        nproperties["proplist"] = property_array ;
+             nproperties["proplist"] = property_array ;
 
-        ngeometry["type"] = "Point";
-        ngeometry["coordinates"] = [];
+             ngeometry["type"] = "Point";
+             ngeometry["coordinates"] = [];
 
-        ngeometry["coordinates"].push(xpp);
-        ngeometry["coordinates"].push(ypp);
+             ngeometry["coordinates"].push(xpp);
+             ngeometry["coordinates"].push(ypp);
 
-        feature["type"] = "Feature";
-        feature["properties"]= nproperties;
-        feature["geometry"]= ngeometry;
+             feature["type"] = "Feature";
+             feature["properties"]= nproperties;
+             feature["geometry"]= ngeometry;
 
-        Features.push(feature);
+             Features.push(feature);
+           }
 
        //  console.log(feature);
    }
