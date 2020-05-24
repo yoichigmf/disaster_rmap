@@ -552,9 +552,9 @@ function  PanCurrentLocation(){
 		}
 
 
-   var map = L.map('map');
+   var map = L.map('map',{maxZoom:18});
 
-map.maxZoom(18);
+
 
 
 map.on('locationfound', onLocationFound);
