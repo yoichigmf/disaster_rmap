@@ -16,7 +16,7 @@ function SetLayerinfo(　mapsheetId) {
     var $overlaylist = $('#overlaylist');
 
 
-    var $btn =  '<input id="ov1"  name="ov_layer1" type="checkbox" value="default_d" onChange=\'changechk( this )\'    checked /><label for="ov1">調査データ</label>'
+    var $btn =  '<label for="ov1">調査データ</label><input id="ov1"  name="ov_layer1" type="checkbox" value="default_d" onChange=\'changechk( this )\'    checked />'
 
      console.log( $btn );
     $( $btn ).appendTo($overlaylist );
@@ -127,7 +127,7 @@ function SelectSheet( sheetname ){
             default_d = PointACluster;
             featureG = L.featureGroup([ default_d ]);
 
-
+            overlays["default_d"] = default_d;
                 FitBound();
 
 
