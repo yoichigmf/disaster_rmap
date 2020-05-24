@@ -160,7 +160,6 @@ function CreatePointCluster( data, PointClusterd){
         var dheader = pfeature["location"];
         var dprop   = pfeature["attribute"];
 
-       if ( dheader ){
         xpp = dheader['x'];
         ypp = dheader['y'];
 
@@ -204,7 +203,6 @@ function CreatePointCluster( data, PointClusterd){
 
         Features.push(feature);
 
-      }
        //  console.log(feature);
    }
 
