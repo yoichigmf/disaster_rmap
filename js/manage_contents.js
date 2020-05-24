@@ -1,5 +1,9 @@
+var default_d;     //default display layer
 
-//   シート選択ボタンのセットアップ
+var overlays = {};    // overlay layers
+
+var backGrounds{};    // backGround layers list
+
    function  SheetListSetup(sheetid){
 
      //  set sheet name list
