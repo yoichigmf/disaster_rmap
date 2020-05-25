@@ -72,6 +72,7 @@
 }
 	</style>
 
+<!--
 	<style>
 	table.fudeinfo {
     width: 100%;
@@ -90,7 +91,7 @@ table.fudeinfo tr th {
     background: #E6EAFF;
 }
 </style>
-
+-->
 
 <script>
 
@@ -167,6 +168,7 @@ function GetURLParameta(){
   <div data-role="page" data-title="display map using google sheets">
 -->
  <!--1ダイアログ風のポップアップを準備  tyuu-->
+<!--
   <div id="popup" data-role="popup" data-overlay-theme="b"
     data-dismissible="false" style="max-width:500px;">
     <div data-role="header" data-theme="b">
@@ -175,14 +177,14 @@ function GetURLParameta(){
     <div role="main" class="ui-content">
       <p>ログアウトしますか？</p>
 
-      <!--2ダイアログを閉じるためのボタン -->
+
       <a href="JavaScript:midori_logout()"
         class="ui-btn ui-btn-inline ui-corner-all ui-btn-b">ログアウト</a>
       <a href="#" data-rel="back"
         class="ui-btn ui-btn-inline ui-corner-all">閉じる</a>
     </div>
   </div>
-
+-->
 
 <!--   Sheet name selection panel -->
 <div id="panel" data-role="panel" data-display="overlay" data-position="left">
@@ -256,14 +258,14 @@ function GetURLParameta(){
       </div>
 
 
-      <form method="POST" action="">
+
       <!--1パネル（コンテンツ領域）を準備-->
       <div id="backgr" class="ui-body ui-body-a">
 
 
       <!--ラジオボタンで単一選択ボタンを作成-->
       <div class="ui-field-contain">
-
+      <form method="POST" action="">
 
       <fieldset data-role="controlgroup" id="baselayers">
 
@@ -290,6 +292,7 @@ function GetURLParameta(){
      -->
 
           </fieldset>      <!--  </fieldset> -->
+             </form>
         </div>  <!--  fieldcontain -->
         </div>  <!-- ui-field-contain  -->
       </div>   <!--  backgr  -->
@@ -320,7 +323,7 @@ function GetURLParameta(){
 
         </fieldset>
       <!--</div> -->
-       </form>
+
 
 
       </div>   <!--  overlay  -->

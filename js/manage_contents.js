@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+
 
 var default_d;     //default display layer
 
