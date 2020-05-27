@@ -105,7 +105,7 @@ $kind = $cols[0];
      }  //  foreach
 
      $output_ar["baselayers"]= $baselayer_ar;
-
+     $output_ar["overlaylayers"]= $overlay_ar;
 
      $retjson = json_encode( $output_ar );      // make json
      echo $retjson;
