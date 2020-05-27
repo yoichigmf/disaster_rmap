@@ -78,10 +78,11 @@ $kind = $cols[0];
 
 
        }
-     elsif ( strcmp( $kind ,'#overlay' ) == 0 ){
+     elseif ( strcmp( $kind ,'#overlay' ) == 0 ){
 
        $ovly_layer = array();
-       $name =$cols[1];    //
+
+       $name =$cols[1];
        $kind = $cols[2];
        $url  = $cols[3];
        $attribute = $cols[4];
