@@ -9,12 +9,48 @@ var backGrounds = {};    // backGround layers list
 var CbaseLayer;           // Current　Base Layer
 
 
+
+var  urlParameta = new Object;
+
+var mapSheetId;
+var mapSheetName;
+
+
+//    引数解析
+function GetURLParameta(){
+
+     var pair=location.search.substring(1).split('&');
+     for(var i=0;pair[i];i++) {
+         var kv = pair[i].split('=');
+           urlParameta[kv[0]]=kv[1];
+       }
+
+       mapSheetId = urlParameta["sheetid"];
+       mapSheetName = urlParameta["sheetname"];
+  }
+
+
+
+
 //var dSearch;
 function SetBaseLayers( data ){
+  var baselays = data["baselayers"];
+
+  for ( let vf of baselays ) {
+       console.log( vf);
+  }
+
 
 }
 
 function SetOverlayLsyers( data ){
+
+    var overlays = data["overlaylayers"];
+
+    for ( let vf of overlays ) {
+         console.log( vf);
+    }
+
 
 }
 

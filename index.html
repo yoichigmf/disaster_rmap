@@ -95,26 +95,7 @@ table.fudeinfo tr th {
 
 <script>
 
-
-var  urlParameta = new Object;
-
-var mapSheetId;
-var mapSheetName;
-
 GetURLParameta();
-
-//    引数解析
-function GetURLParameta(){
-
-     var pair=location.search.substring(1).split('&');
-     for(var i=0;pair[i];i++) {
-         var kv = pair[i].split('=');
-           urlParameta[kv[0]]=kv[1];
-       }
-
-       mapSheetId = urlParameta["sheetid"];
-       mapSheetName = urlParameta["sheetname"];
-  }
 
         $(document).on("mobileinit", function () {
         //  alert('mobileinit');
@@ -151,11 +132,7 @@ function GetURLParameta(){
 
   });
 
-
-
-
-
-     </script>
+</script>
 
 
 </head>
@@ -303,10 +280,11 @@ function GetURLParameta(){
 
         　　　<fieldset data-role="controlgroup"  id="overlaylist">
               <legend><h3>描画地図指定</h3></legend>
+          <!--
               <input id="ov2"
                   name="ov_layer2" type="checkbox" value="20190904oomati" onChange='changechk( this )'    />
                 <label for="ov2">20190904大町地区ドローン撮影</label>
-          <!--
+
          <input id="ov1"
             name="ov_layer1" type="checkbox" value="default_d" onChange='changechk( this )'    checked />
           <label for="ov1">調査データ</label>
