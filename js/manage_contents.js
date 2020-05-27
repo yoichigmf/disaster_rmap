@@ -10,6 +10,13 @@ var CbaseLayer;           // Current　Base Layer
 
 
 //var dSearch;
+function SetBaseLayers( data ){
+
+}
+
+function SetOverlayLsyers( data ){
+
+}
 
 //   レイヤ情報の設定
 function SetLayerinfo(　mapsheetId) {
@@ -22,6 +29,33 @@ function SetLayerinfo(　mapsheetId) {
 
      console.log( $btn );
     $( $btn ).appendTo($overlaylist );
+
+
+    //  get layer information from config sheet
+     url = 'getLayerSetting.php'
+    $.ajax({
+             url: url,
+             type: "POST",
+            data:{sheetid: mapsheetId},
+             dataType: "json",
+             success: function (data, status, xhr) {
+
+
+               console.log( data );
+                setBaselayers( data );
+                setOverlayLayers( data );
+
+
+
+                    },
+             error: function (xhr, status, error) {
+                   alert(error);
+
+                 }
+               });
+
+
+
 
 
   OSMLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
