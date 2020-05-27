@@ -56,7 +56,7 @@ $kind = $cols[0];
 
    //  echo "\nkind ${kind}  ";  sample
 
-        var $base_layer = array();
+        $base_layer = array();
 
         $name =$cols[1];    //
         $kind = $cols[2];
@@ -80,7 +80,7 @@ $kind = $cols[0];
        }
      elsif ( strcmp( $kind ,'#overlay' ) == 0 ){
 
-      var $ovly_layer = array();
+       $ovly_layer = array();
        $name =$cols[1];    //
        $kind = $cols[2];
        $url  = $cols[3];
