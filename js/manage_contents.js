@@ -45,7 +45,7 @@ function SetBaseLayers( data ){
          $checkstr = 'checked';
        }
 
-       var $btn =  '<input id="' +  String($dcount) + '" name="base_layer" type="radio" value="オープンストリートマップ"' + $checkstr +  '/>' +  '<label for="' +  String($dcount) +'">' + vf["name"] + '</label>';
+       var $btn =  '<input id="' +  String($dcount) + '" name="base_layer" type="radio" value="' + String($dcount)  + '" ' + $checkstr +  '/>' +  '<label for="' +  String($dcount) +'">' + vf["name"] + '</label>';
 
       //  '<label for="' +  String($dcount) +'">' + vf["name"] + '</label>';
 
