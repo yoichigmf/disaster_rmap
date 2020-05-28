@@ -58,7 +58,7 @@ function SetBaseLayers( data ){
                            attribution : vf["attribute"], minZoom: vf["minzoom"], maxZoom: vf["maxzoom"], zIndex:0
                        });
          if ( vf["opacity"]){
-                    $bslayer.setOpacity( parseFloat(vf["opacity"]);
+                    $bslayer.setOpacity( parseFloat(vf["opacity"]));
                  }
 
        backGrounds[$dcount]= $bslayer;
@@ -114,7 +114,7 @@ function SetOverlayLayers( data ){
         {    attribution : vf["attribute"], minZoom: vf["minzoom"], maxZoom: vf["maxzoom"], zIndex:$zi });
 
         if ( vf["opacity"]){
-          $ov1.setOpacity( parseFloat(vf["opacity"]);
+          $ov1.setOpacity( parseFloat(vf["opacity"]));
         }
         overlays[$dcount] = $ovl;
 
