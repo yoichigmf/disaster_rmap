@@ -35,9 +35,25 @@ function GetURLParameta(){
 //var dSearch;
 function SetBaseLayers( data ){
   var baselays = data["baselayers"];
+  var $baselist = $('#baselayers');
 
+ var $dcount = 1;
   for ( let vf of baselays ) {
        console.log( vf);
+       var $checkstr = ' ';
+       if ( $dcount == 1) {
+         $checkstr = 'checked';
+       }
+
+       var $btn =  '<input id="' +  String($dcount) + '" name="base_layer" type="radio" value="オープンストリートマップ"' + $checkstr +  '/>' +  '<label for="' +  String($dcount) +'">' + vf["name"] + '</label>';
+
+      //  '<label for="' +  String($dcount) +'">' + vf["name"] + '</label>';
+
+       // <input id="ov1"  name="ov_layer1" type="checkbox" value="default_d" onChange=\'changechk( this )\'    checked /><label for="ov1">調査データ</label>'
+
+       $( $btn ).appendTo( $baselist );
+
+       $dcount++;
   }
 
 
@@ -49,6 +65,7 @@ function SetOverlayLsyers( data ){
 
     for ( let vf of overlays ) {
          console.log( vf);
+
     }
 
 
