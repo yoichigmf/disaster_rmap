@@ -63,7 +63,29 @@ function SetBaseLayers( data ){
   }
 
 
+  //     base layer radio button handler
+  $( 'input[name="base_layer"]:radio' ).change( function() {
+
+
+       map.removeLayer( CbaseLayer );
+
+       // BaseMaps[$( this ).val()].addTo( map );
+       CbaseLayer = backGrounds[$( this ).val()];
+
+      CbaseLayer.setZIndex(0);
+      CbaseLayer.addTo( map );
+      // map.addLayer( CBaseLayer, true );
+
+      // CBaseLayer.setZIndex(0);
+
+        //map.addLayer( BaseMaps[$( this ).val()], true );
+      //alert( $( this ).val()); // valueを表示
+      });
+
 }
+
+
+
 
 function SetOverlayLsyers( data ){
 
