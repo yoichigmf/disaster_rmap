@@ -93,13 +93,13 @@ function SetBaseLayers( data ){
 
 function SetOverlayLayers( data ){
 
-    var overlays = data["overlaylayers"];
+    var overlaydata = data["overlaylayers"];
 
     var $overlaylist = $('#overlaylist');
 
      var $dcount = 1;
 
-    for ( let vf of overlays ) {
+    for ( let vf of overlaydata) {
         // console.log( vf);
 
         var $btn =  '<input id="ov'+ String($dcount)+ '"  name="ov_layer1" type="checkbox" value="' + String($dcount)+ '" onChange=\'changechk( this )\'   /><label for="ov'+ String($dcount)+'">' + vf["name"] +'</label>'
