@@ -57,6 +57,10 @@ function SetBaseLayers( data ){
        var $bslayer = L.tileLayer(vf["url"], {
                            attribution : vf["attribute"], minZoom: vf["minzoom"], maxZoom: vf["maxzoom"], zIndex:0
                        });
+         if ( vf["opacity"]){
+                    $bslayer.setOpacity( parseFloat(vf["opacity"]);
+                 }
+
        backGrounds[$dcount]= $bslayer;
 
        if ( $dcount == 1) {
@@ -109,6 +113,9 @@ function SetOverlayLayers( data ){
         var $ovl  = L.tileLayer(vf["url"],
         {    attribution : vf["attribute"], minZoom: vf["minzoom"], maxZoom: vf["maxzoom"], zIndex:$zi });
 
+        if ( vf["opacity"]){
+          $ov1.setOpacity( parseFloat(vf["opacity"]);
+        }
         overlays[$dcount] = $ovl;
 
        $dcount++;

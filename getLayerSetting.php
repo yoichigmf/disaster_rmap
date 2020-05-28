@@ -65,6 +65,7 @@ $kind = $cols[0];
         $maxzoom = $cols[5];
         $minzoom = $cols[6];
         $legend  = $cols[7];
+        $opacity = $cols[8];
 
         $base_layer["name"]=$name;
         $base_layer["kind"]= $kind;
@@ -73,6 +74,8 @@ $kind = $cols[0];
         $base_layer["maxzoom"] = $maxzoom;
         $base_layer["minzoom"] = $minzoom;
         $base_layer["legend"] = $legend;
+
+        $base_layer["opacity"] = $opacity;
 
         $baselayer_ar[] = $base_layer;
 
@@ -89,6 +92,7 @@ $kind = $cols[0];
        $maxzoom = $cols[5];
        $minzoom = $cols[6];
        $legend  = $cols[7];
+       $opacity = $cols[8];
 
        $ovly_layer["name"]=$name;
        $ovly_layer["kind"]= $kind;
@@ -97,7 +101,8 @@ $kind = $cols[0];
        $ovly_layer["maxzoom"] = $maxzoom;
        $ovly_layer["minzoom"] = $minzoom;
        $ovly_layer["legend"] = $legend;
-
+       $ovly_layer["opacity"] = $opacity;
+       
        $overlay_ar[] = $ovly_layer;
 
       }
