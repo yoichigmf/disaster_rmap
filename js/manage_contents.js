@@ -114,7 +114,7 @@ function SetOverlayLayers( data ){
         {    attribution : vf["attribute"], minZoom: vf["minzoom"], maxZoom: vf["maxzoom"], zIndex:$zi });
 
         if ( vf["opacity"]){
-          $ov1.setOpacity( parseFloat(vf["opacity"]));
+          $ovl.setOpacity( parseFloat(vf["opacity"]));
         }
         overlays[$dcount] = $ovl;
 
