@@ -91,7 +91,7 @@ function SetBaseLayers( data ){
 
 
 
-function SetOverlayLsyers( data ){
+function SetOverlayLayers( data ){
 
     var overlays = data["overlaylayers"];
 
@@ -142,7 +142,7 @@ function SetLayerinfo(　mapsheetId) {
 
                console.log( data );
                 SetBaseLayers( data );
-                SetOverlayLsyers( data );
+                SetOverlayLayers( data );
 
 
 
