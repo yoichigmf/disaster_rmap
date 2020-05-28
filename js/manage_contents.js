@@ -142,7 +142,7 @@ function SetLayerinfo(　mapsheetId) {
 
                console.log( data );
                 SetBaseLayers( data );
-              //  SetOverlayLayers( data );
+               SetOverlayLayers( data );
 
 
 
