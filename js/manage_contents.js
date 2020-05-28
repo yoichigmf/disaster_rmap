@@ -53,6 +53,12 @@ function SetBaseLayers( data ){
 
        $( $btn ).appendTo( $baselist );
 
+
+       var $bslayer = L.tileLayer(vf["url"], {
+                           attribution : vf["attribute"], minZoom: vf["minzoom"], maxZoom: vf["maxzoom"], zIndex:5
+                       });
+       backGrounds[$dcount]= $bslayer;
+
        $dcount++;
   }
 
