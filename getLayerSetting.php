@@ -102,7 +102,7 @@ $kind = $cols[0];
        $ovly_layer["minzoom"] = $minzoom;
        $ovly_layer["legend"] = $legend;
        $ovly_layer["opacity"] = $opacity;
-       
+
        $overlay_ar[] = $ovly_layer;
 
       }
