@@ -55,9 +55,18 @@ function SetBaseLayers( data ){
 
 
        var $bslayer = L.tileLayer(vf["url"], {
-                           attribution : vf["attribute"], minZoom: vf["minzoom"], maxZoom: vf["maxzoom"], zIndex:5
+                           attribution : vf["attribute"], minZoom: vf["minzoom"], maxZoom: vf["maxzoom"], zIndex:0
                        });
        backGrounds[$dcount]= $bslayer;
+
+       if ( $dcount == 1) {
+          CbaseLayer = $bslayer;
+
+          CbaseLayer.setZIndex(0);
+
+          CbaseLayer.addTo(map);
+       }
+
 
        $dcount++;
   }
@@ -137,7 +146,7 @@ function SetLayerinfo(　mapsheetId) {
 
 
 
-
+/*
 
   OSMLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                       attribution : '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors', minZoom: 3, maxZoom: 18, zIndex:5
@@ -150,6 +159,7 @@ function SetLayerinfo(　mapsheetId) {
    CbaseLayer.setZIndex(0);
 
     CbaseLayer.addTo(map);
+*/
 
     //overlays[nsearch]=dSearch;
     SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png',
