@@ -83,12 +83,7 @@ function SetBaseLayers( data ){
 
       CbaseLayer.setZIndex(0);
       CbaseLayer.addTo( map );
-      // map.addLayer( CBaseLayer, true );
 
-      // CBaseLayer.setZIndex(0);
-
-        //map.addLayer( BaseMaps[$( this ).val()], true );
-      //alert( $( this ).val()); // valueを表示
       });
 
 }
@@ -100,9 +95,23 @@ function SetOverlayLsyers( data ){
 
     var overlays = data["overlaylayers"];
 
-    for ( let vf of overlays ) {
-         console.log( vf);
+    var $overlaylist = $('#overlaylist');
 
+     var $dcount = 1;
+
+    for ( let vf of overlays ) {
+        // console.log( vf);
+
+        var $btn =  '<input id="ov'+ String($dcount)+ '"  name="ov_layer1" type="checkbox" value="' + String($dcount)+ '" onChange=\'changechk( this )\'   /><label for="ov'+ String($dcount)+'">' + vf["name"] +'</label>'
+        $( $btn ).appendTo($overlaylist );
+
+        var $zi = 255 - $dcount;
+        var $ovl  = L.tileLayer(vf["url"],
+        {    attribution : vf["attribute"], minZoom: vf["minzoom"], maxZoom: vf["maxzoom"], zIndex:$zi });
+
+        overlays[$dcount] = $ovl;
+
+       $dcount++;
     }
 
 
@@ -117,7 +126,7 @@ function SetLayerinfo(　mapsheetId) {
 
     var $btn =  '<input id="ov1"  name="ov_layer1" type="checkbox" value="default_d" onChange=\'changechk( this )\'    checked /><label for="ov1">調査データ</label>'
 
-     console.log( $btn );
+  //   console.log( $btn );
     $( $btn ).appendTo($overlaylist );
 
 
@@ -146,22 +155,8 @@ function SetLayerinfo(　mapsheetId) {
 
 
 
-/*
-
-  OSMLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                      attribution : '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors', minZoom: 3, maxZoom: 18, zIndex:5
-                  });
-
-   backGrounds["オープンストリートマップ"]= OSMLayer;
-
-   CbaseLayer = OSMLayer;
-
-   CbaseLayer.setZIndex(0);
-
-    CbaseLayer.addTo(map);
-*/
-
     //overlays[nsearch]=dSearch;
+    /*
     SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png',
     {    attribution : 'Dronebird', minZoom: 13, maxZoom: 20, zIndex:3 });
 
@@ -173,6 +168,7 @@ function SetLayerinfo(　mapsheetId) {
 
 
     overlays["t15"]=t15 ;
+*/
 
 
 }
