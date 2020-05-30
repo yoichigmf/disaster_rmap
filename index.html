@@ -104,11 +104,11 @@ GetURLParameta();
 
 
   $(document).bind('pagecreate', function(e, data) {
-    SetLayerinfo(　mapSheetId);  // 　利用レイヤ情報の設定
+         SetLayerinfo(　mapSheetId);  // 　利用レイヤ情報の設定
          SelectSheetInit( mapSheetId, mapSheetName );   // 最初のシートデータ設定
          SheetListSetup(mapSheetId);
 
-  }
+  });
 
 
  $(document).bind('pagebeforeshow', function(e, data) {
