@@ -93,20 +93,21 @@ GetURLParameta();
        //alert('page init');
 
 
-       console.log( mapSheetId );
-       console.log( mapSheetName);
+       //console.log( mapSheetId );
+       //console.log( mapSheetName);
        //alert( mapSheetId );
        //alert( mapSheetName );
        //SelectSheet( "シート1" );
-       　　  SetLayerinfo(　mapSheetId);  // 　利用レイヤ情報の設定
-            SelectSheetInit( mapSheetId, mapSheetName );   // 最初のシートデータ設定
+       //　　  SetLayerinfo(　mapSheetId);  // 　利用レイヤ情報の設定
+        //    SelectSheetInit( mapSheetId, mapSheetName );   // 最初のシートデータ設定
     });
 
 
 
 
  $(document).bind('pagebeforeshow', function(e, data) {
-
+   　　　SetLayerinfo(　mapSheetId);  // 　利用レイヤ情報の設定
+        SelectSheetInit( mapSheetId, mapSheetName );   // 最初のシートデータ設定
         SheetListSetup(mapSheetId);
 
 
@@ -119,31 +120,6 @@ GetURLParameta();
 
 <body>
 
-
-  <!--ページ領域-->
-  <!--
-  <div data-role="page" data-title="display map using google sheets">
--->
- <!--1ダイアログ風のポップアップを準備  tyuu-->
-<!--
-  <div id="popup" data-role="popup" data-overlay-theme="b"
-    data-dismissible="false" style="max-width:500px;">
-    <div data-role="header" data-theme="b">
-      <h1>確認</h1>
-    </div>
-    <div role="main" class="ui-content">
-      <p>ログアウトしますか？</p>
-
-
-      <a href="JavaScript:midori_logout()"
-        class="ui-btn ui-btn-inline ui-corner-all ui-btn-b">ログアウト</a>
-      <a href="#" data-rel="back"
-        class="ui-btn ui-btn-inline ui-corner-all">閉じる</a>
-    </div>
-  </div>
--->
-
-<!--   Sheet name selection panel -->
 
 <div　data-role="page" >
 
@@ -189,21 +165,6 @@ GetURLParameta();
 
 
 
-
-
-
-<!--
-<style>
-    .ui-grid-a, .ui-grid-a .ui-controlgroup-controls {width: 100%}
-    #move_display {width:18%;float:left;margin-left:1%;top:1px}
-    #CONTACTS {width:18%;top:1px}
-    #TRIPS {width:18%;top:1px}
-    #layer_property {width:18%;top:1px}
-    #headerp {height:80px}
-</style>
--->
-
-
     <style>
         .ui-grid-a, .ui-grid-a .ui-controlgroup-controls {width: 100%}
         #headerp {height:80px}
@@ -244,6 +205,9 @@ GetURLParameta();
       <div id="panel_layer" data-role="panel" data-display="overlay" data-position="right">
         <a href="#" data-rel="close"
         class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
+
+        <a href="#" data-rel="close"
+        class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">凡例</a>
             <h3>表示指定</h3>
 
 
@@ -251,7 +215,7 @@ GetURLParameta();
         <!--2タブリストを準備-->
          <div data-role="navbar">
             <ul>
-              <li><a href="#backgr" id="ly_back"   class="ui-btn-active">ベースマップ選択</a></li>
+              <li><a href="#backgr" id="ly_back"   class="ui-btn-active">ベースマップ</a></li>
               <li><a href="#overlay"  id="ly_thema" >主題図</a></li>
             </ul>
           </div>  <!--  navbar -->
@@ -270,12 +234,12 @@ GetURLParameta();
         </div>   <!--  backgr  -->
 
 
-          <div id="overlay" class="ui-body ui-body-a">
+          <div id="overlay" class="ui-body ui-body-a">  <!-- 主題図指定 -->
           　 <!-- <div class="ui-field-contain"> -->
               <form>
           　　　  <fieldset data-role="controlgroup"  id="overlaylist">
-                    <legend><h3>主題図指定</h3></legend>
-
+                <!--    <legend><h3>主題図指定</h3></legend>
+-->
         　　　    </fieldset>
     　　　　　  </form>
         　　</div>   <!--  overlay  -->
