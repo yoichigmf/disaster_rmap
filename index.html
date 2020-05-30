@@ -72,26 +72,6 @@
 }
 	</style>
 
-<!--
-	<style>
-	table.fudeinfo {
-    width: 100%;
-    margin:20px 0 50px;
-    border-top: 1px solid #CCC;
-    border-left: 1px solid #CCC;
-    border-spacing:0;
-}
-table.fudeinfo tr th,table.fudeinfo tr td {
-    font-size: 12px;
-    border-bottom: 1px solid #CCC;
-    border-right: 1px solid #CCC;
-    padding: 7px;
-}
-table.fudeinfo tr th {
-    background: #E6EAFF;
-}
-</style>
--->
 
 <script>
 
@@ -164,19 +144,9 @@ GetURLParameta();
 -->
 
 <!--   Sheet name selection panel -->
-<div id="panel" data-role="panel" data-display="overlay" data-position="left">
-      <!--3パネルを閉じるためのリンクボタン -->
-    <a href="#" data-rel="close"
-      class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
 
-    <h3>表示シート選択</h3>
+<div　data-role="page" >
 
-    <div data-role="controlgroup" id="sheetlist" data-type="vertical">
-
-
-    </div>
-
-</div>
 
   <script>
 
@@ -216,109 +186,16 @@ GetURLParameta();
 </script>
 
 
-</div> <!--  end of Sheet name selection panel -->
-
-
-    <div id="panel_layer" data-role="panel" data-display="overlay" data-position="right">
-      <a href="#" data-rel="close"
-      class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
-          <h3>表示指定</h3>
-
-
-    <div id="tabs" data-role="tabs">
-      <!--2タブリストを準備-->
-     <div data-role="navbar">
-        <ul>
-          <li><a href="#backgr" id="ly_back"   class="ui-btn-active">ベースマップ選択</a></li>
-          <li><a href="#overlay"  id="ly_thema" >主題図</a></li>
-        </ul>
-      </div>
-
-
-
-      <!--1パネル（コンテンツ領域）を準備-->
-      <div id="backgr" class="ui-body ui-body-a">
-
-
-      <!--ラジオボタンで単一選択ボタンを作成-->
-      <form method="POST" action="">
-      <div class="ui-field-contain">
-
-
-      <fieldset data-role="controlgroup" id="baselayers">
-
-
-          </fieldset>      <!--  </fieldset> -->
-
-        </div>  <!--  fieldcontain -->
-        </form>
-        </div>  <!-- ui-field-contain  -->
-      </div>   <!--  backgr  -->
-
-        <div id="overlay" class="ui-body ui-body-a">
-        　 <!-- <div class="ui-field-contain"> -->
-            <form>
-
-        　　　<fieldset data-role="controlgroup"  id="overlaylist">
-              <legend><h3>主題図指定</h3></legend>
-
-
-
-      　　　  </fieldset>
-
-
-
-
-      </div>   <!--  overlay  -->
 
 
 
 
 
-      </form>
-
-
-     </div>
-  </div>
-
-
-
-    </div>
 
 
 
 
-  <div id="panel_r" data-role="panel" data-display="overlay" data-position="right">
-      <a href="#" data-rel="close"
-      class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
 
-      <h3>表示情報指定</h3>
-   <div id="item_info" >
-
-
-    <!--3パネルを閉じるためのリンクボタン -->
-    </div>
-  </div>
-
-
-
-
-    <div id="nav_panel" data-role="panel" data-display="overlay" data-position="left">
-        <a href="#" data-rel="close"
-        class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
-
-        <h3>表示位置指定</h3>
-
-      　  <div data-role="controlgroup" id="navlist" data-type="vertical">
-
-
-      　　　　    <a href="JavaScript:PanCurrentLocation()" class="ui-btn">現在地</a>
-        　　　　　<a href="JavaScript:FitBound()" class="ui-btn">登録情報全域</a>
-
-
-        </div>
-
-    </div>
 
     <style>
         .ui-grid-a, .ui-grid-a .ui-controlgroup-controls {width: 100%}
@@ -356,6 +233,98 @@ GetURLParameta();
 
 
 
+      <div id="panel_layer" data-role="panel" data-display="overlay" data-position="right">
+        <a href="#" data-rel="close"
+        class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
+            <h3>表示指定</h3>
+
+
+        <div id="tabs" data-role="tabs">
+        <!--2タブリストを準備-->
+         <div data-role="navbar">
+            <ul>
+              <li><a href="#backgr" id="ly_back"   class="ui-btn-active">ベースマップ選択</a></li>
+              <li><a href="#overlay"  id="ly_thema" >主題図</a></li>
+            </ul>
+          </div>  <!--  navbar -->
+
+
+
+        <!--1パネル（コンテンツ領域）を準備-->
+        <div id="backgr" class="ui-body ui-body-a">
+        <!--ラジオボタンで単一選択ボタンを作成-->
+          <form method="POST" action="">
+          <div class="ui-field-contain">
+               <fieldset data-role="controlgroup" id="baselayers">
+              </fieldset>      <!--  </fieldset> -->
+          </div>  <!--  fieldcontain -->
+          </form>
+        </div>   <!--  backgr  -->
+
+
+          <div id="overlay" class="ui-body ui-body-a">
+          　 <!-- <div class="ui-field-contain"> -->
+              <form>
+          　　　  <fieldset data-role="controlgroup"  id="overlaylist">
+                    <legend><h3>主題図指定</h3></legend>
+
+        　　　    </fieldset>
+    　　　　　  </form>
+        　　</div>   <!--  overlay  -->
+
+      　　 </div>  <!-- tabs -->
+    　　</div>   <!-- panel right -->
+
+
+
+  <div id="panel" data-role="panel" data-display="overlay" data-position="left">
+        <!--3パネルを閉じるためのリンクボタン -->
+      <a href="#" data-rel="close"
+        class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
+
+      <h3>表示シート選択</h3>
+
+      <div data-role="controlgroup" id="sheetlist" data-type="vertical">
+
+
+      </div>
+
+  </div>
+
+
+
+    <div id="panel_r" data-role="panel" data-display="overlay" data-position="right">
+        <a href="#" data-rel="close"
+        class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
+
+        <h3>表示情報指定</h3>
+     <div id="item_info" >
+
+
+      <!--3パネルを閉じるためのリンクボタン -->
+      </div>
+    </div>
+
+
+
+  <div id="nav_panel" data-role="panel" data-display="overlay" data-position="left">
+      <a href="#" data-rel="close"
+      class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
+
+      <h3>表示位置指定</h3>
+
+    　  <div data-role="controlgroup" id="navlist" data-type="vertical">
+
+
+    　　　　    <a href="JavaScript:PanCurrentLocation()" class="ui-btn">現在地</a>
+      　　　　　<a href="JavaScript:FitBound()" class="ui-btn">登録情報全域</a>
+
+
+      </div>
+
+  </div>
+
+
 
 
 	　　　　　<div id="map">
@@ -384,29 +353,6 @@ $('#ly_thema').on('click', function() {
   //  alert('thema');
      CurlayerKind = "thema";
 });
-
-/*
-   //変数argはオブジェクトですよ
-var arg = new Object;
-
-// 変数pairにURLの?の後ろを&で区切ったものを配列にして代入
-var pair=location.search.substring(1).split('&');
-    // location.search.substring(1)は、URLから最初の1文字 (?記号) を除いた文字列を取得する
-    // .split('&')は&で区切り配列に分割する
-
-
-// for文でrairがある限りループさせる
-for(var i=0;pair[i];i++) {
-
-// 変数kvにpairを=で区切り配列に分割する
-    var kv = pair[i].split('=');// kvはkey-value
-
- // 最初に定義したオブジェクトargに連想配列として格納
-    arg[kv[0]]=kv[1];  // kv[0]がkey,kv[1]がvalue
-
-}
-*/
-
 
 
 function  OpenLayerProp() {
@@ -648,9 +594,10 @@ function showGetFeatureInfoD(err, latlng, content) {
 
 </script>
 
+
 <!--ページ領域-->
-<!--
+
 </div>
--->
+
 </body>
 </html>
