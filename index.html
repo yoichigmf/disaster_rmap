@@ -206,14 +206,17 @@ GetURLParameta();
 
 <div data-role="content"  data-position="fixed"  data-fullscreen="true" >
 
-
+  <div data-role="popup" id="legend" data-shadow="false">
+  		<a href="#" data-rel="back" class="ui-btn ui-icon-delete ui-btn-right ui-btn-icon-notext ui-corner-all">Close</a>
+  		<p>凡例表示</p>
+  	</div>
 
       <div id="panel_layer" data-role="panel" data-display="overlay" data-position="right">
         <a href="#" data-rel="close"
         class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
 
-        <a href="#" data-rel="close"
-        class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">凡例</a>
+        <a href="#legend" data-rel="close"
+        class="ui-btn ui-corner-all ui-icon-bullets ui-btn-icon-left">凡例表示</a>
             <h3>表示指定</h3>
 
 
