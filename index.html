@@ -405,12 +405,13 @@ $( "#legendpos" ).panel({
               tghtml += "<h3>" + tgl["name"] + '</h3>'
                     + '<img="'
                     + tgl["legend"]
-                    + '" >';
+                    + '" />';
             }
           }
       }
       console.log(tghtml);
-      $('#legendpos').append(tghtml);
+      $('#legendarea').empty();
+      $('#legendarea').append(tghtml);
     //  $('#legendarea').trigger("create");
       $('#legendpos').trigger("updatelayout");
 
