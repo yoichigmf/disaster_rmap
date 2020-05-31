@@ -133,7 +133,7 @@ function SetLayerinfo(　mapsheetId) {
     var $overlaylist = $('#overlaylist');
 
 
-    var $btn =  '<input id="ov1"  name="ov_layer1" type="checkbox" value="default_d" onChange=\'changechk( this )\'    checked /><label for="ov1">調査データ</label>'
+    var $btn =  '<input id="ov0"  name="ov_layer1" type="checkbox" value="default_d" onChange=\'changechk( this )\'    checked /><label for="ov0">調査データ</label>'
 
   //   console.log( $btn );
     $( $btn ).appendTo($overlaylist );
