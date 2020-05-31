@@ -208,7 +208,7 @@ function SetLayerinfo(　mapsheetId) {
                         }
 
                   }
-
+                $('#sheetlist').trigger("create");
                 },
          error: function (xhr, status, error) {
                alert(error);
