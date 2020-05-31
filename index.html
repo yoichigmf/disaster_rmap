@@ -383,12 +383,24 @@ $( "#legendpos" ).panel({
 　　var n = $( "input[type='checkbox']:checked" ).length;
 
 
+    //  チェックされている主題図リスト取得
    var chkdef  = $("input[type='checkbox']:checked" ).map(function(){
     //$(this)でjQueryオブジェクトが取得できる。val()で値をvalue値を取得。
                 return $(this).val();
           }).get();
 
     console.log(chkdef);
+
+    if ( n > 0 ){
+　　　　//  チェックされている主題図の情報取得
+      for ( let lp of chkdef) {
+          tgl = ovdef[lp];
+
+          if ( tgl ){
+            console.log( tgl );
+          }
+      }
+    }
 　　//alert( String(n ));
   }
 });
