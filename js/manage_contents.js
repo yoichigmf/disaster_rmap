@@ -122,7 +122,7 @@ function SetOverlayLayers( data ){
 
        $dcount++;
     }
-
+$('#overlaylist').trigger("create");
 
 }
 
