@@ -409,9 +409,9 @@ $( "#legendpos" ).panel({
             }
           }
       }
-
+      console.log(tghtml);
       $('#legendarea').html = tghtml;
-
+      $('#legendarea').trigger("create");
     }
 　　//alert( String(n ));
   }
