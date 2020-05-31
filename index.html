@@ -382,7 +382,14 @@ $( "#legendpos" ).panel({
 
 　　var n = $( "input[type='checkbox']:checked" ).length;
 
-　　alert( String(n ));
+
+   var chkdef  = $("input[type='checkbox']:checked" ).map(function(){
+    //$(this)でjQueryオブジェクトが取得できる。val()で値をvalue値を取得。
+                return $(this).val();
+          }).get();
+
+    console.log(chkdef);
+　　//alert( String(n ));
   }
 });
 

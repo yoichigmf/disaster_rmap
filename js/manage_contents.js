@@ -4,6 +4,7 @@ var default_d;     //default display layer
 
 var overlays = {};    // overlay layers
 
+var ovdef = {}     // information of overlay layers
 var backGrounds = {};    // backGround layers list
 
 var CbaseLayer;           // Current　Base Layer
@@ -119,6 +120,7 @@ function SetOverlayLayers( data ){
           $ovl.setOpacity( parseFloat(vf["opacity"]));
         }
         overlays[$dcount] = $ovl;
+        ovdef[$dcount] = vf;
 
        $dcount++;
     }
