@@ -374,11 +374,15 @@ $('#ly_thema').on('click', function() {
      CurlayerKind = "thema";
 });
 
-
+//  凡例パネルが開くときの動作
 $( "#legendpos" ).panel({
   beforeopen: function( event, ui ) {
-alert("befor");
+//alert("befor");
+　　var $overlaylist = $('#overlaylist');
 
+　　var n = $( "input:checked" ).length;
+
+　　alert( String(n ));
   }
 });
 
