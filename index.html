@@ -233,7 +233,6 @@ data-fullscreen="true"
 
 
 
-
   <div  id="legendpos"  data-role="panel" data-display="overlay" data-dismissible="false" data-position="left">
      <a href="#" data-rel="close" class="ui-btn ui-icon-delete ui-btn-right ui-btn-icon-notext ui-corner-all">Close</a>
 
@@ -374,6 +373,15 @@ $('#ly_thema').on('click', function() {
   //  alert('thema');
      CurlayerKind = "thema";
 });
+
+
+$( "#legend" ).panel({
+  beforeopen: function( event, ui ) {
+alert("befor");
+
+  }
+});
+
 
 
 function  OpenLayerProp() {
