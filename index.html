@@ -172,6 +172,8 @@ $(document).on("mobileinit", function () {
         #TRIPS {width:18%;top:1px}
         #layer_property {width:18%;top:1px}
 
+        #legendpos {position: absolute; bottom: 0;}
+
 </style>
 
 	<div data-role="header" data-position="fixed" data-tap-toggle="true" data-fullscreen="false" id="headerp">
@@ -179,6 +181,7 @@ $(document).on("mobileinit", function () {
 <!--
 		 	<div data-role="navbar" data-position="fixed" data-tap-toggle="false"  >
   　　-->
+
       <div data-role="controlgroup" data-type="horizontal" data-position="fixed" class="ui-grid-a">
 
 	　　　　　　<a href="#nav_panel"  id="move_display" data-role="button" class="ui-btn ui-btn-inline ui-btn-icon-top ui-icon-navigation">位置指定</a></li>
@@ -194,7 +197,11 @@ $(document).on("mobileinit", function () {
 
 <div data-role="content"  data-position="fixed"  data-fullscreen="true" >
 
-  <div data-role="popup" id="legend" data-shadow="false" data-dismissible="false" data-tolerance="200,200,1,1">
+  <div  id="legendpos"  data-position="fixed">
+
+  </div>
+
+  <div data-role="popup" id="legend" data-shadow="false" data-dismissible="false" data-position-to="#lagendpos">
   		<a href="#" data-rel="back" class="ui-btn ui-icon-delete ui-btn-right ui-btn-icon-notext ui-corner-all">Close</a>
   		<p>凡例表示</p>
 
