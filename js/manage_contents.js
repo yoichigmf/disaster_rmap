@@ -90,6 +90,8 @@ function SetBaseLayers( data ){
 
       });
 
+  $('#baselayers').trigger("create");
+
 }
 
 
