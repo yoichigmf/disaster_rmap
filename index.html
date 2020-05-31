@@ -238,7 +238,9 @@ data-fullscreen="true"
 
     <h3>凡例</h3>
      <div id="legendarea" >
+       <!--
      <img src="https://disaportal.gsi.go.jp/hazardmap/copyright/img/shinsui_legend2-1.png">
+   -->
 
    </div>
   </div>
@@ -391,6 +393,7 @@ $( "#legendpos" ).panel({
 
     console.log(chkdef);
 
+    $tghtml = ' ';
     if ( n > 0 ){
 　　　　//  チェックされている主題図の情報取得
       for ( let lp of chkdef) {
@@ -398,8 +401,17 @@ $( "#legendpos" ).panel({
 
           if ( tgl ){
             console.log( tgl );
+            if ( tgl["legend"]){
+              tghtml += "<h3>" + tgl["name"]
+                    + '<img="'
+                    + tgl["legend"]
+                    + '" />';
+            }
           }
       }
+
+      $('#legendarea').html = tghtml;
+
     }
 　　//alert( String(n ));
   }
