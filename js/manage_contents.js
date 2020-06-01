@@ -386,7 +386,7 @@ function SetUserList( userListA ){
   var $user_list = $('#userlist');
 
          $dcount = 1;
-         for ( let vf of userListA) {
+         for ( let vf in  userListA) {
              // console.log( vf);
 
 
