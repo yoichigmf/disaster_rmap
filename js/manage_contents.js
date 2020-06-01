@@ -397,7 +397,7 @@ function SetUserList( userListA ){
              // console.log( vf);
 
 
-             var $btn =  '<input id="us'+ String($dcount)+ '"  name="duserlist" type="checkbox" value="' + vf + '"  checked   /><label for="us'+ String($dcount)+'">' + vf +'</label>'
+             var $btn =  '<input id="us'+ String($dcount)+ '"  name="duserlist" type="checkbox" value="' + vf + '"  onChange=\'changeUserStat( this )\'   checked   /><label for="us'+ String($dcount)+'">' + vf +'</label>'
              $( $btn ).appendTo($user_list )
               $dcount++;
 
@@ -405,6 +405,11 @@ function SetUserList( userListA ){
     $('#userlist').trigger("create");
 
    }
+
+//   条件別表示でユーザのステータスが変わった場合
+function changeUserStat( stat ){
+    console.log(stat);
+}
 
    function PropContents2(feature, layer) {
        // does this feature have a property named popupContent?
