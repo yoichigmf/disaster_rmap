@@ -13,6 +13,8 @@ var  UserList = {};       //   ユーザ名リスト
 
 var  urlParameta = new Object;
 
+var  OrgPointdata;    //  オリジナルポイントデータ
+
 var mapSheetId;
 var mapSheetName;
 
@@ -258,6 +260,9 @@ function SelectSheet( sheetname ){
             PointACluster.setZIndex(250);
             PointACluster.addTo(map);
 
+
+　　　　　　 OrgPointdata = PointACluster;
+
             default_d = PointACluster;
             featureG = L.featureGroup([ default_d ]);
 
@@ -392,7 +397,7 @@ function SetUserList( userListA ){
              // console.log( vf);
 
 
-             var $btn =  '<input id="us'+ String($dcount)+ '"  name="duserlist" type="checkbox" value="' + vf + '"    /><label for="us'+ String($dcount)+'">' + vf +'</label>'
+             var $btn =  '<input id="us'+ String($dcount)+ '"  name="duserlist" type="checkbox" value="' + vf + '"  checked   /><label for="us'+ String($dcount)+'">' + vf +'</label>'
              $( $btn ).appendTo($user_list )
               $dcount++;
 
