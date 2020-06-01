@@ -9,7 +9,7 @@ var backGrounds = {};    // backGround layers list
 
 var CbaseLayer;           // Current　Base Layer
 
-
+var  UserList = {};       //   ユーザ名リスト
 
 var  urlParameta = new Object;
 
@@ -296,7 +296,7 @@ function CreatePointCluster( data, PointClusterd){
 
 　　　　　　　　　　//  ポイント地物リスト
    var Features = [];
-
+   UserList = {};   //  User 別リストの初期化
 
 
    for ( var item in data  ){
@@ -347,11 +347,19 @@ function CreatePointCluster( data, PointClusterd){
              feature["properties"]= nproperties;
              feature["geometry"]= ngeometry;
 
-             Features.push(feature);
-           }
+             　　
 
-       //  console.log(feature);
-   }
+             Features.push(feature);
+
+             if ( ! UserList[nproperties["user"]]){
+                   UserList[nproperties["user"]] = [];
+             }
+
+             UserList[nproperties["user"]].push(feature);
+           }　　//  dbheader
+
+        console.log( UserList);
+   }  // for loop
 
    PointArray["features"]= Features;
 
