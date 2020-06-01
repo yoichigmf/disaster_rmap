@@ -385,6 +385,8 @@ clickable: true
 function SetUserList( userListA ){
   var $user_list = $('#userlist');
 
+  $user_list.empty();
+
          $dcount = 1;
          for ( let vf in  userListA) {
              // console.log( vf);
@@ -395,7 +397,7 @@ function SetUserList( userListA ){
               $dcount++;
 
           }
-
+    $('#userlist').trigger("create");
 
    }
 
