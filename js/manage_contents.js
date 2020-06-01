@@ -382,7 +382,7 @@ clickable: true
 
 }
 
-   function SetuserList( userListA ){
+function SetUserList( userListA ){
   var $user_list = $('#userlist');
 
          $dcount = 1;
