@@ -358,8 +358,11 @@ function CreatePointCluster( data, PointClusterd){
              UserList[nproperties["user"]].push(feature);
            }　　//  dbheader
 
-        console.log( UserList);
+        //console.log( UserList);
    }  // for loop
+
+
+   SetUserList( UserList );
 
    PointArray["features"]= Features;
 
@@ -378,6 +381,23 @@ clickable: true
   return( PointClusterd  );
 
 }
+
+   function SetuserList( userListA ){
+  var $user_list = $('#userlist');
+
+         $dcount = 1;
+         for ( let vf of userListA) {
+             // console.log( vf);
+
+
+             var $btn =  '<input id="us'+ String($dcount)+ '"  name="duserlist" type="checkbox" value="' + vf + '"    /><label for="us'+ String($dcount)+'">' + vf +'</label>'
+             $( $btn ).appendTo($user_list )
+              $dcount++;
+
+          }
+
+
+   }
 
    function PropContents2(feature, layer) {
        // does this feature have a property named popupContent?
