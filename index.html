@@ -386,7 +386,7 @@ $( "#legendpos" ).panel({
 
 
     //  チェックされている主題図リスト取得
-   var chkdef  = $("input[type='checkbox']:checked" ).map(function(){
+   var chkdef  = $("input[name='ov_layer1']:checked" ).map(function(){
     //$(this)でjQueryオブジェクトが取得できる。val()で値をvalue値を取得。
                 return $(this).val();
           }).get();
