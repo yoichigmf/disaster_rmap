@@ -477,7 +477,7 @@ function changeUserStat( stat ){
 
 overlays["default_d"] = default_d;
 //$('#map').trigger('updatelayout');
-  FitBound();
+  //FitBound();
 }
 
    function PropContents2(feature, layer) {
