@@ -426,7 +426,7 @@ function changeUserStat( stat ){
         }).get();
 
   console.log(chkdef);
-  var PointClusterd = L.markerClusterGroup({
+  var PointCluster = L.markerClusterGroup({
     showCoverageOnHover: false,
     spiderfyOnMaxZoom: true,
     removeOutsideVisibleBounds: true,
@@ -450,7 +450,7 @@ function changeUserStat( stat ){
         }
     PointArray["features"]= Features;
 
-    PointClusterd.addLayer(L.geoJson(PointArray,{
+     PointCluster.addLayer(L.geoJson(PointArray,{
     onEachFeature:function (feature, layer) {
       // 地物クリック時の関数記述　プロパティが配列化した場合
            PropContents2(feature,layer);
@@ -466,18 +466,18 @@ function changeUserStat( stat ){
               map.removeLayer(default_d);
           }
 
- PointClusterd.setZIndex(250);
- PointClusterd.addTo(map);
+  PointCluster.setZIndex(250);
+  PointCluster.addTo(map);
 
 
  　　　　
 
- default_d = PointClusterd;
+ default_d =  PointCluster;
  featureG = L.featureGroup([ default_d ]);
 
 overlays["default_d"] = default_d;
-$('#map').trigger('updatelayout');
-
+//$('#map').trigger('updatelayout');
+  FitBound();
 }
 
    function PropContents2(feature, layer) {
