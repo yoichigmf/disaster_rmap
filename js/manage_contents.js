@@ -445,7 +445,7 @@ function changeUserStat( stat ){
 　　       var flist = UserList[ chkdef[userid]];
 
            for ( var feature in flist ){
-                Features.push(feature);
+                Features.push(flist[feature]);
            }
         }
     PointArray["features"]= Features;
@@ -473,7 +473,7 @@ function changeUserStat( stat ){
  　　　　
 
  default_d =  PointCluster;
- featureG = L.featureGroup([ default_d ]);
+ featureG  = L.featureGroup([ default_d ]);
 
 overlays["default_d"] = default_d;
 //$('#map').trigger('updatelayout');
