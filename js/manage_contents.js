@@ -397,7 +397,7 @@ function SetUserList( userListA ){
              // console.log( vf);
 
 
-             var $btn =  '<input id="us'+ String($dcount)+ '"  name="duserlist" type="checkbox" value="' + vf + '"  onChange=\'changeUserStat( this )\'   checked   /><label for="us'+ String($dcount)+'">' + vf +'</label>'
+             var $btn =  '<input id="us'+ String($dcount)+ '"  name="userlist" type="checkbox" value="' + vf + '"  onChange=\'changeUserStat( this )\'   checked   /><label for="us'+ String($dcount)+'">' + vf +'</label>'
              $( $btn ).appendTo($user_list )
               $dcount++;
 
@@ -408,7 +408,18 @@ function SetUserList( userListA ){
 
 //   条件別表示でユーザのステータスが変わった場合
 function changeUserStat( stat ){
-    console.log(stat);
+  　　//  調査データの再構成と再描画を行う
+
+  var n = $( "input[name='userlist']:checked").length;
+
+  //  チェックされているユーザリスト取得
+　　 var chkdef  = $("input[name='userlist']:checked" ).map(function(){
+  //$(this)でjQueryオブジェクトが取得できる。val()で値をvalue値を取得。
+              return $(this).val();
+        }).get();
+
+  console.log(chkdef);
+
 }
 
    function PropContents2(feature, layer) {
