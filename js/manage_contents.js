@@ -372,10 +372,6 @@ function CreatePointCluster( data, PointClusterd){
    PointArray["features"]= Features;
 
 
-               if ( default_d){
-                     map.removeLayer(default_d);
-                 }
-
 
 
    //console.log(PointArray);
@@ -456,6 +452,10 @@ function changeUserStat( stat ){
  clickable: true
  }));
 
+
+                if ( default_d){
+                      map.removeLayer(default_d);
+                  }
 
  PointClusterd.setZIndex(250);
  PointClusterd.addTo(map);
