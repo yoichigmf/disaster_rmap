@@ -371,6 +371,13 @@ function CreatePointCluster( data, PointClusterd){
 
    PointArray["features"]= Features;
 
+
+               if ( default_d){
+                     map.removeLayer(default_d);
+                 }
+
+
+
    //console.log(PointArray);
    PointClusterd.addLayer(L.geoJson(PointArray,{
    onEachFeature:function (feature, layer) {
@@ -383,7 +390,19 @@ function CreatePointCluster( data, PointClusterd){
 clickable: true
 }));
 
-  return( PointClusterd  );
+
+PointClusterd.setZIndex(250);
+PointClusterd.addTo(map);
+
+
+　　　　
+
+default_d = PointClusterd;
+featureG = L.featureGroup([ default_d ]);
+
+overlays["default_d"] = default_d;
+
+  //return( PointClusterd  );
 
 }
 
@@ -419,6 +438,34 @@ function changeUserStat( stat ){
         }).get();
 
   console.log(chkdef);
+
+  //  ポイント geojson 定義
+　　var PointArray = {
+  "type": "FeatureCollection",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } }
+　　　};
+
+　　　var Features = [];
+
+    for ( var username in chkdef  ){
+　　       var flist = UserList[ username];
+
+           for ( var feature in flist ){
+                Features.push(feature);
+           }
+        }
+    PointArray["features"]= Features;
+
+    PointClusterd.addLayer(L.geoJson(PointArray,{
+    onEachFeature:function (feature, layer) {
+      // 地物クリック時の関数記述　プロパティが配列化した場合
+           PropContents2(feature,layer);
+      //var field = "id: " + feature.properties.id;
+      //  layer.bindPopup(field);
+
+     },
+ clickable: true
+ }));
 
 }
 
