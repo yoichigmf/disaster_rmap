@@ -441,8 +441,8 @@ function changeUserStat( stat ){
 
 　　　var Features = [];
 
-    for ( var username in chkdef  ){
-　　       var flist = UserList[ username];
+    for ( var userid in chkdef  ){
+　　       var flist = UserList[ chkdef[userid]];
 
            for ( var feature in flist ){
                 Features.push(feature);
