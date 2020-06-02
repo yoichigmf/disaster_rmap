@@ -423,6 +423,12 @@ function changeUserStat( stat ){
         }).get();
 
   console.log(chkdef);
+  var PointClusterd = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    spiderfyOnMaxZoom: true,
+    removeOutsideVisibleBounds: true,
+    disableClusteringAtZoom: 18
+        });
 
   //  ポイント geojson 定義
 　　var PointArray = {
