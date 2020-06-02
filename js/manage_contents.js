@@ -410,6 +410,9 @@ function SetUserList( userListA ){
 
    }
 
+
+
+
 //   条件別表示でユーザのステータスが変わった場合
 function changeUserStat( stat ){
   　　//  調査データの再構成と再描画を行う
@@ -466,7 +469,7 @@ function changeUserStat( stat ){
  PointClusterd.setZIndex(250);
  PointClusterd.addTo(map);
 
-
+ $('#map').trigger('updatelayout');
  　　　　
 
  default_d = PointClusterd;
