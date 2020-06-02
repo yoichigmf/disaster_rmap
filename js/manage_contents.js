@@ -462,21 +462,21 @@ function changeUserStat( stat ){
  }));
 
 
-                if ( default_d){
-                      map.removeLayer(default_d);
-                  }
+  if ( default_d){
+              map.removeLayer(default_d);
+          }
 
  PointClusterd.setZIndex(250);
  PointClusterd.addTo(map);
 
- $('#map').trigger('updatelayout');
+
  　　　　
 
  default_d = PointClusterd;
  featureG = L.featureGroup([ default_d ]);
 
- overlays["default_d"] = default_d;
-
+overlays["default_d"] = default_d;
+$('#map').trigger('updatelayout');
 
 }
 
