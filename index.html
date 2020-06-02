@@ -304,6 +304,15 @@ data-fullscreen="true"
         <a href="#" data-rel="close"
         class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
 
+        <div id="conditiontabs" data-role="tabs">
+                <!--2タブリストを準備-->
+                 <div data-role="navbar">
+                    <ul>
+                      <li><a href="#user_select" id="user_selection"   class="ui-btn-active">報告者</a></li>
+                      <li><a href="#set_date"  id="date_selection" >日時指定</a></li>
+                    </ul>
+                  </div>  <!--  navbar -->
+
         <h3>表示情報指定</h3>
         <div id="user_select" class="ui-body ui-body-a">  <!-- 主題図指定 -->
         　 <!-- <div class="ui-field-contain"> -->
@@ -315,10 +324,20 @@ data-fullscreen="true"
       　　　    </fieldset>
   　　　　　  </form>
       　　</div>   <!--  overlay  -->
+      <div id="set_date" class="ui-body ui-body-a">  <!-- 日時 -->
+      　 <!-- <div class="ui-field-contain"> -->
+          日時指定
+          <form>
+      　　　  <fieldset data-role="controlgroup"  id="datelist">
+            <!--    <legend><h3>主題図指定</h3></legend>
+-->
+    　　　    </fieldset>
+　　　　　  </form>
+    　　</div>   <!--  overlay  -->
 
-    </div>
+    </div><!--  tabs -->
 
-
+  </div>
 
   <div id="nav_panel" data-role="panel" data-display="overlay" data-position="left">
       <a href="#" data-rel="close"
