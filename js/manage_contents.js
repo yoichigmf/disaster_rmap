@@ -391,18 +391,7 @@ clickable: true
 }));
 
 
-PointClusterd.setZIndex(250);
-PointClusterd.addTo(map);
-
-
-　　　　
-
-default_d = PointClusterd;
-featureG = L.featureGroup([ default_d ]);
-
-overlays["default_d"] = default_d;
-
-  //return( PointClusterd  );
+ return( PointClusterd  );
 
 }
 
@@ -466,6 +455,19 @@ function changeUserStat( stat ){
      },
  clickable: true
  }));
+
+
+ PointClusterd.setZIndex(250);
+ PointClusterd.addTo(map);
+
+
+ 　　　　
+
+ default_d = PointClusterd;
+ featureG = L.featureGroup([ default_d ]);
+
+ overlays["default_d"] = default_d;
+
 
 }
 
