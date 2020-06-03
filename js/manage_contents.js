@@ -370,7 +370,7 @@ function CreatePointCluster( data, PointClusterd){
    SetUserList( UserList );
 
 //   条件指定用日付リストの設定
-   SetDateList( features );
+   SetDateList( Features );
 
    PointArray["features"]= Features;
 
@@ -475,7 +475,7 @@ function changeUserStat( stat ){
   if ( default_d){
     　　　　
               map.removeLayer(default_d);
-              delete default_d;   
+              delete default_d;
           }
 
   PointCluster.setZIndex(250);
