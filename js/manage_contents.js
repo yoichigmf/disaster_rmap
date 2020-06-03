@@ -366,8 +366,11 @@ function CreatePointCluster( data, PointClusterd){
         //console.log( UserList);
    }  // for loop
 
-
+//   条件指定用ユーザーリストの設定
    SetUserList( UserList );
+
+//   条件指定用日付リストの設定
+   SetDateList( features );
 
    PointArray["features"]= Features;
 
@@ -389,6 +392,13 @@ clickable: true
 
  return( PointClusterd  );
 
+}
+
+//      日付リストの設定
+function SetDateList( features ){
+  var $datelist = $('#datelist');
+
+    $datelist.empty();
 }
 
 function SetUserList( userListA ){
@@ -463,7 +473,9 @@ function changeUserStat( stat ){
 
 
   if ( default_d){
+    　　　　
               map.removeLayer(default_d);
+              delete default_d;   
           }
 
   PointCluster.setZIndex(250);
