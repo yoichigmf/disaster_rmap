@@ -406,8 +406,8 @@ function SetDateList( features ){
 
         dated = features[vf]["properties"]["date"];
 
-        var $btn =  '<input id="us'+ String($dcount)+ '"  name="date_list" type="checkbox" value="' + vf + '"  onChange=\'changeUserStat( this )\'   checked   /><label for="us'+ String($dcount)+'">' + dated +'</label>'
-        $( $btn ).appendTo($date_list )
+        var $btn =  '<input id="dt'+ String($dcount)+ '"  name="date_list" type="checkbox" value="' + vf + '"  onChange=\'changeDateStat( this )\'   checked   /><label for="us'+ String($dcount)+'">' + dated +'</label>'
+        $( $btn ).appendTo($datelist )
          $dcount++;
 
      }
@@ -436,7 +436,9 @@ function SetUserList( userListA ){
    }
 
 
+function changeDateStat( stat ){
 
+}
 
 //   条件別表示でユーザのステータスが変わった場合
 function changeUserStat( stat ){
