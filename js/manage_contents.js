@@ -399,6 +399,21 @@ function SetDateList( features ){
   var $datelist = $('#datelist');
 
     $datelist.empty();
+
+    $dcount = 1;
+    for ( let vf in  features ) {
+        // console.log( vf);
+
+        dated = vf["properties"]["date"];
+
+        var $btn =  '<input id="us'+ String($dcount)+ '"  name="date_list" type="checkbox" value="' + vf + '"  onChange=\'changeUserStat( this )\'   checked   /><label for="us'+ String($dcount)+'">' + dated +'</label>'
+        $( $btn ).appendTo($date_list )
+         $dcount++;
+
+     }
+
+    $('#datelist').trigger("create");
+
 }
 
 function SetUserList( userListA ){
