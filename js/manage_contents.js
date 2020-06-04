@@ -609,6 +609,7 @@ function PropContents2(feature, layer) {
      }
      catch (err){
          alert("位置情報を持つ調査データがありません");
+         PanCurrentLocation();
      }
 
    }
