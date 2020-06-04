@@ -510,11 +510,17 @@ function  ChangeReportdisplay(){
            for ( var feature in flist ){
                 //  日付チェックを追加
 
-              　var dstestr = flist[feature]["properties"]["date"];
+              　var datestr = flist[feature]["properties"]["date"];
 
                 console.log(datestr);
+                var splitd = datestr.split(" ");
 
-                Features.push(flist[feature]);
+                     //  指定日付がチェックされているかどうか
+                if (datedef.indexOf(splitd[0]) > 0){
+                        Features.push(flist[feature]);
+                }
+
+
            }
         }
     PointArray["features"]= Features;
