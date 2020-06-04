@@ -488,7 +488,7 @@ function  ChangeReportdisplay(){
 
   console.log(datedef);
 
-  
+
   var PointCluster = L.markerClusterGroup({
     showCoverageOnHover: false,
     spiderfyOnMaxZoom: true,
@@ -508,6 +508,12 @@ function  ChangeReportdisplay(){
 　　       var flist = UserList[ chkdef[userid]];
 
            for ( var feature in flist ){
+                //  日付チェックを追加
+
+              　var dstestr = flist[feature]["properties"]["date"];
+
+                console.log(datestr);
+
                 Features.push(flist[feature]);
            }
         }
