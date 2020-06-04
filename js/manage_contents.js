@@ -516,7 +516,7 @@ function  ChangeReportdisplay(){
                 var splitd = datestr.split(" ");
 
                      //  指定日付がチェックされているかどうか
-                if (datedef.indexOf(splitd[0]) > 0){
+                if (datedef.indexOf(splitd[0]) >= 0){
                         Features.push(flist[feature]);
                 }
 
