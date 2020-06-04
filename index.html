@@ -40,17 +40,7 @@
 
 <script src="js/manage_contents.js"></script>
 
-<!--
-<script src="js/layersdef.js"></script>
--->
- <!--	#map { min-height:717px; height: 100vh;  margin: -15px;}
- 	#map {  height: 100%; margin: -15px;}
 
-<style>
-ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
-li { margin: 5px; padding: 5px; width: 150px; }
-  </style>
- -->
      <style type="text/css">
 		body {
 			padding: 0;
@@ -91,21 +81,6 @@ $(document).on("mobileinit", function () {
 
 
 
-  //  alert('mobileinit');
-  //$(document).bind('pageinit', function(e, data) {
-        // initialize page
-       //alert('page init');
-
-
-       //console.log( mapSheetId );
-       //console.log( mapSheetName);
-       //alert( mapSheetId );
-       //alert( mapSheetName );
-       //SelectSheet( "シート1" );
-       //　　  SetLayerinfo(　mapSheetId);  // 　利用レイヤ情報の設定
-        //    SelectSheetInit( mapSheetId, mapSheetName );   // 最初のシートデータ設定
-  //  });
-
 
   $(document).bind('pagecreate', function(e, data) {
          SetLayerinfo(　mapSheetId);  // 　利用レイヤ情報の設定
@@ -115,13 +90,6 @@ $(document).on("mobileinit", function () {
   });
 
 
- //$(document).bind('pagebeforeshow', function(e, data) {
-   　//　　SetLayerinfo(　mapSheetId);  // 　利用レイヤ情報の設定
-    //    SelectSheetInit( mapSheetId, mapSheetName );   // 最初のシートデータ設定
-    //    SheetListSetup(mapSheetId);
-
-
-//  });
 
 </script>
 
@@ -385,7 +353,7 @@ $( "#legendpos" ).panel({
                 return $(this).val();
           }).get();
 
-    console.log(chkdef);
+  //  console.log(chkdef);
 
     var tghtml = ' ';
     if ( n > 0 ){
@@ -403,7 +371,7 @@ $( "#legendpos" ).panel({
             }
           }
       }
-      console.log(tghtml);
+    //  console.log(tghtml);
       $('#legendarea').empty();
       $('#legendarea').append(tghtml);
     //  $('#legendarea').trigger("create");

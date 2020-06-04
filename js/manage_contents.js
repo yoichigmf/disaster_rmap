@@ -189,7 +189,7 @@ function SetLayerinfo(　mapsheetId) {
                if ( v !== 'config'){   //  設定ページを除く
                     var $btn =  '<a href="JavaScript:SelectSheet(\'' + v +'\')" class="ui-btn">' + v + '</a>';
 
-                       console.log( $btn );
+                    //   console.log( $btn );
                        $( $btn ).appendTo($buttonlist);
                  // console.log(v);
                         }
