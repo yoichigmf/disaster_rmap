@@ -538,7 +538,8 @@ overlays["default_d"] = default_d;
 
 }
 
-   function PropContents2(feature, layer) {
+
+function PropContents2(feature, layer) {
        // does this feature have a property named popupContent?
 
       //     console.log("propcontents2");
@@ -600,6 +601,35 @@ overlays["default_d"] = default_d;
            layer.bindPopup(tgtext);
       // }  //
    }
+
+   function  FitBound() {
+
+     try {
+           map.fitBounds(featureG.getBounds());
+     }
+     catch (err){
+         alert("位置情報を持つ調査データがありません");
+     }
+
+   }
+
+   // 　　主題図チェックボックスをクリックした場合の動作
+   function changechk( cb ){
+
+     var tgkey = cb.value;
+     var tgstat = cb.checked;
+
+     var tgLayer =  overlays[tgkey ];
+
+     if ( tgstat ) {
+         tgLayer.addTo( map );
+     }
+     else {
+        map.removeLayer( tgLayer );
+
+     }
+   }
+
 
 
 function PropContents(feature, layer) {

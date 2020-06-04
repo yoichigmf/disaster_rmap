@@ -229,14 +229,14 @@ data-fullscreen="true"
 
    </div>
   </div>
-
+<!--
   <div data-role="popup" id="legend" data-shadow="false" data-dismissible="false" data-position-to="#lagendpos">
   		<a href="#" data-rel="back" class="ui-btn ui-icon-delete ui-btn-right ui-btn-icon-notext ui-corner-all">Close</a>
   		<p>凡例表示</p>
 
       <img src="https://disaportal.gsi.go.jp/hazardmap/copyright/img/shinsui_legend2-1.png">
   </div>
-
+-->
  <div id="panel_layer" data-role="panel" data-display="overlay" data-position="right">
         <a href="#" data-rel="close"
         class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left">閉じる</a>
@@ -410,7 +410,7 @@ $( "#legendpos" ).panel({
           tgl = ovdef[lp];
 
           if ( tgl ){
-            console.log( tgl );
+          //  console.log( tgl );
             if ( tgl["legend"]){
               tghtml += "<h3>" + tgl["name"] + '</h3>'
                     + '<img src="'
@@ -462,26 +462,6 @@ function  OpenLayerProp() {
 
 
 
-function changechk( cb ){
-
-  var tgkey = cb.value;
-  var tgstat = cb.checked;
-
-  var tgLayer =  overlays[tgkey ];
-
-  if ( tgstat ) {
-      tgLayer.addTo( map );
-  }
-  else {
-     map.removeLayer( tgLayer );
-
-  }
-//  alert(cb.value);
-//  alert( cb.checked);
-}
-
-
-
 
 
 
@@ -523,7 +503,7 @@ function  PanCurrentLocation(){
 		}
 
 
-   var map = L.map('map',{maxZoom:18});
+var map = L.map('map',{maxZoom:18});
 
 
 
@@ -549,17 +529,14 @@ var featureG;
 
 
 
-	 var Marker;
+var Marker;
 
 
   map.on('move',function( e ) {
          click_status = fstatus.MOUSE;
   });
 
-function  FitBound() {
 
-  map.fitBounds(featureG.getBounds());
-}
 
 
 function  SetMarker( latlng ){
@@ -655,12 +632,6 @@ function showGetFeatureInfoD(err, latlng, content) {
     $("#item_info").html(htxt);
 
     $("#panel_r").panel("open");
-
-
-
-
-
-  //  var marker = L.marker([]).addTo(map);
 
 
   }
