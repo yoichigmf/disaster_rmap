@@ -421,7 +421,7 @@ function SetDateList( features ){
     for ( let dn in  date_array ) {
         // console.log( vf);
 
-        dated = date_array[dn];
+        dated = dn;
 
 
 
