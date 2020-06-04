@@ -11,12 +11,12 @@ var CbaseLayer;           // Current　Base Layer
 
 var  UserList = {};       //   ユーザ名リスト
 
-var  urlParameta = new Object;
+var  urlParameta = new Object;　　　//  起動引き数
 
 var  OrgPointdata;    //  オリジナルポイントデータ
 
-var mapSheetId;
-var mapSheetName;
+var mapSheetId;       //  シートID
+var mapSheetName;     // シート名
 
 
 //    引数解析
@@ -42,7 +42,7 @@ function SetBaseLayers( data ){
 
  var $dcount = 1;
   for ( let vf of baselays ) {
-       console.log( vf);
+       //console.log( vf);
        var $checkstr = ' ';
        if ( $dcount == 1) {
          $checkstr = 'checked';
@@ -50,9 +50,6 @@ function SetBaseLayers( data ){
 
        var $btn =  '<input id="' +  String($dcount) + '" name="base_layer" type="radio" value="' + String($dcount)  + '" ' + $checkstr +  '/>' +  '<label for="' +  String($dcount) +'">' + vf["name"] + '</label>';
 
-      //  '<label for="' +  String($dcount) +'">' + vf["name"] + '</label>';
-
-       // <input id="ov1"  name="ov_layer1" type="checkbox" value="default_d" onChange=\'changechk( this )\'    checked /><label for="ov1">調査データ</label>'
 
        $( $btn ).appendTo( $baselist );
 
@@ -153,7 +150,7 @@ function SetLayerinfo(　mapsheetId) {
              success: function (data, status, xhr) {
 
 
-               console.log( data );
+              // console.log( data );
                 SetBaseLayers( data );
                SetOverlayLayers( data );
 
@@ -168,20 +165,6 @@ function SetLayerinfo(　mapsheetId) {
 
 
 
-    //overlays[nsearch]=dSearch;
-    /*
-    SagaOOmati  = L.tileLayer('https://dronebird.github.io/oam_saga20190904omachi01/xyztile_lowest/{z}/{x}/{y}.png',
-    {    attribution : 'Dronebird', minZoom: 13, maxZoom: 20, zIndex:3 });
-
-    overlays["20190904oomati"]=SagaOOmati ;
-
-
-    t15  = L.tileLayer('https://tile.geospatial.jp/aeroasahi/t15chiba/{z}/{x}/{y}.png',
-    {    attribution : 'Aeroasahi Corporation', minZoom: 5, maxZoom: 18, zIndex:3 });
-
-
-    overlays["t15"]=t15 ;
-*/
 
 
 }
@@ -246,7 +229,7 @@ function SelectSheet( sheetname ){
          dataType: "json",
          success: function (data, status, xhr) {
             //  console.log( data.length)
-              console.log( data );
+          //    console.log( data );
 
             var PointACluster;
             PointACluster = CreatePointCluster( data  , PointACluster);
@@ -486,7 +469,7 @@ function  ChangeReportdisplay(){
             }).get();
 
 
-  console.log(datedef);
+  //console.log(datedef);
 
 
   var PointCluster = L.markerClusterGroup({
@@ -512,7 +495,7 @@ function  ChangeReportdisplay(){
 
               　var datestr = flist[feature]["properties"]["date"];
 
-                console.log(datestr);
+                //console.log(datestr);
                 var splitd = datestr.split(" ");
 
                      //  指定日付がチェックされているかどうか
@@ -529,8 +512,7 @@ function  ChangeReportdisplay(){
     onEachFeature:function (feature, layer) {
       // 地物クリック時の関数記述　プロパティが配列化した場合
            PropContents2(feature,layer);
-      //var field = "id: " + feature.properties.id;
-      //  layer.bindPopup(field);
+
 
      },
  clickable: true
@@ -553,18 +535,17 @@ function  ChangeReportdisplay(){
  featureG  = L.featureGroup([ default_d ]);
 
 overlays["default_d"] = default_d;
-//$('#map').trigger('updatelayout');
-  //FitBound();
+
 }
 
    function PropContents2(feature, layer) {
        // does this feature have a property named popupContent?
 
-           console.log("propcontents2");
+      //     console.log("propcontents2");
     //   if (feature.properties && feature.properties.日付) {
 
           var tgtext = "";
-          console.log(feature);
+        //  console.log(feature);
            //var kind = feature.properties.種別;
 
            tgtext = feature.properties.date + "<br>報告者:" +  feature.properties.user ;
