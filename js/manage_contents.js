@@ -557,7 +557,7 @@ function PropContents2(feature, layer) {
 
               if ( propList ) {
               for ( let vf of propList ) {
-                    console.log(vf);
+            //        console.log(vf);
                    tgtext = tgtext + "<br>" + vf["日付"] ;
 
                     kind = vf["種別"];
