@@ -457,14 +457,19 @@ function SetUserList( userListA ){
 
    }
 
-
+//    日付のチェック変更
 function changeDateStat( stat ){
-
+       ChangeReportdisplay();　　　
 }
 
-//   条件別表示でユーザのステータスが変わった場合
+//   調査員のチェック変更
 function changeUserStat( stat ){
   　　//  調査データの再構成と再描画を行う
+       ChangeReportdisplay();
+}
+
+//    調査データの再描画
+function  ChangeReportdisplay(){
 
   var n = $( "input[name='userlist']:checked").length;
 
@@ -474,7 +479,16 @@ function changeUserStat( stat ){
               return $(this).val();
         }).get();
 
-  console.log(chkdef);
+  //  チェックされている日付リスト取得
+    var  datedef =　 $("input[name='date_list']:checked" ).map(function(){
+      //$(this)でjQueryオブジェクトが取得できる。val()で値をvalue値を取得。
+                  return $(this).val();
+            }).get();
+
+
+  console.log(datedef);
+
+  
   var PointCluster = L.markerClusterGroup({
     showCoverageOnHover: false,
     spiderfyOnMaxZoom: true,
