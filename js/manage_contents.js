@@ -425,7 +425,7 @@ function SetDateList( features ){
 
 
 
-        var $btn =  '<input id="dt'+ String($dcount)+ '"  name="date_list" type="checkbox" value="' + vf + '"  onChange=\'changeDateStat( this )\'   checked   /><label for="dt'+ String($dcount)+'">' + dated +'</label>'
+        var $btn =  '<input id="dt'+ String($dcount)+ '"  name="date_list" type="checkbox" value="' + dated + '"  onChange=\'changeDateStat( this )\'   checked   /><label for="dt'+ String($dcount)+'">' + dated +'</label>'
         $( $btn ).appendTo($datelist )
          $dcount++;
 
