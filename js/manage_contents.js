@@ -401,16 +401,38 @@ function SetDateList( features ){
     $datelist.empty();
 
     $dcount = 1;
+
+    var  date_array = {};
+
+
     for ( let vf in  features ) {
+
+            var datedp = features[vf]["properties"]["date"];
+
+            var darray = datedp.split(" ");
+
+            date_array[darray[0]] = 1;
+
+
+
+    }
+
+
+    for ( let dn in  date_array ) {
         // console.log( vf);
 
-        dated = features[vf]["properties"]["date"];
+        dated = date_array[dn];
+
+
 
         var $btn =  '<input id="dt'+ String($dcount)+ '"  name="date_list" type="checkbox" value="' + vf + '"  onChange=\'changeDateStat( this )\'   checked   /><label for="dt'+ String($dcount)+'">' + dated +'</label>'
         $( $btn ).appendTo($datelist )
          $dcount++;
 
      }
+
+
+
 
     $('#datelist').trigger("create");
 
