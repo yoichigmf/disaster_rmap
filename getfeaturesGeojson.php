@@ -50,6 +50,13 @@ $sheetd = GetSheet( $spreadsheetId, $sheetname, $client );
 
 $isdone = false;
 
+
+$geojson = array(
+   'type'      => 'FeatureCollection',
+   'features'  => array()
+);
+
+
 $output_ar = array();    // array of output data
 
 $uid_ar = array();   //  array of user id
@@ -168,7 +175,7 @@ foreach ($sheetd as $index => $cols) {
 
      }  //  foreach
 
-     $retjson = json_encode( $output_ar );      // make json
+     $retjson = json_encode( $geojson  );      // make json
      echo $retjson;
 
 ?>
