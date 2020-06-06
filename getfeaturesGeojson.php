@@ -197,7 +197,7 @@ foreach ($sheetd as $index => $cols) {
                      );
 
                      foreach ( $geojson as &$feat){
-                           if ( $feat["id"] == $userd ){
+                           if ( $feat["id"] === $userd ){
                               array_push(  $feat["propertis"]["attrs"], $atrdata );
                            }
 
