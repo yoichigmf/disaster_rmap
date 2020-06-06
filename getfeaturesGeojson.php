@@ -198,10 +198,10 @@ foreach ($sheetd as $index => $cols) {
                        'text' => $stext,
                        'url'=> $url
                      );
-                     log.warning("attribute add  ${arkey}");
+                     log->addWarning("attribute add  ${arkey}");
                      foreach ( $geojson as &$feat){
                            if ( $feat["id"] === $arkey ){
-                             log.warning("add attribute success ============== ${arkey}");
+                             log->addWarning("add attribute success ============== ${arkey}");
 
                               array_push(  $feat["propertis"]["attrs"], $atrdata );
                            }
