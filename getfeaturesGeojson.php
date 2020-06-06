@@ -193,7 +193,7 @@ foreach ($sheetd as $index => $cols) {
                        'user' => $userd,
                        'kind' => $kind,
                        'text' => $stext,
-                       'url'= $url
+                       'url'=> $url
                      );
 
                      foreach ( $geojson as &$feat){
