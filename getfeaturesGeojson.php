@@ -188,6 +188,21 @@ foreach ($sheetd as $index => $cols) {
                      $attr['TEXT'] = $stext;
                      $attr['url'] = $url;
 
+                     $atrdata = array(
+                       'date'=> $dated,
+                       'user' => $userd,
+                       'kind' => $kind,
+                       'text' => $stext,
+                       'url'= $url
+                     );
+
+                     foreach ( $geojson as &$feat){
+                           if ( $feat["id"] == $userd ){
+                              array_push(  $feat["propertis"]["attrs"], $atrdata );
+                           }
+
+                     }
+
           // $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
 
            $output_ar[$arkey]['attribute'] [] = $attr;
