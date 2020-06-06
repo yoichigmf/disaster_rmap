@@ -135,7 +135,7 @@ foreach ($sheetd as $index => $cols) {
          $output_ar[$arkey] =$location_rec;
 
          $atrar = array();
-         
+
          $feature = array(
            'id' => $arkey,
            'type' => 'Feature',
@@ -158,7 +158,7 @@ foreach ($sheetd as $index => $cols) {
          //echo ${topc};
         // echo sprintf(' \\"type\\":\\"Feature\\",\\"geometry\\":{\\"type\\": \\"Point\\", \\"coordinates\\":[%s,%s]}, \\"properties\\":{\\"日付\\":\\"%s\\",\\"ユーザ\\":\\"%s\\",\\"種別\\":\\"%s\\",\\"uid\\":\\"%d\\",\\"url\\":\\"%s\\",\\"テキスト\\":\\"%s\\"}}',$xcod,$ycod, $dated,$userd,$kind,$ckey,$url,$stext);
 
-
+         array_push($geojson['features'], $feature);
 
        }    // location
        else  {
