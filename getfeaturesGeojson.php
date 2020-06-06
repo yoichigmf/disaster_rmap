@@ -173,12 +173,15 @@ foreach ($sheetd as $index => $cols) {
 
                    $ukey = $uid_ar[$userd];
 
-
+                   $arkey = $ukey;
                   }
             else  {
 
 
                     $output_ar[$arkey]['attribute'] = array();
+
+
+
                   }
                   $attr = array();
 
@@ -197,7 +200,7 @@ foreach ($sheetd as $index => $cols) {
                      );
 
                      foreach ( $geojson as &$feat){
-                           if ( $feat["id"] === $userd ){
+                           if ( $feat["id"] === $arkey ){
                               array_push(  $feat["propertis"]["attrs"], $atrdata );
                            }
 
