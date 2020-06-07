@@ -136,6 +136,7 @@ foreach ($sheetd as $index => $cols) {
 
          $atrar = array();
 
+                           $log->addWarning("feature id == ${arkey}  user == ${userd}");
          $feature = array(
            'id' => $arkey,
            'type' => 'Feature',
