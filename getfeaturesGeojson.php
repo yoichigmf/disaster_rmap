@@ -86,8 +86,8 @@ foreach ($sheetd as $index => $cols) {
 
 
 
-        $xcod =$cols[6];    //  coordinate
-        $ycod = $cols[5];
+        $xcod = (double)$cols[6];    //  coordinate
+        $ycod = (double)$cols[5];
 
         if (array_key_exists( $userd, $uid_ar)){   //  is the user id in the array ?
 
@@ -102,7 +102,7 @@ foreach ($sheetd as $index => $cols) {
             }
 
          $arkey = $userd . "_" . $ckey ;
-
+/*
          $atrarray = array();
 
          $location_rec = array();
@@ -124,15 +124,15 @@ foreach ($sheetd as $index => $cols) {
          $attr['種別'] = $kind;
          $attr['TEXT'] = $stext;
          $attr['url'] = $url;
+*/
+        // $atrarray[] = $attr;
 
-         $atrarray[] = $attr;
+      //   $location_rec[ 'location'] = $head;
 
-         $location_rec[ 'location'] = $head;
-
-         $location_rec[ 'attribute'] = $atrarray;
+        // $location_rec[ 'attribute'] = $atrarray;
 
 
-         $output_ar[$arkey] =$location_rec;
+      //   $output_ar[$arkey] =$location_rec;
 
          $atrar = array();
 
@@ -179,7 +179,7 @@ foreach ($sheetd as $index => $cols) {
             else  {
 
 
-                    $output_ar[$arkey]['attribute'] = array();
+                  //  $output_ar[$arkey]['attribute'] = array();
 
                      $ukey = $arkey;
 
@@ -217,7 +217,7 @@ foreach ($sheetd as $index => $cols) {
 
           // $non_locr = array( "日付"=> $dated,"ユーザ"=>$userd, "種別"=>$kind, 'url'=>$url, 'TEXT'=> $stext );
 
-           $output_ar[$arkey]['attribute'] [] = $attr;
+           //$output_ar[$arkey]['attribute'] [] = $attr;
           }
        }
 
