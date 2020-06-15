@@ -205,12 +205,12 @@ foreach ($sheetd as $index => $cols) {
 
                           $fkey = $feat["id"];
 
-                           $log->addWarning("fkey == ${fkey}");
+                        //   $log->addWarning("fkey == ${fkey}");
 
                            if ( $feat["id"] === $ukey ){
                              $log->addWarning("add attribute success ============== ${ukey}");
 
-                              array_push(  $feat["propertis"]["attrs"], $atrdata );
+                              array_push(  $feat["properties"]["attrs"], $atrdata );
                            }
 
                      }
