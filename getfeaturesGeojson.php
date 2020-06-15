@@ -112,8 +112,8 @@ foreach ($sheetd as $index => $cols) {
          $head['vkey'] = $arkey;
          $head['user'] = $userd;
          $head['date'] = $dated;
-         $head['x'] = $xcod;
-         $head['y'] = $ycod;
+         $head['x'] =  (double)$xcod;
+         $head['y'] =  (double)$ycod;
          $head['kind'] = $kind;
          $head['stext'] = $stext;
 
