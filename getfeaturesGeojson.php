@@ -143,7 +143,7 @@ foreach ($sheetd as $index => $cols) {
            'geometry' => array(
            'type' => 'Point',
        # Pass Longitude and Latitude Columns here
-             'coordinates' => array($xcod, $ycod)
+             'coordinates' => array((double)$xcod, (double)$ycod)
               ),
    # Pass other attribute columns here
            'properties' => array(
