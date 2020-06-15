@@ -172,8 +172,8 @@ foreach ($sheetd as $index => $cols) {
            if (array_key_exists( $userd, $uid_ar)){
 
 
-                   $ukey = $uid_ar[$userd];
-
+                   $ukeyd = $uid_ar[$userd];
+                   $ukey = $userd . "_" . $ukeyd ;
                    //$arkey = $ukey;
                   }
             else  {
