@@ -201,7 +201,7 @@ foreach ($sheetd as $index => $cols) {
                      );
 
                      $log->addWarning("attribute add  ${ukey}");
-                     foreach ( $geojson as &$feat){
+                     foreach ( $geojson['features'] as &$feat){
 
                           $fkey = $feat["id"];
 
