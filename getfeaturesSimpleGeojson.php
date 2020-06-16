@@ -57,7 +57,7 @@ $geojson = array(
 );
 
 
-$output_ar = array();    // array of output data
+// $output_ar = array();    // array of output data
 
 $uid_ar = array();   //  array of user id
 
@@ -65,7 +65,7 @@ $uid_ar = array();   //  array of user id
 
 $ckey = 0;
 
-$non_locr = array();    //  arrray of non location data for a user
+// $non_locr = array();    //  arrray of non location data for a user
 
 foreach ($sheetd as $index => $cols) {
 
@@ -222,7 +222,7 @@ foreach ($sheetd as $index => $cols) {
      }  //  foreach
 
      unset( $uid_ar );
-
+     unset( $cols  );
 
      $retjson = json_encode( $geojson  );      // make json
      echo $retjson;
