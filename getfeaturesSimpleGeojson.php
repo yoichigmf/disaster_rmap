@@ -197,13 +197,13 @@ foreach ($sheetd as $index => $cols) {
 
                            if ( $feat["id"] === $ukey ){
 
-                             $poi = $feat['geometry'][ 'coordinates'];
+                             $poip = $feat['geometry'][ 'coordinates'];
 
-                              $geom = array('type' => 'Point',
-                                     'coordinates' => $poi
+                              $geomp = array('type' => 'Point',
+                                     'coordinates' => $poip
                                );
 
-                              $feature2["geometry"]  = $geom;
+                              $feature2["geometry"]  = $geomp;
 
                             // $log->addWarning("add attribute success ============== ${ukey}");
 
