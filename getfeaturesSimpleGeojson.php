@@ -57,15 +57,14 @@ $geojson = array(
 );
 
 
-// $output_ar = array();    // array of output data
 
 $uid_ar = array();   //  array of user id
 
-//$non_loc_ar = array();  // array of non location data
+
 
 $ckey = 0;
 
-// $non_locr = array();    //  arrray of non location data for a user
+
 
 foreach ($sheetd as $index => $cols) {
 
@@ -152,21 +151,6 @@ foreach ($sheetd as $index => $cols) {
                   }
                   $attr = array();
 
-                  /*   $attr['日付'] = $dated;
-                     $attr['ユーザ'] = $userd;
-                     $attr['種別'] = $kind;
-                     $attr['TEXT'] = $stext;
-                     $attr['url'] = $url;
-*/
-/*
-                     $atrdata = array(
-                       'date'=> $dated,
-                       'user' => $userd,
-                       'kind' => $kind,
-                       'text' => $stext,
-                       'url'=> $url
-                     );
-*/
 
                      $feature2 = array(
                        'id' => $ukey,
