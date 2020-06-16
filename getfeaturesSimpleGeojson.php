@@ -197,10 +197,10 @@ foreach ($sheetd as $index => $cols) {
 
                            if ( $feat["id"] === $ukey ){
 
-                             $poi = $feat["geometry"]['coordinates'];
+                             $poi = $feat['geometry'][ 'coordinates'];
 
                               $geom = array('type' => 'Point',
-                                     'coodinates' => array((double)$poi[0], (double)$poi[1])
+                                     'coordinates' => $poi
                                );
 
                               $feature2["geometry"]  = $geom;
