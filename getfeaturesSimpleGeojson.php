@@ -200,7 +200,7 @@ foreach ($sheetd as $index => $cols) {
                              $poi = $feat["geometry"]['coordinates'];
 
                               $geom = array('type' => 'Point',
-                                     'coodinates' => array((double)$poi[0], (double))$poi[1])
+                                     'coodinates' => array(double)$poi[0], (double))$poi[1])
                                );
 
                               $feature2["geometry"]  = $geom;
