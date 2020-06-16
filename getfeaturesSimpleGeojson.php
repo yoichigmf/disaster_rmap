@@ -200,7 +200,7 @@ foreach ($sheetd as $index => $cols) {
                              $poip = $feat['geometry'][ 'coordinates'];
 
                               $geomp = array('type' => 'Point',
-                                     'coordinates' => $poip
+                                     'coordinates' => array($poip[0], $poip[1])
                                );
 
                               $feature2["geometry"]  = $geomp;
