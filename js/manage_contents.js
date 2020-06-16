@@ -11,7 +11,7 @@ var CbaseLayer;           // Current　Base Layer
 
 var  UserList = {};       //   ユーザ名リスト
 
-var  urlParameta = new Object;　　　//  起動引き数
+var  urlParameta = new Object;     //  起動引き数
 
 var  OrgPointdata;    //  オリジナルポイントデータ
 
@@ -219,6 +219,88 @@ function SetLayerinfo(　mapsheetId) {
 
 
 
+   function SelectSheet( sheetname ){
+        //  set sheet name list
+          url = 'getfeaturesGeojson.php'
+          $.ajax({
+            url: url,
+            type: "POST",
+            data:{sheetname: sheetname, sheetid:mapSheetId},
+            dataType: "json",
+            success: function (data, status, xhr) {
+               //  console.log( data.length)
+             //    console.log( data );
+
+               var PointACluster;
+               PointACluster = CreatePointClusterFromGeoJson( data  , PointACluster);
+                 //マーカークラスター設定
+
+
+               if ( default_d){
+                     map.removeLayer(default_d);
+                 }
+
+               PointACluster.setZIndex(250);
+               PointACluster.addTo(map);
+
+
+                OrgPointdata = PointACluster;
+
+               default_d = PointACluster;
+               featureG = L.featureGroup([ default_d ]);
+
+               overlays["default_d"] = default_d;
+                   FitBound();
+
+
+             //  map.addLayer(PointACluster);
+
+
+
+                   },
+            error: function (xhr, status, error) {
+                  alert(error);
+
+                }
+              });
+      }
+
+
+
+      function CreatePointClusterFromGeoJson( data  , PointClusterd){
+
+        //マーカークラスター設定
+      PointClusterd = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        spiderfyOnMaxZoom: true,
+        removeOutsideVisibleBounds: true,
+        disableClusteringAtZoom: 18
+            });
+
+     UserList = {};   //  User 別リストの初期化
+
+
+
+               //console.log(PointArray);
+      PointClusterd.addLayer(L.geoJson(data,{
+               onEachFeature:function (feature, layer) {
+                 // 地物クリック時の関数記述　プロパティが配列化した場合
+                      PropContents2(feature,layer);
+                 //var field = "id: " + feature.properties.id;
+                 //  layer.bindPopup(field);
+
+                },
+            clickable: true
+            }));
+
+
+             return( PointClusterd  );
+
+
+      }
+
+
+/*
 function SelectSheet( sheetname ){
      //  set sheet name list
        url = 'getfeatures.php'
@@ -244,7 +326,7 @@ function SelectSheet( sheetname ){
             PointACluster.addTo(map);
 
 
-　　　　　　 OrgPointdata = PointACluster;
+          OrgPointdata = PointACluster;
 
             default_d = PointACluster;
             featureG = L.featureGroup([ default_d ]);
@@ -264,7 +346,7 @@ function SelectSheet( sheetname ){
              }
            });
    }
-
+*/
 
 
 function CreatePointCluster( data, PointClusterd){
@@ -282,7 +364,7 @@ function CreatePointCluster( data, PointClusterd){
      "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } }
    };
 
-　　　　　　　　　　//  ポイント地物リスト
+      //  ポイント地物リスト
    var Features = [];
    UserList = {};   //  User 別リストの初期化
 
@@ -335,7 +417,6 @@ function CreatePointCluster( data, PointClusterd){
              feature["properties"]= nproperties;
              feature["geometry"]= ngeometry;
 
-             　　
 
              Features.push(feature);
 
@@ -344,7 +425,7 @@ function CreatePointCluster( data, PointClusterd){
              }
 
              UserList[nproperties["user"]].push(feature);
-           }　　//  dbheader
+           }  //  dbheader
 
         //console.log( UserList);
    }  // for loop
@@ -442,12 +523,12 @@ function SetUserList( userListA ){
 
 //    日付のチェック変更
 function changeDateStat( stat ){
-       ChangeReportdisplay();　　　
+       ChangeReportdisplay();
 }
 
 //   調査員のチェック変更
 function changeUserStat( stat ){
-  　　//  調査データの再構成と再描画を行う
+     //  調査データの再構成と再描画を行う
        ChangeReportdisplay();
 }
 
@@ -457,7 +538,7 @@ function  ChangeReportdisplay(){
   var n = $( "input[name='userlist']:checked").length;
 
   //  チェックされているユーザリスト取得
-　　 var chkdef  = $("input[name='userlist']:checked" ).map(function(){
+    var chkdef  = $("input[name='userlist']:checked" ).map(function(){
   //$(this)でjQueryオブジェクトが取得できる。val()で値をvalue値を取得。
               return $(this).val();
         }).get();
@@ -480,20 +561,20 @@ function  ChangeReportdisplay(){
         });
 
   //  ポイント geojson 定義
-　　var PointArray = {
+   var PointArray = {
   "type": "FeatureCollection",
   "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } }
-　　　};
+   };
 
-　　　var Features = [];
+   var Features = [];
 
     for ( var userid in chkdef  ){
-　　       var flist = UserList[ chkdef[userid]];
+         var flist = UserList[ chkdef[userid]];
 
            for ( var feature in flist ){
                 //  日付チェックを追加
 
-              　var datestr = flist[feature]["properties"]["date"];
+               var datestr = flist[feature]["properties"]["date"];
 
                 //console.log(datestr);
                 var splitd = datestr.split(" ");
@@ -520,7 +601,7 @@ function  ChangeReportdisplay(){
 
 
   if ( default_d){
-    　　　　
+
               map.removeLayer(default_d);
               delete default_d;
           }
@@ -529,7 +610,7 @@ function  ChangeReportdisplay(){
   PointCluster.addTo(map);
 
 
- 　　　　
+
 
  default_d =  PointCluster;
  featureG  = L.featureGroup([ default_d ]);
@@ -579,23 +660,23 @@ function PropContents2(feature, layer) {
 
                           tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\"><img src=\"" + mmurl + "\"  width=\"200\"></a>";
 
-                        　　　　　　}
+                            }
 
 
 
-                    　　　　　}
+                        }
 
 
 
                      if ( vf["TEXT"]  ) {
                          tgtext = tgtext +  "<br>" + vf["TEXT"]+ "<br>";
 
-                      　　}
+                         }
 
 
-                   }　// proplist loop
+                   } // proplist loop
 
-           　　}  // if proplist
+              }  // if proplist
 
 
            layer.bindPopup(tgtext);
@@ -614,7 +695,7 @@ function PropContents2(feature, layer) {
 
    }
 
-   // 　　主題図チェックボックスをクリックした場合の動作
+   //   主題図チェックボックスをクリックした場合の動作
    function changechk( cb ){
 
      var tgkey = cb.value;
