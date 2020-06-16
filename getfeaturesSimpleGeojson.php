@@ -158,7 +158,7 @@ foreach ($sheetd as $index => $cols) {
                      $attr['TEXT'] = $stext;
                      $attr['url'] = $url;
 */
-
+/*
                      $atrdata = array(
                        'date'=> $dated,
                        'user' => $userd,
@@ -166,7 +166,7 @@ foreach ($sheetd as $index => $cols) {
                        'text' => $stext,
                        'url'=> $url
                      );
-
+*/
 
                      $feature2 = array(
                        'id' => $ukey,
@@ -207,12 +207,12 @@ foreach ($sheetd as $index => $cols) {
 
                             // $log->addWarning("add attribute success ============== ${ukey}");
 
-                            //array_push( $geojson['features'], $feature2 );
-                               unset( $feat );
-                              // break;
+                             array_push( $geojson['features'], $feature2 );
+
+                             break;
                            }
 
-
+                       unset( $feat );
 
                      }
 
