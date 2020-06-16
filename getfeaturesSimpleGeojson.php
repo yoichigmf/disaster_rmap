@@ -103,7 +103,7 @@ foreach ($sheetd as $index => $cols) {
 
          $arkey = $userd . "_" . $ckey ;
 
-         $atrar = array();
+        // $atrar = array();
 
               //             $log->addWarning("feature id == ${arkey}  user == ${userd}");
          $feature = array(
@@ -120,8 +120,8 @@ foreach ($sheetd as $index => $cols) {
               'date' => $dated,
               'kind' => $kind,
               'text' => $stext,
-              'url' => $url,
-       'attrs' => $atrar
+              'url' => $url
+    //   'attrs' => $atrar
        )
    );
 
@@ -167,6 +167,27 @@ foreach ($sheetd as $index => $cols) {
                        'url'=> $url
                      );
 
+
+                     $feature2 = array(
+                       'id' => $ukey,
+                       'type' => 'Feature',
+                  //     'geometry' => array(
+                  //     'type' => 'Point',
+                   # Pass Longitude and Latitude Columns here
+                  //       'coordinates' => array((double)$xcod, (double)$ycod)
+                  //        ),
+               # Pass other attribute columns here
+                       'properties' => array(
+                          'user' => $userd,
+                          'date' => $dated,
+                          'kind' => $kind,
+                          'text' => $stext,
+                          'url' => $url
+                //   'attrs' => $atrar
+                   )
+               );
+
+
                      $log->addWarning("attribute add  ${ukey}");
                      foreach ( $geojson['features'] as &$feat){
 
@@ -175,9 +196,18 @@ foreach ($sheetd as $index => $cols) {
                         //   $log->addWarning("fkey == ${fkey}");
 
                            if ( $feat["id"] === $ukey ){
-                             $log->addWarning("add attribute success ============== ${ukey}");
 
-                              array_push(  $feat["properties"]["attrs"], $atrdata );
+                             $poi = $feat["geometry"]['coordinates'];
+
+                              $geom = array('type' => 'Point',
+                                     'coodinates' => array((double)$poi[0], (double))$poi[1])
+                               );
+
+                              $feature2["geometry"]  = $geom;
+
+                            // $log->addWarning("add attribute success ============== ${ukey}");
+
+                            //  array_push(  $feat["properties"]["attrs"], $atrdata );
                            }
 
                      }
