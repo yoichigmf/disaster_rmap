@@ -219,7 +219,7 @@ function SetLayerinfo(　mapsheetId) {
 
 
 
-   function SelectSheet( sheetname ){
+   function SelectSheetNew( sheetname ){
         //  set sheet name list
           url = 'getfeaturesGeojson.php'
           $.ajax({
@@ -280,6 +280,9 @@ function SetLayerinfo(　mapsheetId) {
      UserList = {};   //  User 別リストの初期化
 
 
+      for ( var item in data  ){
+
+      }
 
                //console.log(PointArray);
       PointClusterd.addLayer(L.geoJson(data,{
@@ -300,7 +303,7 @@ function SetLayerinfo(　mapsheetId) {
       }
 
 
-/*
+
 function SelectSheet( sheetname ){
      //  set sheet name list
        url = 'getfeatures.php'
@@ -346,7 +349,7 @@ function SelectSheet( sheetname ){
              }
            });
    }
-*/
+
 
 
 function CreatePointCluster( data, PointClusterd){
