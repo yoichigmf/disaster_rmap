@@ -61,7 +61,7 @@ $output_ar = array();    // array of output data
 
 $uid_ar = array();   //  array of user id
 
-$non_loc_ar = array();  // array of non location data
+//$non_loc_ar = array();  // array of non location data
 
 $ckey = 0;
 
@@ -188,7 +188,7 @@ foreach ($sheetd as $index => $cols) {
                );
 
 
-                     $log->addWarning("attribute add  ${ukey}");
+            //         $log->addWarning("attribute add  ${ukey}");
                      foreach ( $geojson['features'] as $feat){
 
                           $fkey = $feat["id"];
@@ -210,12 +210,19 @@ foreach ($sheetd as $index => $cols) {
                             array_push( $geojson['features'], $feature2 );
                            }
 
+                           unset( $feat );
+
                      }
+
+              unset( $feature2 );
 
           }
        }
 
      }  //  foreach
+
+     unset( $uid_ar );
+
 
      $retjson = json_encode( $geojson  );      // make json
      echo $retjson;
