@@ -207,10 +207,12 @@ foreach ($sheetd as $index => $cols) {
 
                             // $log->addWarning("add attribute success ============== ${ukey}");
 
-                            array_push( $geojson['features'], $feature2 );
+                            //array_push( $geojson['features'], $feature2 );
+                               unset( $feat );
+                              // break;
                            }
 
-                           unset( $feat );
+
 
                      }
 
