@@ -121,7 +121,7 @@ foreach ($sheetd as $index => $cols) {
               'kind' => $kind,
               'text' => $stext,
               'url' => $url,
-       'attrs' => $atrar
+       'proplist' => $atrar
        )
    );
 
@@ -177,7 +177,7 @@ foreach ($sheetd as $index => $cols) {
                            if ( $feat["id"] === $ukey ){
                              $log->addWarning("add attribute success ============== ${ukey}");
 
-                              array_push(  $feat["properties"]["attrs"], $atrdata );
+                              array_push(  $feat["properties"]["proplist"], $atrdata );
                            }
 
                      }

@@ -128,7 +128,7 @@ $('#overlaylist').trigger("create");
 }
 
 //   レイヤ情報の設定
-function SetLayerinfo(　mapsheetId) {
+function SetLayerinfo( mapsheetId) {
 
 
     var $overlaylist = $('#overlaylist');
