@@ -514,7 +514,7 @@ function PropContents3(feature, layer) {
 
 
                      if ( vf["text"]  ) {
-                         tgtext = tgtext +  "<br>" + vf["TEXT"]+ "<br>";
+                         tgtext = tgtext +  "<br>" + vf["text"]+ "<br>";
 
                          }
 
