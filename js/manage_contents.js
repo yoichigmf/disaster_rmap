@@ -288,7 +288,7 @@ function SetLayerinfo( mapsheetId) {
               UserList[data["features"][item]["properties"]["user"]] = [];
         }
 
-        UserList[item["properties"]["user"]].push(data["features"][item]);
+        UserList[data["features"][item]["properties"]["user"]].push(data["features"][item]);
 
       }
 
