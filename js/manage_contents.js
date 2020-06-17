@@ -214,7 +214,10 @@ function SetLayerinfo(　mapsheetId) {
     }
 
 
-    SelectSheet  (tgSheetname);
+  //  SelectSheet  (tgSheetname);
+
+
+      SelectSheetNew(tgSheetname);
    }
 
 
