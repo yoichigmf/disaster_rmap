@@ -451,7 +451,7 @@ function CreatePointCluster( data, PointClusterd){
    PointClusterd.addLayer(L.geoJson(PointArray,{
    onEachFeature:function (feature, layer) {
      // 地物クリック時の関数記述　プロパティが配列化した場合
-          PropContents2(feature,layer);
+          PropContents3(feature,layer);
      //var field = "id: " + feature.properties.id;
      //  layer.bindPopup(field);
 
@@ -463,6 +463,70 @@ clickable: true
  return( PointClusterd  );
 
 }
+
+
+function PropContents3(feature, layer) {
+       // does this feature have a property named popupContent?
+
+      //     console.log("propcontents2");
+    //   if (feature.properties && feature.properties.日付) {
+
+          var tgtext = "";
+        //  console.log(feature);
+           //var kind = feature.properties.種別;
+
+           tgtext = feature.properties.date + "<br>報告者:" +  feature.properties.user ;
+
+
+               var propList = feature.properties.proplist;
+
+
+              if ( propList ) {
+              for ( let vf of propList ) {
+            //        console.log(vf);
+                   tgtext = tgtext + "<br>" + vf["date"] ;
+
+                    kind = vf["kind"];
+
+
+                    if ( vf["url"]   ){
+                     imageurl = vf["url"];
+
+                          dlurl = imageurl;
+
+                          mmurl = dlurl.replace('?dl=0', '');
+                         mmurl = mmurl.replace('www.dropbox.com', 'dl.dropboxusercontent.com');
+
+                          tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\">" + imageurl + "</a>";
+
+                           if ( kind === 'image' ) {
+
+
+
+                          tgtext = tgtext + "<br><a href=\""+ imageurl + "\" target=\"photo\"><img src=\"" + mmurl + "\"  width=\"200\"></a>";
+
+                            }
+
+
+
+                        }
+
+
+
+                     if ( vf["text"]  ) {
+                         tgtext = tgtext +  "<br>" + vf["TEXT"]+ "<br>";
+
+                         }
+
+
+                   } // proplist loop
+
+              }  // if proplist
+
+
+           layer.bindPopup(tgtext);
+      // }  //
+   }
 
 //      日付リストの設定
 function SetDateList( features ){
