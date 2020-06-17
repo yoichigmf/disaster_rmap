@@ -283,7 +283,7 @@ function SetLayerinfo( mapsheetId) {
      UserList = {};   //  User 別リストの初期化
 
 
-      for ( var item in data  ){
+      for ( var item in data["features"]  ){
         if ( !UserList[ item["properties"]["user"]]){
               UserList[item["properties"]["user"]] = [];
         }
