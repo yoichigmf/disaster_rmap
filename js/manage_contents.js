@@ -217,12 +217,12 @@ function SetLayerinfo( mapsheetId) {
   //  SelectSheet  (tgSheetname);
 
 
-      SelectSheetNew(tgSheetname);
+      SelectSheet(tgSheetname);
    }
 
 
 
-   function SelectSheetNew( sheetname ){
+   function SelectSheet( sheetname ){
         //  set sheet name list
           url = 'getfeaturesGeojson.php'
           $.ajax({
@@ -319,7 +319,7 @@ function SetLayerinfo( mapsheetId) {
 
 
 
-function SelectSheet( sheetname ){
+function SelectSheetOld( sheetname ){
      //  set sheet name list
        url = 'getfeatures.php'
        $.ajax({
@@ -674,7 +674,7 @@ function  ChangeReportdisplay(){
      PointCluster.addLayer(L.geoJson(PointArray,{
     onEachFeature:function (feature, layer) {
       // 地物クリック時の関数記述　プロパティが配列化した場合
-           PropContents2(feature,layer);
+           PropContents3(feature,layer);
 
 
      },
