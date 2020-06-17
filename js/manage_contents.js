@@ -284,6 +284,11 @@ function SetLayerinfo( mapsheetId) {
 
 
       for ( var item in data  ){
+        if ( !UserList[ item["properties"]["user"]]){
+              UserList[item["properties"]["user"]] = [];
+        }
+
+        UserList[item["properties"]["user"]].push(item);
 
       }
 
@@ -298,6 +303,13 @@ function SetLayerinfo( mapsheetId) {
                 },
             clickable: true
             }));
+
+
+            //   条件指定用ユーザーリストの設定
+               SetUserList( UserList );
+
+            //   条件指定用日付リストの設定
+               SetDateList( data['features'] );
 
 
              return( PointClusterd  );
