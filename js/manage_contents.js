@@ -284,11 +284,11 @@ function SetLayerinfo( mapsheetId) {
 
 
       for ( var item in data["features"]  ){
-        if ( !UserList[ item["properties"]["user"]]){
-              UserList[item["properties"]["user"]] = [];
+        if ( !UserList[ data["features"][item]["properties"]["user"]]){
+              UserList[data["features"][item]["properties"]["user"]] = [];
         }
 
-        UserList[item["properties"]["user"]].push(item);
+        UserList[item["properties"]["user"]].push(data["features"][item]);
 
       }
 
