@@ -291,7 +291,7 @@ function SetLayerinfo( mapsheetId) {
       PointClusterd.addLayer(L.geoJson(data,{
                onEachFeature:function (feature, layer) {
                  // 地物クリック時の関数記述　プロパティが配列化した場合
-                      PropContents2(feature,layer);
+                      PropContents3(feature,layer);
                  //var field = "id: " + feature.properties.id;
                  //  layer.bindPopup(field);
 
