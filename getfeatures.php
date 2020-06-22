@@ -28,14 +28,14 @@ $envid= getenv('SPREADSHEET_ID');
  //$sheetname = 'シート1';
  $spreadsheetId = getenv('SPREADSHEET_ID');
 
- if ( $sheetid ){
+ if ( ! empty($sheetid) ){
      $spreadsheetId = $sheetid;
  }
 
 $client = getGoogleSheetClient();
- if( !$sheetname ) {
+ if( empty($sheetname) ) {
      $sheetname  = getenv('SHEET_NAME');
-     if( !$sheetname ) {
+     if( empty($sheetname )) {
           //$sheetname = 'シート1';
           $sheetname = GetFirstSheetName( $spreadsheetID, $client );
      }
