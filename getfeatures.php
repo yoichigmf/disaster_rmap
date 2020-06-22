@@ -167,7 +167,7 @@ foreach ($sheetd as $index => $cols) {
                        'url'=> $url
                      );
 
-                     $atrtext = "$dated<br>${kind}<br>${stext}<br>${url}"
+                     $atrtext = "<br>$dated<br>${kind}<br>${stext}<br>${url}";
                      $log->addWarning("attribute add  ${ukey}");
                      foreach ( $geojson['features'] as &$feat){
 
