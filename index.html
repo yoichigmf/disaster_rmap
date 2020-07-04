@@ -334,13 +334,13 @@ $('#ly_thema').on('click', function() {
 
 //  凡例パネルが開くときの動作
 $( "#legendpos" ).panel({
-  beforeopen: function( event, ui ) {
+   open: function( event, ui ) {
 //alert("befor");
    var $overlaylist = $('#overlaylist');
 
    var n = $( "input[name='ov_layer1']:checked").length;
 
-
+   var   client_w = document.getElementById('legendarea').clientWidth;
     //  チェックされている主題図リスト取得
    var chkdef  = $("input[name='ov_layer1']:checked" ).map(function(){
     //$(this)でjQueryオブジェクトが取得できる。val()で値をvalue値を取得。
@@ -358,10 +358,14 @@ $( "#legendpos" ).panel({
           if ( tgl ){
           //  console.log( tgl );
             if ( tgl["legend"]){
-              tghtml += "<h3>" + tgl["name"] + '</h3>'
-                    + '<img src="'
-                    + tgl["legend"]
-                    + '" />';
+
+              nhtml = "<h3>" + tgl["name"] + '</h3>'
+              + '<img src="'
+              + tgl["legend"]
+              + '" width=' + String(client_w) + '/>';
+
+
+              tghtml += nhtml;
             }
           }
       }
