@@ -1,6 +1,7 @@
 {
 "require": {
                 "monolog/monolog": "^1.23",
-                "google/apiclient": "^2.0"
+                "google/apiclient": "^2.0",
+                                "linecorp/line-bot-sdk": "^4.4"
     }
     }

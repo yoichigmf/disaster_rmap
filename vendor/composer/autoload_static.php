@@ -29,6 +29,10 @@ class ComposerStaticInite99d90d98aada3575ca36d24c60033c0
         array (
             'Monolog\\' => 8,
         ),
+        'L' => 
+        array (
+            'LINE\\' => 5,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -62,6 +66,10 @@ class ComposerStaticInite99d90d98aada3575ca36d24c60033c0
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'LINE\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/linecorp/line-bot-sdk/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (

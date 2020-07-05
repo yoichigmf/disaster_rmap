@@ -394,6 +394,80 @@
         ]
     },
     {
+        "name": "linecorp/line-bot-sdk",
+        "version": "4.4.2",
+        "version_normalized": "4.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/line/line-bot-sdk-php.git",
+            "reference": "65217da824ff9459a6077fd684509c38ceac2862"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/line/line-bot-sdk-php/zipball/65217da824ff9459a6077fd684509c38ceac2862",
+            "reference": "65217da824ff9459a6077fd684509c38ceac2862",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "ext-sockets": "*",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "ext-posix": "*",
+            "indigophp/hash-compat": "~1.1.0",
+            "phpmd/phpmd": "~2.4",
+            "phpunit/phpunit": "^4.8.24||^5||^6",
+            "squizlabs/php_codesniffer": "~2.6||^3"
+        },
+        "suggest": {
+            "apigen/apigen": "Install with roave/better-reflection:dev-master to generate docs",
+            "roave/better-reflection": "Required by apigen/apigen:dev-master"
+        },
+        "time": "2020-06-11T15:18:31+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "LINE\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "moznion",
+                "email": "moznion@gmail.com",
+                "role": "Retired"
+            },
+            {
+                "name": "Satoru Yoshihara",
+                "email": "vaduz0@gmail.com",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Satoshi Shibuya",
+                "email": "satosby@gmail.com",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Shunsuke Mori",
+                "email": "morimorim7180@gmail.com",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "SDK of the LINE BOT API for PHP",
+        "homepage": "https://github.com/line/line-bot-sdk-php",
+        "keywords": [
+            "bot",
+            "line",
+            "sdk"
+        ]
+    },
+    {
         "name": "monolog/monolog",
         "version": "1.24.0",
         "version_normalized": "1.24.0.0",
