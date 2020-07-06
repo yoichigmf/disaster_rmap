@@ -386,6 +386,27 @@ open: function( event, ui ) {
 
 });
 
+
+$('#select-pref').change(function () {
+     $("#select-pref option:selected").each(function () {
+             pref_name = $(this).text();
+
+             var strval =  $(this).val();
+
+             var spl = strval.split("/" );
+
+             chiiki_lat = spl[0];
+             chiiki_lon = spl[1];
+             if ( chiiki_lat ) {
+                         		  map.panTo([ chiiki_lat, chiiki_lon ]);
+                            }
+                            
+
+
+     });
+
+
+});
 //   都道府県リスト`の設定`
 function SetPrefList( data ){
   //  都道府県リストのセット
