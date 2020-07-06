@@ -332,11 +332,7 @@ $(document).on("mobileinit", function () {
 
 <script>
 
-//   都道府県選択が変わったとき
 
-  $("#select-pref").change(function () {
-
-   }).change();
 
 
 
@@ -386,7 +382,7 @@ open: function( event, ui ) {
 
 });
 
-
+//   都道府県選択が変わったとき
 $('#select-pref').change(function () {
      $("#select-pref option:selected").each(function () {
              pref_name = $(this).text();
@@ -430,6 +426,8 @@ function SetPrefList( data ){
 
   $('#nav_panel').trigger("updatelayout");
 }
+
+
 
 //  凡例パネルが開くときの動作
 $( "#legendpos" ).panel({
